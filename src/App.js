@@ -8,9 +8,12 @@ class App extends Component {
       textAlign: 'center',
     }
     return (
-      <div className="App" style={divStyle}>
+      <div className='App' style={divStyle}>
         <h1>Hello world!</h1>
-        <Car />
+        <Car name='Ford' year={2018}>
+          <p>color</p>
+        </Car>
+        <Car name='Audi' year={2016} />
       </div>
     );
   }
