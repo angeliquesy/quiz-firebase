@@ -3,9 +3,13 @@ import './App.css';
 
 class App extends Component {
   render() {
+    const divStyle = {
+      textAlign: 'center',
+      color: 'red'
+    }
     return (
-      <div className="App">
-        <h1>Hello world!</h1>
+      <div className="App" style={divStyle}>
+        <h1 style={{fontSize: '244px'}}>Hello world!</h1>
       </div>
     );
 
