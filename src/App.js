@@ -23,12 +23,15 @@ class App extends Component {
     showCars: false
   }
 
-  changeTitleHandler = newTitle => {
-    this.setState({
-      pageTitle: newTitle
-    })
+  onChangeName = (name, index) => {
+    const car = this.state.cars[index]
+    car.name = name
+    const cars = [...this.state.cars]
+    // const cars = this.state.cars.concat() // клонирование массива - старый способ
+    cars[index] = car
+    this.setState({cars}) // = cars: cars
 
-    // this.state.pageTitle = 'Changed!' не сработает
+    // когда меняем состояние, должны создавать клон и новый стейт, т.к. не можем напрямую менять состояние
   }
 
   toggleCarsHandler = () => {
@@ -51,7 +54,7 @@ class App extends Component {
             key={index}
             name={car.name}
             year={car.year}
-            onChangeTitle={() => this.changeTitleHandler(car.name)}
+            onChangeName={event => this.onChangeName(event.target.value, index)}
             // лучший способ (оптимизация): onChangeTitle={this.changeTitleHandler.bind(this, car.name)}
           />
         )
