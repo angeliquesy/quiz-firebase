@@ -42,7 +42,21 @@ class App extends Component {
       textAlign: 'center',
     }
 
-    const cars = this.state.cars
+    let cars = null
+
+    if (this.state.showCars) {
+      cars = this.state.cars.map((car, index) => {
+        return (
+          <Car
+            key={index}
+            name={car.name}
+            year={car.year}
+            onChangeTitle={() => this.changeTitleHandler(car.name)}
+            // лучший способ (оптимизация): onChangeTitle={this.changeTitleHandler.bind(this, car.name)}
+          />
+        )
+      })
+    }
 
     return (
       <div className='App' style={divStyle}>
@@ -52,22 +66,7 @@ class App extends Component {
           ToggleCars
         </button>
 
-        {
-          // for, if - запрещены в jsx
-          this.state.showCars ?
-            this.state.cars.map((car, index) => {
-              return (
-                <Car
-                  key={index}
-                  name={car.name}
-                  year={car.year}
-                  onChangeTitle={() => this.changeTitleHandler(car.name)}
-                  // лучший способ (оптимизация): onChangeTitle={this.changeTitleHandler.bind(this, car.name)}
-                />
-              )
-            })
-          : null
-        }
+        {cars}
 
       </div>
     );
