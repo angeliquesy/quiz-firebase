@@ -7,8 +7,16 @@ export default class Counter extends Component {
   }
 
   addCounter = () => {
-    this.setState({
-      counter: this.state.counter + 1
+    // setState - ассинхронный, поэтому если будет меняться параллельно, может быть ошибка
+    // this.setState({
+    //   counter: this.state.counter + 1
+    // })
+
+    // способ работы со 100% предыдущим стейтом, который не может быть изменен асинхронно
+    this.setState((prevState) => {
+      return {
+        counter: prevState.counter + 1
+      }
     })
   }
 
