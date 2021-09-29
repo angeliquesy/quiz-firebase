@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import Car from './Car/Car'
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import Counter from "./Counter/Counter";
 
 class App extends Component {
 
@@ -14,14 +15,14 @@ class App extends Component {
           name: 'Ford',
           year: 2018
         },
-        {
-          name: 'Audi',
-          year: 2016
-        },
-        {
-          name: 'Mazda',
-          year: 2010
-        },
+        // {
+        //   name: 'Audi',
+        //   year: 2016
+        // },
+        // {
+        //   name: 'Mazda',
+        //   year: 2010
+        // },
       ],
       pageTitle: 'React components',
       showCars: false
@@ -88,6 +89,10 @@ class App extends Component {
     return (
       <div className='App' style={divStyle}>
         <h1>{this.state.pageTitle}</h1>
+
+        <Counter/>
+
+        <hr/>
 
         <button onClick={this.toggleCarsHandler}>
           ToggleCars
