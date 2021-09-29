@@ -13,6 +13,13 @@ class Car extends React.Component {
       // вернет true если изменилось имя, false если добавили пробел
   }
 
+  static getDerivedStateFromProps (nextProps, prevState) {
+    // static - без доступа к this
+    console.log('Car gerDerivedStateFromProps')
+
+    return prevState
+  }
+
   UNSAFE_componentWillUpdate(nextProps, nextState) {
     console.log('Car componentWillUpdate')
   }
@@ -21,7 +28,19 @@ class Car extends React.Component {
     console.log('Car componentDidUpdate')
   }
 
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log('Car getSnapshotBeforeUpdate')
+  }
+
+  componentWillUnmount() {
+    console.log('Car componentWillUnmount')
+  }
+
   render() {
+    if (Math.random() > 0.7) {
+      throw new Error('Car random failed')
+    }
+
     const inputClasses = ['input']
 
     if (this.props.name !== '') {

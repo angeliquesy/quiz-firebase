@@ -35,7 +35,7 @@ componentWillUpdate
 
 
 ===========================================
-ЖИЗНЕННЫЙ ЦИКЛ КОМПОНЕНТА: ПОСЛЕ ОБНОВЛЕНИЯ
+ЖИЗНЕННЫЙ ЦИКЛ КОМПОНЕНТА: КОМПОНЕНТ ОБНОВЛЯЕТСЯ
 ===========================================
 
 1. componentWillReceiveProps(nextProps) - получаем новые параметры для компонента
@@ -49,8 +49,13 @@ true говорит что компонент должен измениться,
 например, если пробел не считается изменением свойства:
 return nextProps.name.trim() !== this.props.name.trim()
 
-3. UNSAFE_componentWillUpdate(nextProps, nextState) - тут уже знаем, что компонент будет изменен, и готовимся к изменению
+3. getSnapshotBeforeUpdate(prevProps, prevState
 
-4. render()
+4. UNSAFE_componentWillUpdate(nextProps, nextState) - тут уже знаем, что компонент будет изменен, и готовимся к изменению
+сейчас заменен, т.к. внутри него можно использовать this.state, например, хотя сам компонент еще не отрендерился, это опасно
 
-5. componentDidUpdate()
+/ static getDirivedStateFromProps
+
+5. render()
+
+6. componentDidUpdate()
