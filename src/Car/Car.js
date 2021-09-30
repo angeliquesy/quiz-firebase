@@ -1,69 +1,23 @@
 import React from 'react';
-//import Radium from 'radium'
-import './Car.css'
+import classes from './Car.module.scss'
+import withClass from "../hoc/withClass";
 
 class Car extends React.Component {
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    console.log('Car componentWillReceiveProps')
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('Car shouldComponentUpdate')
-    return nextProps.name.trim() !== this.props.name.trim()
-      // вернет true если изменилось имя, false если добавили пробел
-  }
-
-  static getDerivedStateFromProps (nextProps, prevState) {
-    // static - без доступа к this
-    console.log('Car gerDerivedStateFromProps')
-
-    return prevState
-  }
-
-  UNSAFE_componentWillUpdate(nextProps, nextState) {
-    console.log('Car componentWillUpdate')
-  }
-
-  componentDidUpdate() {
-    console.log('Car componentDidUpdate')
-  }
-
-  getSnapshotBeforeUpdate(prevProps, prevState) {
-    console.log('Car getSnapshotBeforeUpdate')
-  }
-
-  componentWillUnmount() {
-    console.log('Car componentWillUnmount')
-  }
-
   render() {
-    // if (Math.random() > 0.7) {
-    //   throw new Error('Car random failed')
-    // }
-
-    const inputClasses = ['input']
+    const inputClasses = [classes.input]
 
     if (this.props.name !== '') {
-      inputClasses.push('green')
+      inputClasses.push(classes.green)
     } else {
-      inputClasses.push('red')
+      inputClasses.push(classes.red)
     }
 
     if (this.props.name.length > 4) {
-      inputClasses.push('bold')
-    }
-
-    const style = {
-      border: '1px solid #ccc',
-      boxShadow: '0 4px 5px 0 rgba(0, 0, 0, .14)',
-      ':hover': {
-        border: '1px solid #aaa',
-        boxShadow: '0 4px 15px 0 rgba(0, 0, 0, .25)',
-      }
+      inputClasses.push(classes.bold)
     }
 
     return (
-      <div style={style} className='car'>
+      <React.Fragment>
         <h3>Car name: {this.props.name}</h3>
         <p>Year: <strong>{this.props.year}</strong></p>
         <input
@@ -73,9 +27,9 @@ class Car extends React.Component {
           className={inputClasses.join(' ')}
         />
         <button onClick={this.props.onDelete}>Delete</button>
-      </div>
+      </React.Fragment>
     )
   }
 }
 
-export default Car;
+export default withClass(Car, classes.Car);
