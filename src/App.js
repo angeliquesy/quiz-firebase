@@ -4,12 +4,15 @@ import Car from './Car/Car'
 import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 import Counter from "./Counter/Counter";
 
+export const ClickedContext = React.createContext(false)
+
 class App extends Component {
 
   constructor(props) {
     super(props) // т.к Component имеет свои пропс, нужно их наследовать
 
     this.state = {
+      clicked: false,
       cars: [
         {
           name: 'Ford',
@@ -91,12 +94,19 @@ class App extends Component {
       <div className='App' style={divStyle}>
         <h1>{this.state.pageTitle}</h1>
 
-        <Counter/>
+        <ClickedContext.Provider value={this.state.clicked}>
+          <Counter/>
+        </ClickedContext.Provider>
+
 
         <hr/>
 
         <button onClick={this.toggleCarsHandler}>
           ToggleCars
+        </button>
+
+        <button onClick={() => this.setState({clicked: true})}>
+          Change click
         </button>
 
         {cars}
