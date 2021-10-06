@@ -4,6 +4,7 @@ import Button from '../../components/Ui/Button/Button'
 import {createControl, validate, validateForm} from '../../form/formFramework'
 import Input from '../../components/Ui/Input/Input'
 import Select from '../../components/Ui/Select/Select'
+import axios from '../../axios/axios-quiz'
 
 function createOptionControl(number) {
   return createControl({
@@ -69,10 +70,39 @@ class QuizCreator extends Component {
     })
   }
 
-  createQuizHandler = event => {
+  // createQuizHandler = event => {
+  //   event.preventDefault()
+  //
+  //      старый способ (содержит много колбэков):
+  //   axios.post('https://react-quiz-19f4f-default-rtdb.asia-southeast1.firebasedatabase.app/quizes.json', this.state.quiz)
+  //     .then(response => {
+  //       console.log(response)
+  //     })
+  //     .catch(error => {
+  //       console.log(error)
+  //     })
+  //
+  //   //console.log(this.state.quiz)
+  // }
+
+  createQuizHandler = async event => {
     event.preventDefault()
 
-    console.log(this.state.quiz)
+    try {
+      // вернет promise. мы распарсим его с помощью await
+      await axios.post('quizes.json', this.state.quiz)
+      // console.log(response.data) - проверка ответа сервера
+
+      this.setState({ // обнуляем страницу
+        quiz: [],
+        rightAnswerId: 1,
+        formControls: createFormControls(),
+        isFormValid: false,
+      })
+    }
+    catch (error) {
+      //console.log(error)
+    }
   }
 
   changeHandler(value, controlName) {

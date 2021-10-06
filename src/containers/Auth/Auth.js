@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import classes from './Auth.css'
 import Button from '../../components/Ui/Button/Button'
 import Input from '../../components/Ui/Input/Input'
-
+import axios from 'axios'
 
 function validateEmail(email) {
   const regExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -41,12 +41,34 @@ class Auth extends Component {
     }
   }
 
-  loginHandler = () => {
+  loginHandler = async () => {
+    const authData = {
+      email: this.state.formControls.email.value,
+      password: this.state.formControls.password.value,
+      returnSecureToken: true
+    }
 
+    try {
+      const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCPg1ppEmNlVms9f4WAtq56AjuAfLLRUOY', authData) //firebase rest auth -> password&email; api key = вставить себе веб
+      console.log(response.data)
+    } catch (e) {
+      console.log(e)
+    }
   }
 
-  registerHandler = () => {
+  registerHandler = async () => {
+    const authData = {
+      email: this.state.formControls.email.value,
+      password: this.state.formControls.password.value,
+      returnSecureToken: true
+    }
 
+    try {
+      const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCPg1ppEmNlVms9f4WAtq56AjuAfLLRUOY', authData) //firebase rest auth -> password&email; api key = вставить себе веб
+      console.log(response.data)
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   submitHandler = (e) => {
