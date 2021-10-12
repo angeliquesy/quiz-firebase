@@ -75,7 +75,7 @@ class Quiz extends Component {
     } catch (e) {
       console.log(e)
     }
-    // this.props.match.params.id - проверка номера теста
+
   }
 
   render() {

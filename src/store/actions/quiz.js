@@ -15,7 +15,7 @@ export function fetchQuizes() {
         })
       })
 
-      dispatch(fetchQuizesSuccess(quizes)) // вместо set state - мы передаем новые пропсы
+      dispatch(fetchQuizesSuccess(quizes))
     }
     catch (e) {
       dispatch(fetchQuizesError(e))

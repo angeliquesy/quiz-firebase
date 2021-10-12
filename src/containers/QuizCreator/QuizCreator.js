@@ -70,30 +70,15 @@ class QuizCreator extends Component {
     })
   }
 
-  // createQuizHandler = event => {
-  //   event.preventDefault()
-  //
-  //      старый способ (содержит много колбэков):
-  //   axios.post('https://react-quiz-19f4f-default-rtdb.asia-southeast1.firebasedatabase.app/quizes.json', this.state.quiz)
-  //     .then(response => {
-  //       console.log(response)
-  //     })
-  //     .catch(error => {
-  //       console.log(error)
-  //     })
-  //
-  //   //console.log(this.state.quiz)
-  // }
-
   createQuizHandler = async event => {
     event.preventDefault()
 
     try {
-      // вернет promise. мы распарсим его с помощью await
-      await axios.post('quizes.json', this.state.quiz)
-      // console.log(response.data) - проверка ответа сервера
 
-      this.setState({ // обнуляем страницу
+      await axios.post('quizes.json', this.state.quiz)
+
+
+      this.setState({
         quiz: [],
         rightAnswerId: 1,
         formControls: createFormControls(),
