@@ -1,1 +1,0 @@
-# quiz-firebase
