@@ -14,7 +14,7 @@ export function fetchQuizzes() {
   return async dispatch => {
     dispatch(fetchQuizzesStart())
     try {
-      const response = await axios.get('quizzes.json')
+      const response = await axios.get('quizes.json')
 
       const quizzes = []
       Object.keys(response.data).forEach((key, index) => {

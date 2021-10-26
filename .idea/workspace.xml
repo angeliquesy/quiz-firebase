@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="50605c50-3633-440f-9b1c-3b14bdc53ddf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firebase-debug.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/QuizList/QuizList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/QuizList/QuizList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/create.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions/quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/quiz.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +58,7 @@
       <workItem from="1634023153781" duration="6239000" />
       <workItem from="1634103127890" duration="8895000" />
       <workItem from="1634463164337" duration="1070000" />
-      <workItem from="1635230297459" duration="164000" />
+      <workItem from="1635230297459" duration="1287000" />
     </task>
     <servers />
   </component>
