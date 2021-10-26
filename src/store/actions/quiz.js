@@ -1,8 +1,8 @@
 import axios from '../../axios/axios-quiz'
 import {
-  FETCH_QUIZES_START,
-  FETCH_QUIZES_SUCCESS,
-  FETCH_QUIZES_ERROR,
+  FETCH_QUIZZES_START,
+  FETCH_QUIZZES_SUCCESS,
+  FETCH_QUIZZES_ERROR,
   FETCH_QUIZ_SUCCESS,
   QUIZ_SET_STATE,
   FINISH_QUIZ,
@@ -10,59 +10,59 @@ import {
   QUIZ_RETRY,
 } from './actionTypes'
 
-export function fetchQuizes() {
+export function fetchQuizzes() {
   return async dispatch => {
-    dispatch(fetchQuizesStart())
+    dispatch(fetchQuizzesStart())
     try {
-      const response = await axios.get('quizes.json')
+      const response = await axios.get('quizzes.json')
 
-      const quizes = []
+      const quizzes = []
       Object.keys(response.data).forEach((key, index) => {
-        quizes.push({
+        quizzes.push({
           id: key,
           name: `Тест №${index + 1}`
         })
       })
 
-      dispatch(fetchQuizesSuccess(quizes))
+      dispatch(fetchQuizzesSuccess(quizzes))
     }
     catch (e) {
-      dispatch(fetchQuizesError(e))
+      dispatch(fetchQuizzesError(e))
     }
   }
 }
 
-export function fetchQuizesStart() {
+export function fetchQuizzesStart() {
   return {
-    type: FETCH_QUIZES_START
+    type: FETCH_QUIZZES_START
   }
 }
 
-export function fetchQuizesSuccess(quizes) {
+export function fetchQuizzesSuccess(quizzes) {
   return {
-    type: FETCH_QUIZES_SUCCESS,
-    quizes
+    type: FETCH_QUIZZES_SUCCESS,
+    quizzes
   }
 }
 
-export function fetchQuizesError(e) {
+export function fetchQuizzesError(e) {
   return {
-    type: FETCH_QUIZES_ERROR,
+    type: FETCH_QUIZZES_ERROR,
     error: e
   }
 }
 
 export function fetchQuizById(quizId) {
   return async dispatch => {
-    dispatch(fetchQuizesStart())
+    dispatch(fetchQuizzesStart())
 
     try {
-      const response = await axios.get(`quizes/${quizId}.json`)
+      const response = await axios.get(`quizzes/${quizId}.json`)
       const quiz = response.data
 
       dispatch(fetchQuizSuccess(quiz))
     } catch (e) {
-      dispatch(fetchQuizesError(e))
+      dispatch(fetchQuizzesError(e))
     }
   }
 }

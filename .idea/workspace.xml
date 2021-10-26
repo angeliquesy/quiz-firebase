@@ -3,17 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="50605c50-3633-440f-9b1c-3b14bdc53ddf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Auth/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Quiz/Quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Quiz/Quiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase-debug.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/QuizList/QuizList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/QuizList/QuizList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions/quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions/quiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/quiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/rootReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +35,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -64,6 +57,8 @@
       <workItem from="1634020439741" duration="1592000" />
       <workItem from="1634023153781" duration="6239000" />
       <workItem from="1634103127890" duration="8895000" />
+      <workItem from="1634463164337" duration="1070000" />
+      <workItem from="1635230297459" duration="164000" />
     </task>
     <servers />
   </component>
