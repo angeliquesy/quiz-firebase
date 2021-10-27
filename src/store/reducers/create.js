@@ -7,7 +7,6 @@ const initialState = {
 export default function createReducer(state=initialState, action) {
   switch (action.type) {
     case CREATE_QUIZ_QUESTION:
-      console.log(action.item)
       return {
         ...state,
         quiz: [...state.quiz, action.item]

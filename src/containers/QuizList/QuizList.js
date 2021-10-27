@@ -1,14 +1,23 @@
-import React, {Component} from 'react'
+import React, {useContext, useEffect} from 'react'
 import classes from './QuizList.css'
 import {NavLink} from 'react-router-dom'
 import Loader from '../../components/Ui/Loader/Loader'
-import {connect} from 'react-redux'
-import {fetchQuizzes} from '../../store/actions/quiz'
+//import {connect} from 'react-redux'
+//import {fetchQuizzes} from '../../store/actions/quiz'
+import {QuizContext} from '../../context/quiz/quizContext'
 
-class QuizList extends Component {
+function QuizList() {
 
-  renderQuizzes() {
-    return this.props.quizzes.map(quiz => {
+  const {fetch, loading, state} = useContext(QuizContext)
+
+  const {quizzes} = state
+
+  useEffect(() => {
+    fetch()
+  }, [])
+
+  const renderQuizzes = () => {
+    return quizzes.map(quiz => {
       return (
         <li key={quiz.id}>
           <NavLink to={'/quiz/' + quiz.id}>
@@ -19,39 +28,21 @@ class QuizList extends Component {
     })
   }
 
-  componentDidMount() {
-    this.props.fetchQuizzes()
-  }
-
-  render() {
-    return (
-      <div className={classes.QuizList}>
-        <div>
-          <h1>Список тестов</h1>
-          {
-            this.props.loading && this.props.quizzes.length !== 0
-              ? <Loader />
-            : <ul>
-                { this.renderQuizzes() }
-              </ul>
-          }
-        </div>
+  return (
+    <div className={classes.QuizList}>
+      <div>
+        <h1>Список тестов</h1>
+        {
+          loading && quizzes.length !== 0
+            ? <Loader />
+          : <ul>
+              { renderQuizzes() }
+            </ul>
+        }
       </div>
-    );
-  }
+    </div>
+  );
+
 }
 
-function mapStateToProps(state) {
-  return {
-    quizzes: state.quiz.quizzes,
-    loading: state.quiz.loading
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    fetchQuizzes: () => dispatch(fetchQuizzes())
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(QuizList);
+export default QuizList;

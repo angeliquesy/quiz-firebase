@@ -1,60 +1,56 @@
-import React, { Component } from 'react';
+import React, {useContext, useEffect} from 'react';
 import Layout from "./hoc/Layout/Layout";
-import {Route, Switch, Redirect, withRouter} from 'react-router-dom'
-import {connect} from 'react-redux'
+import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom'
 import Quiz from "./containers/Quiz/Quiz";
 import QuizList from "./containers/QuizList/QuizList";
 import Auth from "./containers/Auth/Auth";
 import QuizCreator from "./containers/QuizCreator/QuizCreator";
 import Logout from './components/Logout/Logout'
-import {autoLogin} from './store/actions/auth'
+import {AuthContext} from './context/auth/authContext'
+import {QuizState} from './context/quiz/quizState'
+import {CreateState} from './context/create/CreateState'
 
-class App extends Component {
-  componentDidMount() {
-    this.props.autoLogin()
-  }
+//import {autoLogin} from './store/actions/auth'
 
-  render() {
+function App() {
+  const {autoLogin, isAuthenticated} = useContext(AuthContext)
 
-    let routes = (
-      <Switch>
-        <Route path='/auth' component={Auth} />
-        <Route path='/quiz/:id' component={Quiz} />
-        <Route path='/' component={QuizList} />
-        <Redirect to='/' />
-      </Switch>
-    )
+  useEffect(() => {
+    autoLogin()
+  }, [])
 
-    if (this.props.isAuthenticated) {
-      routes = (
+  let routes = (
+    <Switch>
+      <Route path='/auth' component={Auth}/>
+      <Route path='/quiz/:id' component={Quiz}/>
+      <Route path='/' component={QuizList}/>
+      <Redirect to='/'/>
+    </Switch>
+  )
+
+  if (isAuthenticated) {
+    routes = (
+      <CreateState>
         <Switch>
-          <Route path='/quiz-creator' component={QuizCreator} />
-          <Route path='/quiz/:id' component={Quiz} />
-          <Route path='/logout' component={Logout} />
-          <Route path='/' component={QuizList} exact />
-          <Redirect to='/' />
+          <Route path='/quiz-creator' component={QuizCreator}/>
+          <Route path='/quiz/:id' component={Quiz}/>
+          <Route path='/logout' component={Logout}/>
+          <Route path='/' component={QuizList} exact/>
+          <Redirect to='/'/>
         </Switch>
-      )
-    }
-
-    return (
-      <Layout>
-        {routes}
-      </Layout>
-    );
+      </CreateState>
+    )
   }
+
+  return (
+    <QuizState>
+      <BrowserRouter>
+        <Layout>
+          {routes}
+        </Layout>
+      </BrowserRouter>
+    </QuizState>
+  );
 }
 
-function mapStateToProps(state) {
-  return {
-    isAuthenticated: !!state.auth.token
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    autoLogin: () => dispatch(autoLogin())
-  }
-}
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default App
