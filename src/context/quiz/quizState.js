@@ -20,10 +20,10 @@ export const QuizState = ({children}) => {
     quizzes: [],
     loading: true,
     error: null,
-    results: {}, // { [id]: 'success' 'error'}
+    results: {},
     isFinished: false,
     activeQuestion: 0,
-    answerState: null, // { [id]: 'success' 'error'}
+    answerState: null,
     quiz: null,
   }
 
@@ -93,8 +93,10 @@ export const QuizState = ({children}) => {
       if (state.answerState[key] === 'success') return;
     }
 
-    const question = state.quiz[state.activeQuestion]
+    const question = state.quiz.questions[state.activeQuestion]
     const results = state.results
+
+    console.log(question)
 
     if (question.rightAnswerId === answerId) {
       if (!results[question.id]) {
@@ -118,7 +120,7 @@ export const QuizState = ({children}) => {
   }
 
   const isQuizFinished = state => {
-    return state.activeQuestion + 1 === state.quiz.length
+    return state.activeQuestion + 1 === state.quiz.questions.length
   }
 
   const fetch = async () => {

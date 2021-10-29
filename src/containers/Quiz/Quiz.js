@@ -43,10 +43,10 @@ function Quiz() {
                 onRetry={retryQuiz}
               />
               : <ActiveQuiz
-                question={quiz[activeQuestion].question}
-                answers={quiz[activeQuestion].answers}
+                question={quiz.questions[activeQuestion].question}
+                answers={quiz.questions[activeQuestion].answers}
                 onAnswerClick={quizAnswerClick}
-                quizLength={quiz.length}
+                quizLength={quiz.questions.length}
                 answerNumber={activeQuestion + 1}
                 state={answerState}
             />
