@@ -1,4 +1,4 @@
-import {CREATE_QUIZ_QUESTION, RESET_QUIZ_CREATION} from '../types'
+import { CREATE_QUIZ, CREATE_QUIZ_QUESTION, RESET_QUIZ_CREATION} from '../types'
 import axios from '../../axios/axios-quiz'
 import React, {useReducer} from 'react'
 import {createReducer} from './createReducer'
@@ -6,10 +6,22 @@ import {CreateContext} from './createContext'
 
 export const CreateState = ({children}) => {
   const initialState = {
-    quiz: []
+    quiz: {
+      name: '',
+      createdBy: '',
+      questions: []
+    }
   }
 
   const [state, dispatch] = useReducer(createReducer, initialState)
+
+  const createQuiz = (name, createdBy) => {
+    dispatch({
+      type: CREATE_QUIZ,
+      name, createdBy
+    })
+    console.log(name, createdBy)
+  }
 
   const createQuizQuestion = item => {
     dispatch({
@@ -27,7 +39,7 @@ export const CreateState = ({children}) => {
 
   return (
     <CreateContext.Provider value={{
-      createQuizQuestion, finishCreateQuiz, quiz: state.quiz
+      createQuiz, createQuizQuestion, finishCreateQuiz, quiz: state.quiz
     }}>
       {children}
     </CreateContext.Provider>

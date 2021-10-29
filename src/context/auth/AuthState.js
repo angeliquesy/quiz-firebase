@@ -1,12 +1,16 @@
 import React, {useReducer} from 'react'
 import axios from 'axios'
-import {AUTH_LOGOUT, AUTH_SUCCESS} from '../types'
+import axiosDb from '../../axios/axios-quiz'
+import {AUTH_LOGOUT, AUTH_SUCCESS, GET_USER} from '../types'
 import {authReducer} from './authReducer'
 import {AuthContext} from './authContext'
 
+const withCreds = query => `https://identitytoolkit.googleapis.com/v1/accounts:${query}?key=AIzaSyCPg1ppEmNlVms9f4WAtq56AjuAfLLRUOY`
+
 export const AuthState = ({children}) => {
   const initialState = {
-    token: null
+    user: null,
+    id: null
   }
 
   const [state, dispatch] = useReducer(authReducer, initialState)
@@ -18,7 +22,6 @@ export const AuthState = ({children}) => {
   }
 
   const logout = () => {
-    localStorage.removeItem('token')
     localStorage.removeItem('userId')
     localStorage.removeItem('expirationDate')
 
@@ -28,25 +31,27 @@ export const AuthState = ({children}) => {
   }
 
   const autoLogin = () => {
-    const token = localStorage.getItem('token')
+    const id = localStorage.getItem('userId')
 
-    if (!token) {
+    if (!id) {
       logout()
     } else {
       const expirationDate = new Date(localStorage.getItem('expirationDate'))
       if (expirationDate <= new Date()) {
         logout()
       } else {
-        authSuccess(token)
+        authSuccess(id)
         autoLogout((expirationDate.getTime() - new Date().getTime()) / 1000)
       }
     }
   }
 
-  const authSuccess = token => dispatch({
-    type: AUTH_SUCCESS,
-    payload: token
-  })
+  const authSuccess = id => {
+    dispatch({
+      type: AUTH_SUCCESS,
+      id
+    })
+  }
 
   const auth = async (email, password, isLogin) => {
     const authData = {
@@ -55,29 +60,46 @@ export const AuthState = ({children}) => {
       returnSecureToken: true
     }
 
-    let url = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCPg1ppEmNlVms9f4WAtq56AjuAfLLRUOY'
-
-    if (isLogin) {
-      url = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCPg1ppEmNlVms9f4WAtq56AjuAfLLRUOY'
-    }
+    const url = isLogin
+      ? withCreds('signInWithPassword')
+      : withCreds('signUp')
 
     const response = await axios.post(url, authData)
-    const data = response.data
+    const {localId, expiresIn} = response.data
 
-    const expirationDate = new Date(new Date().getTime() + data.expiresIn * 1000)
+    const expirationDate = new Date(new Date().getTime() + expiresIn * 1000)
 
-    localStorage.setItem('token', data.idToken)
-    localStorage.setItem('userId', data.localId)
+    if (!isLogin) {
+      await addUser(localId, email)
+    }
+
+    localStorage.setItem('userId', localId)
     localStorage.setItem('expirationDate', expirationDate)
 
-    authSuccess(data.idToken)
-    autoLogout(data.expiresIn)
+    authSuccess(localId)
+    autoLogout(expiresIn)
   }
+
+  const addUser = async (id, email) => {
+    await axiosDb.put(`users/${id}.json`, {email})
+  }
+
+  const getUser = async () => {
+    const id = state.id
+    const response = await axiosDb.get(`users/${id}.json`)
+
+    dispatch({
+      type: GET_USER,
+      user: response.data
+    })
+  }
+
+  const {user, id} = state
 
   return (
     <AuthContext.Provider value={{
-      autoLogin, auth, autoLogout, authSuccess, logout,
-      isAuthenticated: !!state.token,
+      autoLogin, auth, autoLogout, authSuccess, logout, getUser,
+      isAuthenticated: !!id, user, id
     }}>
       {children}
     </AuthContext.Provider>

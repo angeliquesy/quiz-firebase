@@ -1,0 +1,11 @@
+.Fav {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.Fav i {
+    color: yellow;
+}

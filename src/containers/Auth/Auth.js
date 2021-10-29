@@ -2,8 +2,6 @@ import React, {useState, useContext} from 'react';
 import classes from './Auth.css'
 import Button from '../../components/Ui/Button/Button'
 import Input from '../../components/Ui/Input/Input'
-//import {connect} from 'react-redux'
-//import {auth} from '../../store/actions/auth'
 import {AuthContext} from '../../context/auth/authContext'
 
 function validateEmail(email) {
@@ -102,10 +100,7 @@ function Auth() {
       isFormValid = formControls[name].valid && isFormValid
     })
 
-    setState({
-      ...state,
-      formControls, isFormValid
-    })
+    setState({...state, formControls, isFormValid})
   }
 
   const renderInputs = () => {

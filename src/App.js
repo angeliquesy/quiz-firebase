@@ -10,8 +10,6 @@ import {AuthContext} from './context/auth/authContext'
 import {QuizState} from './context/quiz/quizState'
 import {CreateState} from './context/create/CreateState'
 
-//import {autoLogin} from './store/actions/auth'
-
 function App() {
   const {autoLogin, isAuthenticated} = useContext(AuthContext)
 

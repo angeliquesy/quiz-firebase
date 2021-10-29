@@ -7,7 +7,7 @@
     background: linear-gradient(90deg, #fd8355 0%, #f0576c 36%, #f79cbd 100%);
 }
 
-.QuizList h1 {
+.QuizList h1, h2 {
     color: #fff;
 }
 
@@ -19,6 +19,9 @@
 
 .QuizList li {
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .QuizList li a {
@@ -29,4 +32,13 @@
 
 .QuizList li a:hover {
     color: #363f54;
+}
+
+.QuizList li button {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.QuizList li:hover button {
+    opacity: 1;
 }

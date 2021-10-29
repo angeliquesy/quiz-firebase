@@ -1,10 +1,11 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext, useRef, useState} from 'react';
 import classes from './QuizCreator.css'
 import Button from '../../components/Ui/Button/Button'
 import {createControl, validate, validateForm} from '../../form/formFramework'
 import Input from '../../components/Ui/Input/Input'
 import Select from '../../components/Ui/Select/Select'
 import {CreateContext} from '../../context/create/createContext'
+//import {AuthContext} from '../../context/auth/authContext'
 
 function createOptionControl(number) {
   return createControl({
@@ -29,13 +30,18 @@ function createFormControls() {
 
 function QuizCreator() {
 
+  const {quiz, createQuiz, createQuizQuestion, finishCreateQuiz} = useContext(CreateContext)
+
+  const [init, setInit] = useState({
+    name: null,
+    isValid: false,
+  })
+
   const [state, setState] = useState({
     rightAnswerId: 1,
     formControls: createFormControls(),
     isFormValid: false,
   })
-
-  const {quiz, createQuizQuestion, finishCreateQuiz} = useContext(CreateContext)
 
   const submitHandler = event => {
     event.preventDefault()
@@ -98,6 +104,24 @@ function QuizCreator() {
     })
   }
 
+  const nameHandler = e => {
+    const control = {}
+    control.touched = true
+    control.value = e.target.value
+    control.valid = validate(control.value, control.validation)
+
+    setInit({
+      ...init, isValid: control.valid
+    })
+  }
+
+  const nameRef = useRef()
+
+  const addNameHandler = () => {
+    setInit(prev => ({...prev, name: nameRef.current.value}))
+    createQuiz(nameRef.current.value, localStorage.getItem('userId'))
+  }
+
   const renderControls = () => {
     return Object.keys(state.formControls).map((controlName, index) => {
       const control = state.formControls[controlName]
@@ -146,25 +170,48 @@ function QuizCreator() {
 
         <form onSubmit={submitHandler}>
 
-          {renderControls()}
+          {
+            init.name
+            ? <React.Fragment>
 
-          {select}
+                {renderControls()}
 
-          <Button
-            type='primary'
-            onClick={addQuestionHandler}
-            disabled={!state.isFormValid}
-          >
-            Добавить вопрос
-          </Button>
+                {select}
 
-          <Button
-            type='success'
-            onClick={createQuizHandler}
-            disabled={quiz.length === 0}
-          >
-            Создать тест
-          </Button>
+                <Button
+                type='primary'
+                onClick={addQuestionHandler}
+                disabled={!state.isFormValid}
+                >
+                Добавить вопрос
+                </Button>
+
+                <Button
+                type='success'
+                onClick={createQuizHandler}
+                disabled={quiz.length === 0}
+                >
+                Создать тест
+                </Button>
+
+              </React.Fragment>
+            : <React.Fragment>
+                <Input
+                  innerRef={nameRef}
+                  label='Введите название теста'
+                  shouldValidate={true}
+                  errorMessage='Название не может быть пустым'
+                  onChange={event => nameHandler(event)}
+                />
+                <Button
+                type='primary'
+                onClick={addNameHandler}
+                disabled={!init.isValid}
+                >
+                Начать создание теста
+                </Button>
+              </React.Fragment>
+          }
 
         </form>
       </div>

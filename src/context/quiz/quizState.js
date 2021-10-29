@@ -4,6 +4,7 @@ import {
   FETCH_QUIZZES_ERROR,
   FETCH_QUIZZES_START,
   FETCH_QUIZZES_SUCCESS,
+  DELETE_QUIZ,
   FINISH_QUIZ,
   QUIZ_NEXT_QUESTION,
   QUIZ_RETRY,
@@ -17,7 +18,7 @@ export const QuizState = ({children}) => {
 
   const initialState = {
     quizzes: [],
-    loading: false,
+    loading: true,
     error: null,
     results: {}, // { [id]: 'success' 'error'}
     isFinished: false,
@@ -39,6 +40,18 @@ export const QuizState = ({children}) => {
     type: FETCH_QUIZZES_ERROR,
     payload: e
   })
+
+  const deleteQuiz = async id => {
+    const newQuizzes = state.quizzes.filter(quiz => quiz.id !== id)
+    await axios.delete(`quizes/${id}.json`)
+
+    console.log(newQuizzes)
+
+    dispatch({
+      type: DELETE_QUIZ,
+      payload: newQuizzes
+    })
+  }
 
   const fetchQuizById = async quizId => {
     fetchQuizzesStart()
@@ -102,8 +115,6 @@ export const QuizState = ({children}) => {
       results[question.id] = 'error'
       quizSetState({[answerId]: 'error'}, results)
     }
-
-    console.log(results)
   }
 
   const isQuizFinished = state => {
@@ -116,12 +127,14 @@ export const QuizState = ({children}) => {
       const response = await axios.get('quizes.json')
 
       const quizzes = []
-      Object.keys(response.data).forEach((key, index) => {
+
+      for (const [key, value] of Object.entries(response.data)) {
         quizzes.push({
           id: key,
-          name: `Тест №${index + 1}`
+          name: value.name || 'Тест',
+          createdBy: value.createdBy || null
         })
-      })
+      }
 
       fetchQuizzesSuccess(quizzes)
     } catch (e) {
@@ -131,10 +144,11 @@ export const QuizState = ({children}) => {
 
   return (
     <QuizContext.Provider value={{
-      fetchQuizzesStart, fetchQuizzesSuccess, fetchQuizzesError,
+      fetchQuizzesStart, fetchQuizzesSuccess, fetchQuizzesError, deleteQuiz,
       fetch, state,
       fetchQuizById, fetchQuizSuccess, quizSetState, finishQuiz, retryQuiz,
-      quizAnswerClick, quizNextQuestion
+      quizAnswerClick, quizNextQuestion,
+      clearLoading: () => fetchQuizzesStart()
     }}>
       {children}
     </QuizContext.Provider>
