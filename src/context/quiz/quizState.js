@@ -43,14 +43,13 @@ export const QuizState = ({children}) => {
 
   const deleteQuiz = async id => {
     const newQuizzes = state.quizzes.filter(quiz => quiz.id !== id)
-    await axios.delete(`quizes/${id}.json`)
-
-    console.log(newQuizzes)
 
     dispatch({
       type: DELETE_QUIZ,
       payload: newQuizzes
     })
+
+    await axios.delete(`quizes/${id}.json`)
   }
 
   const fetchQuizById = async quizId => {

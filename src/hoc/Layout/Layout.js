@@ -3,11 +3,11 @@ import classes from './Layout.module.css'
 import MenuToggle from '../../components/Navigation/MenuToggle/MenuToggle'
 import Drawer from '../../components/Navigation/Drawer/Drawer'
 import {AuthContext} from '../../context/auth/authContext'
+import useIsMobile from '../../hooks/useIsMobile'
 
 function Layout({children}) {
-
+  const isMobile = useIsMobile()
   const {isAuthenticated} = useContext(AuthContext)
-
   const [menu, setMenu] = useState(false)
 
   const toggleMenuHandler = () => {
@@ -18,7 +18,6 @@ function Layout({children}) {
     setMenu(false)
   }
 
-
   return (
     <div className={classes.Layout}>
 
@@ -26,12 +25,16 @@ function Layout({children}) {
         isOpen={menu}
         onClose={menuCloseHandler}
         isAuthenticated={isAuthenticated}
+        isMobile={isMobile}
       />
 
-      <MenuToggle
-        onToggle={toggleMenuHandler}
-        isOpen={menu}
-      />
+      {
+        isMobile &&
+        <MenuToggle
+          onToggle={toggleMenuHandler}
+          isOpen={menu}
+        />
+      }
 
       <main>
         {children}

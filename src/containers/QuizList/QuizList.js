@@ -13,6 +13,8 @@ function QuizList() {
   const {fetch, state, clearLoading, deleteQuiz} = useContext(QuizContext)
   const {quizzes, loading} = state
   const myQuizzes = []
+  let filteredQuizzes = []
+  //const myFavs = user.favs
 
   useEffect(() => {
     fetch()
@@ -26,7 +28,9 @@ function QuizList() {
     quizzes.forEach((quiz, index, arr) => {
       if (quiz.createdBy === id) {
         myQuizzes.push(quiz)
-        arr.splice(index, 1)
+      }
+      else {
+        filteredQuizzes.push(quiz)
       }
     })
   }
@@ -51,12 +55,17 @@ function QuizList() {
   }
 
   const render = () => {
-    if (isAuthenticated) filterQuizzes()
+    if (isAuthenticated) {
+      filterQuizzes()
+    }
+    else {
+      filteredQuizzes = quizzes
+    }
 
     return (
       <Fragment>
         <ul>
-          { renderQuizzes(quizzes) }
+          {renderQuizzes(filteredQuizzes)}
         </ul>
         { isAuthenticated &&
           <Fragment>
