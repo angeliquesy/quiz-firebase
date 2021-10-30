@@ -16,3 +16,10 @@
 .MenuToggle.open {
     left: 320px;
 }
+
+@media (max-width: 375px) {
+    .MenuToggle.open {
+        color: #363d54;
+    }
+}
+

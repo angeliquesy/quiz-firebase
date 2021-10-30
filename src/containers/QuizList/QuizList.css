@@ -18,21 +18,37 @@
 }
 
 .QuizList li {
-    margin-bottom: 10px;
+    padding: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.QuizList li:hover {
+    background-color: rgba(90, 90, 90, 0.1);
 }
 
 .QuizList li a {
+    display: inline-block;
+    margin: -5px 5px -5px -5px;
+    padding: 5px;
+    width: 100%;
     text-decoration: none;
     color: #fff;
     transition: color 0.3s;
 }
 
 .QuizList li a:hover {
-    color: #363f54;
+    /*color: #363f54;*/
 }
+
+
+.QuizList li div {
+    display: flex;
+}
+
 
 .QuizList li button {
     opacity: 0;

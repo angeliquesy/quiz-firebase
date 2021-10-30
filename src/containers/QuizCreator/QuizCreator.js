@@ -5,6 +5,7 @@ import {createControl, validate, validateForm} from '../../form/formFramework'
 import Input from '../../components/Ui/Input/Input'
 import Select from '../../components/Ui/Select/Select'
 import {CreateContext} from '../../context/create/createContext'
+
 //import {AuthContext} from '../../context/auth/authContext'
 
 function createOptionControl(number) {
@@ -33,7 +34,7 @@ function QuizCreator() {
   const {quiz, createQuiz, createQuizQuestion, finishCreateQuiz} = useContext(CreateContext)
 
   const [init, setInit] = useState({
-    name: null,
+    name: '',
     isValid: false,
   })
 
@@ -42,6 +43,8 @@ function QuizCreator() {
     formControls: createFormControls(),
     isFormValid: false,
   })
+
+  const [created, setCreated] = useState(false)
 
   const submitHandler = event => {
     event.preventDefault()
@@ -54,7 +57,7 @@ function QuizCreator() {
 
     const questionItem = {
       question: question.value,
-      id: quiz.length + 1,
+      id: quiz.questions.length + 1,
       rightAnswerId: state.rightAnswerId,
       answers: [
         {text: option1.value, id: option1.id},
@@ -83,6 +86,9 @@ function QuizCreator() {
       formControls: createFormControls(),
       isFormValid: false,
     })
+
+    setInit({name: '', isValid: false})
+    setCreated(true)
 
     finishCreateQuiz()
   }
@@ -168,52 +174,59 @@ function QuizCreator() {
       <div>
         <h1>Создание тестов</h1>
 
-        <form onSubmit={submitHandler}>
+        {created
+          ? <React.Fragment>
+              <p>Тест успешно создан!</p>
+              <Button type='success' onClick={() => setCreated(false)}>Создать тест</Button>
+              <Button type='primary' to='/'>Перейти в список тестов</Button>
+            </React.Fragment>
 
-          {
-            init.name
-            ? <React.Fragment>
+          : <form onSubmit={submitHandler}>
+            {
+              init.name
+                ? <React.Fragment>
 
-                {renderControls()}
+                  {renderControls()}
 
-                {select}
+                  {select}
 
-                <Button
-                type='primary'
-                onClick={addQuestionHandler}
-                disabled={!state.isFormValid}
-                >
-                Добавить вопрос
-                </Button>
+                  <Button
+                    type='primary'
+                    onClick={addQuestionHandler}
+                    disabled={!state.isFormValid}
+                  >
+                    Добавить вопрос
+                  </Button>
 
-                <Button
-                type='success'
-                onClick={createQuizHandler}
-                disabled={quiz.length === 0}
-                >
-                Создать тест
-                </Button>
+                  <Button
+                    type='success'
+                    onClick={createQuizHandler}
+                    disabled={quiz.questions.length === 0}
+                  >
+                    Создать тест
+                  </Button>
 
-              </React.Fragment>
-            : <React.Fragment>
-                <Input
-                  innerRef={nameRef}
-                  label='Введите название теста'
-                  shouldValidate={true}
-                  errorMessage='Название не может быть пустым'
-                  onChange={event => nameHandler(event)}
-                />
-                <Button
-                type='primary'
-                onClick={addNameHandler}
-                disabled={!init.isValid}
-                >
-                Начать создание теста
-                </Button>
-              </React.Fragment>
-          }
+                </React.Fragment>
+                : <React.Fragment>
+                  <Input
+                    innerRef={nameRef}
+                    label='Введите название теста'
+                    shouldValidate={true}
+                    errorMessage='Название не может быть пустым'
+                    onChange={event => nameHandler(event)}
+                  />
+                  <Button
+                    type='primary'
+                    onClick={addNameHandler}
+                    disabled={!init.isValid}
+                  >
+                    Начать создание теста
+                  </Button>
+                </React.Fragment>
+            }
 
-        </form>
+          </form>
+        }
       </div>
     </div>
   )

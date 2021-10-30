@@ -2,40 +2,89 @@
     position: fixed;
     left: 0;
     top: 0;
-    bottom: 0;
-    width: 80%;
-    max-width: 300px;
+    width: 100%;
     padding: 20px 10px;
     box-sizing: border-box;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.1);
     z-index: 90;
-    transform: translateX(0);
-    transition: transform .22s ease-in;
-}
-
-.Drawer.close {
-    transform: translateX(-300px);
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .Drawer ul {
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
+    max-width: 1000px;
+    width: 100%;
 }
 
-.Drawer ul li {
-    margin-bottom: 15px;
+.Drawer ul li:last-child {
+    margin-left: auto;
 }
 
 .Drawer ul li a {
-    color: #363d54;
-    font-size: 30px;
+    color: #fff;
+    font-size: 24px;
     text-decoration: none;
-    background-color: #fff;
     padding: 0 20px 10px 20px;
     transition: opacity .3s;
 }
 
+.Drawer ul li a i {
+    margin-left: 10px;
+}
+
 .Drawer ul li a:hover, .active {
     opacity: .7;
+}
+
+.Drawer ul li a.active {
+    pointer-events: none;
+}
+
+@media (max-width: 720px) {
+    .Drawer {
+        bottom: 0;
+        width: 80%;
+        padding: 40px 10px;
+        max-width: 300px;
+        justify-content: left;
+        background: #fff;
+        transform: translateX(0);
+        transition: transform .22s ease-in;
+    }
+
+    .Drawer ul li a {
+        color: #363d54;
+    }
+
+    .Drawer ul {
+        flex-direction: column;
+    }
+
+    .Drawer ul li:last-child {
+        margin-left: 0;
+    }
+
+    .Drawer.close {
+        transform: translateX(-300px);
+    }
+
+    .Drawer ul li {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 375px) {
+    .Drawer {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .Drawer.close {
+        transform: translateX(-100%);
+    }
 }

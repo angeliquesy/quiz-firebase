@@ -20,7 +20,6 @@ export const CreateState = ({children}) => {
       type: CREATE_QUIZ,
       name, createdBy
     })
-    console.log(name, createdBy)
   }
 
   const createQuizQuestion = item => {
