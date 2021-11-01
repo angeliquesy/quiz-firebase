@@ -10,9 +10,10 @@ import {
   QUIZ_RETRY,
   QUIZ_SET_STATE
 } from '../types'
-import React, {useReducer} from 'react'
+import React, {useReducer, useContext} from 'react'
 import {quizReducer} from './quizReducer'
 import {QuizContext} from './quizContext'
+import {AuthContext} from '../auth/authContext'
 
 export const QuizState = ({children}) => {
 
@@ -28,6 +29,8 @@ export const QuizState = ({children}) => {
   }
 
   const [state, dispatch] = useReducer(quizReducer, initialState)
+
+  const {token} = useContext(AuthContext)
 
   const fetchQuizzesStart = () => dispatch({type: FETCH_QUIZZES_START})
 
@@ -49,7 +52,7 @@ export const QuizState = ({children}) => {
       payload: newQuizzes
     })
 
-    await axios.delete(`quizes/${id}.json`)
+    await axios.delete(`quizes/${id}.json?auth=${token}`)
   }
 
   const fetchQuizById = async quizId => {

@@ -9,7 +9,7 @@ import Fav from '../../components/Ui/Fav/Fav'
 
 function QuizList() {
 
-  const {isAuthenticated, id} = useContext(AuthContext)
+  const {isAuthenticated, userId} = useContext(AuthContext)
   const {fetch, state, clearLoading, deleteQuiz} = useContext(QuizContext)
   const {quizzes, loading} = state
   const myQuizzes = []
@@ -26,7 +26,7 @@ function QuizList() {
 
   const filterQuizzes = () => {
     quizzes.forEach((quiz, index, arr) => {
-      if (quiz.createdBy === id) {
+      if (quiz.createdBy === userId) {
         myQuizzes.push(quiz)
       }
       else {

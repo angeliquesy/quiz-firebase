@@ -9,6 +9,7 @@ const withCreds = query => `https://identitytoolkit.googleapis.com/v1/accounts:$
 
 export const AuthState = ({children}) => {
   const initialState = {
+    token: null,
     user: null,
     id: null
   }
@@ -31,6 +32,7 @@ export const AuthState = ({children}) => {
   }
 
   const autoLogin = () => {
+    const token = localStorage.getItem('token')
     const id = localStorage.getItem('userId')
 
     if (!id) {
@@ -40,16 +42,16 @@ export const AuthState = ({children}) => {
       if (expirationDate <= new Date()) {
         logout()
       } else {
-        authSuccess(id)
+        authSuccess(token, id)
         autoLogout((expirationDate.getTime() - new Date().getTime()) / 1000)
       }
     }
   }
 
-  const authSuccess = id => {
+  const authSuccess = (token, id) => {
     dispatch({
       type: AUTH_SUCCESS,
-      id
+      token, id
     })
   }
 
@@ -65,41 +67,53 @@ export const AuthState = ({children}) => {
       : withCreds('signUp')
 
     const response = await axios.post(url, authData)
-    const {localId, expiresIn} = response.data
+    const {localId, expiresIn, refreshToken} = response.data
 
+    const secureResponse = await axios.post(
+      'https://securetoken.googleapis.com/v1/token?key=AIzaSyCPg1ppEmNlVms9f4WAtq56AjuAfLLRUOY',
+      {
+        grant_type: 'refresh_token',
+        refresh_token: refreshToken
+      }
+    )
+
+    const token = secureResponse.data.access_token
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000)
 
-    if (!isLogin) {
-      await addUser(localId, email)
-    }
-
+    localStorage.setItem('token', token)
     localStorage.setItem('userId', localId)
     localStorage.setItem('expirationDate', expirationDate)
 
-    authSuccess(localId)
+    getUser(token, localId)
+    authSuccess(token, localId)
     autoLogout(expiresIn)
   }
 
-  const addUser = async (id, email) => {
-    await axiosDb.put(`users/${id}.json`, {email})
+  const addUser = async (token, id) => {
+    await axiosDb.put(`users/${id}.json?auth=${token}`, {quizzes: 1})
   }
 
-  const getUser = async () => {
-    const id = state.id
+  const getUser = async (token, id) => {
     const response = await axiosDb.get(`users/${id}.json`)
 
-    dispatch({
-      type: GET_USER,
-      user: response.data
-    })
+    if (response.data) {
+      dispatch({
+        type: GET_USER,
+        user: response.data
+      })
+    }
+    else {
+      addUser(token, id)
+      getUser(token, id)
+    }
   }
 
-  const {user, id} = state
+  const {token, user, id} = state
 
   return (
     <AuthContext.Provider value={{
       autoLogin, auth, autoLogout, authSuccess, logout, getUser,
-      isAuthenticated: !!id, user, id
+      isAuthenticated: !!id, user, token, userId: id
     }}>
       {children}
     </AuthContext.Provider>

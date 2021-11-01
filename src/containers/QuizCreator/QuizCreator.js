@@ -31,7 +31,7 @@ function createFormControls() {
 
 function QuizCreator() {
 
-  const {quiz, createQuiz, createQuizQuestion, finishCreateQuiz} = useContext(CreateContext)
+  const {quiz, createQuiz, createQuizQuestion, finishCreateQuiz, error} = useContext(CreateContext)
 
   const [init, setInit] = useState({
     name: '',
@@ -176,7 +176,7 @@ function QuizCreator() {
 
         {created
           ? <React.Fragment>
-              <p>Тест успешно создан!</p>
+              { error ? <p>Произошла ошибка. Попробуйте позже.</p> : <p>Тест успешно создан!</p> }
               <Button type='success' onClick={() => setCreated(false)}>Создать тест</Button>
               <Button type='primary' to='/'>Перейти в список тестов</Button>
             </React.Fragment>
