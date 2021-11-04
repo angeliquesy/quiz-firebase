@@ -12,21 +12,21 @@
 }
 
 .Button + .Button {
-    margin-left: 15px;
+    margin-left: 16px;
 }
 
 .Button:focus {
     outline: none;
 }
 
-.Button:not(.icon):active {
+.Button:not(.icon):not(.gradient):active {
     box-shadow: inset 2px 2px 1px rgba(0, 0, 0, 0.3);
 }
 
 .Button:disabled {
     background: #ccc;
     color: #000;
-    cursor: not-allowed;
+    pointer-events: none;
 }
 
 .success {
@@ -51,4 +51,38 @@
     cursor: pointer;
     font-size: 22px;
     color: #fff
+}
+
+.gradient {
+    min-width: 27px;
+    min-height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.4;
+    border-color: #fff;
+    color: #fff;
+    border-radius: 20px;
+    background: linear-gradient(-45deg, #FFA63D, #FF3D77, #338AFF, #3CF0C5);
+    background-size: 600%;
+    animation: anime 16s linear infinite;
+}
+
+.gradient + .gradient {
+    margin: 15px 0;
+    animation: anime 16s linear 5s infinite;
+}
+
+@keyframes anime {
+    0% {
+        background-position: 0 50%
+    }
+    50% {
+        background-position: 100% 50%
+    }
+    100% {
+        background-position: 0 50%
+    }
 }

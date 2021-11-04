@@ -1,7 +1,8 @@
 .MenuToggle {
     position: fixed;
-    top: 40px;
-    left: 40px;
+    top: 16px;
+    left: 16px;
+    padding: 10px;
     font-size: 20px;
     cursor: pointer;
     color: #fff;
@@ -20,6 +21,8 @@
 @media (max-width: 375px) {
     .MenuToggle.open {
         color: #363d54;
+        left: auto;
+        right: 20px;
     }
 }
 

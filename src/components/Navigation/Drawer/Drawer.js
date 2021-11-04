@@ -2,6 +2,7 @@ import React from "react";
 import classes from './Drawer.css'
 import {NavLink} from 'react-router-dom'
 import Backdrop from '../../Ui/Backdrop/Backdrop'
+import {HashLink} from 'react-router-hash-link'
 
 function Drawer({isOpen, isAuthenticated, onClose, isMobile}) {
 
@@ -13,15 +14,21 @@ function Drawer({isOpen, isAuthenticated, onClose, isMobile}) {
     return links.map((link, index) => {
       return (
         <li key={index}>
-          <NavLink
-            to={link.to}
-            exact={link.exact}
-            activeClassName={classes.active}
-            onClick={clickHandler}
-          >
-            {link.label}
-            {link.icon && <i className={`fa ${link.icon}`}/>}
-          </NavLink>
+          {
+            !link.hash
+            ? <NavLink
+                to={link.to}
+                exact={link.exact}
+                activeClassName={classes.active}
+                onClick={clickHandler}
+              >
+                {link.label}
+                {link.icon && <i className={`fa ${link.icon}`}/>}
+              </NavLink>
+              : <HashLink to={link.to} smooth>{link.label}</HashLink>
+          }
+
+
         </li>
       )
     })
@@ -34,14 +41,16 @@ function Drawer({isOpen, isAuthenticated, onClose, isMobile}) {
   }
 
   const links = [
-    {to: '/', label: 'Список', exact: true}
+    {to: '/', label: 'Main', exact: true}
   ]
 
   if (isAuthenticated) {
-    links.push({to: '/quiz-creator', label: 'Создать тест', exact: false})
-    links.push({to: '/logout', label: 'Выйти', exact: false, icon: 'fa-sign-out'})
+    links.push({to: '/quiz-creator', label: 'Create a quiz', exact: false})
+    links.push({to: '/#my-quizzes', label: '#My quizzes', hash: true, exact: true})
+    links.push({to: '/logout', label: 'Sign out', exact: false, icon: 'fa-sign-out'})
+
   } else {
-    links.push({to: '/auth', label: 'Авторизация', exact: false, icon: 'fa-user-o'})
+    links.push({to: '/auth', label: 'Sign in', exact: false, icon: 'fa-user-o'})
   }
 
   return (

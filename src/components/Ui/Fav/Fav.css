@@ -1,11 +1,18 @@
 .Fav {
-    padding: 0;
+    padding: 5px;
+    margin: -5px;
     border: 0;
     background-color: transparent;
     cursor: pointer;
     font-size: 22px;
+    transition: opacity 0.3s;
 }
 
 .Fav i {
     color: yellow;
+}
+
+.Fav:disabled {
+    background-color: transparent;
+    opacity: 0.5;
 }

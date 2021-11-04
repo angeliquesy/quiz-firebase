@@ -20,6 +20,8 @@ const Button = props => {
         onClick={props.onClick}
         className={cls.join(' ')}
         disabled={props.disabled}
+        aria-pressed={props.ariaPressed}
+        aria-label={props.ariaLabel}
       >
         {props.children}
       </button>

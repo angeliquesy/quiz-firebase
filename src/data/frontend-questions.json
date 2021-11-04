@@ -1,0 +1,2992 @@
+[
+  {
+    "id": 0,
+    "rightAnswerId": 1,
+    "question": "What does HTML stand for?",
+    "answers": [
+      {
+        "text": "Hyper Text Markup Language",
+        "id": 1
+      },
+      {
+        "text": "Home Tool Markup Language",
+        "id": 2
+      },
+      {
+        "text": "Hyperlinks and Text Markup Language",
+        "id": 3
+      },
+      {
+        "text": "Hyperscript Text Markup Language",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "rightAnswerId": 3,
+    "question": "Who is making the Web standards?",
+    "answers": [
+      {
+        "text": "Microsoft",
+        "id": 1
+      },
+      {
+        "text": "Google",
+        "id": 2
+      },
+      {
+        "text": "The World Wide Web Consortium",
+        "id": 3
+      },
+      {
+        "text": "Mozilla",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "rightAnswerId": 3,
+    "question": "What is the correct HTML element for the largest heading?",
+    "answers": [
+      {
+        "text": "<heading>",
+        "id": 1
+      },
+      {
+        "text": "<h6>",
+        "id": 2
+      },
+      {
+        "text": "<h1>",
+        "id": 3
+      },
+      {
+        "text": "<head>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "rightAnswerId": 1,
+    "question": "What is the correct HTML element for inserting a line break?",
+    "answers": [
+      {
+        "text": "<br>",
+        "id": 1
+      },
+      {
+        "text": "<break>",
+        "id": 2
+      },
+      {
+        "text": "<lb>",
+        "id": 3
+      },
+      {
+        "text": "<linebreak>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "rightAnswerId": 4,
+    "question": "What is the correct HTML for adding a background color?",
+    "answers": [
+      {
+        "text": "<body bg=\"yellow\">",
+        "id": 1
+      },
+      {
+        "text": "<background>yellow</background>",
+        "id": 2
+      },
+      {
+        "text": "<body style=\"background-color=yellow;\">",
+        "id": 3
+      },
+      {
+        "text": "<body style=\"background-color:yellow;\">",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "rightAnswerId": 2,
+    "question": "What is the correct HTML element to define important text?",
+    "answers": [
+      {
+        "text": "<important>",
+        "id": 1
+      },
+      {
+        "text": "<strong>",
+        "id": 2
+      },
+      {
+        "text": "<b>",
+        "id": 3
+      },
+      {
+        "text": "<i>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "rightAnswerId": 1,
+    "question": "What is the correct HTML element to define emphasized text?",
+    "answers": [
+      {
+        "text": "<em>",
+        "id": 1
+      },
+      {
+        "text": "<i>",
+        "id": 2
+      },
+      {
+        "text": "<italic>",
+        "id": 3
+      },
+      {
+        "text": "<b>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "rightAnswerId": 4,
+    "question": "What is the correct HTML for creating a hyperlink?",
+    "answers": [
+      {
+        "text": "<a name=\"http://www.millionier.com\">millionier</a>",
+        "id": 1
+      },
+      {
+        "text": "<a url=\"http://www.millionier.com\">millionier</a>",
+        "id": 2
+      },
+      {
+        "text": "<a>http://www.millionier.com</a>",
+        "id": 3
+      },
+      {
+        "text": "<a href=\"http://www.millionier.com\">millionier</a>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "rightAnswerId": 1,
+    "question": "Which character is used to indicate an end tag?",
+    "answers": [
+      {
+        "text": "/",
+        "id": 1
+      },
+      {
+        "text": "<",
+        "id": 2
+      },
+      {
+        "text": ".",
+        "id": 3
+      },
+      {
+        "text": "\\",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "rightAnswerId": 3,
+    "question": "How can you open a link in a new tab/browser window?",
+    "answers": [
+      {
+        "text": "<a href=\"url\" new>",
+        "id": 1
+      },
+      {
+        "text": "<a href=\"url\" target=\"new\">",
+        "id": 2
+      },
+      {
+        "text": "<a href=\"url\" target=\"_blank\">",
+        "id": 3
+      },
+      {
+        "text": "<a href=\"url\" target=\"new_page\">",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "rightAnswerId": 3,
+    "question": "Which of these elements are all <table> elements?",
+    "answers": [
+      {
+        "text": "<thead><body><tr>",
+        "id": 1
+      },
+      {
+        "text": "<table><tr><tt>",
+        "id": 2
+      },
+      {
+        "text": "<table><tr><td>",
+        "id": 3
+      },
+      {
+        "text": "<table><head><tfoot>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "rightAnswerId": 1,
+    "question": "How can you make a numbered list?",
+    "answers": [
+      {
+        "text": "<ol>",
+        "id": 1
+      },
+      {
+        "text": "<ul>",
+        "id": 2
+      },
+      {
+        "text": "<dl>",
+        "id": 3
+      },
+      {
+        "text": "<list>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "rightAnswerId": 4,
+    "question": "How can you make a bulleted list?",
+    "answers": [
+      {
+        "text": "<list>",
+        "id": 1
+      },
+      {
+        "text": "<dl>",
+        "id": 2
+      },
+      {
+        "text": "<ol>",
+        "id": 3
+      },
+      {
+        "text": "<ul>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "rightAnswerId": 2,
+    "question": "What is the correct HTML for making a checkbox?",
+    "answers": [
+      {
+        "text": "<input type=\"check\">",
+        "id": 1
+      },
+      {
+        "text": "<input type=\"checkbox\">",
+        "id": 2
+      },
+      {
+        "text": "<check>",
+        "id": 3
+      },
+      {
+        "text": "<checkbox>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "rightAnswerId": 3,
+    "question": "What is the correct HTML for making a text input field?",
+    "answers": [
+      {
+        "text": "<input type=\"textfield\">",
+        "id": 1
+      },
+      {
+        "text": "<textfield>",
+        "id": 2
+      },
+      {
+        "text": "<input type=\"text\">",
+        "id": 3
+      },
+      {
+        "text": "<textinput type=\"text\">",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "rightAnswerId": 1,
+    "question": "What is the correct HTML for making a drop-down list?",
+    "answers": [
+      {
+        "text": "<select>",
+        "id": 1
+      },
+      {
+        "text": "<list>",
+        "id": 2
+      },
+      {
+        "text": "<input type=\"dropdown\">",
+        "id": 3
+      },
+      {
+        "text": "<input type=\"list\">",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "rightAnswerId": 2,
+    "question": "What is the correct HTML for making a text area?",
+    "answers": [
+      {
+        "text": "<input type=\"textarea\">",
+        "id": 1
+      },
+      {
+        "text": "<textarea>",
+        "id": 2
+      },
+      {
+        "text": "<input type=\"textbox\">",
+        "id": 3
+      },
+      {
+        "text": "<text>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "rightAnswerId": 1,
+    "question": "What is the correct HTML for inserting an image?",
+    "answers": [
+      {
+        "text": "<img src=\"image.gif\" alt=\"MyImage\">",
+        "id": 1
+      },
+      {
+        "text": "<img href=\"image.gif\" alt=\"MyImage\">",
+        "id": 2
+      },
+      {
+        "text": "<img alt=\"MyImage\">image.gif</img>",
+        "id": 3
+      },
+      {
+        "text": "<image src=\"image.gif\" alt=\"MyImage\">",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "rightAnswerId": 1,
+    "question": "What is the correct HTML for inserting a background image?",
+    "answers": [
+      {
+        "text": "<body style=\"background-image:url(background.gif)\">",
+        "id": 1
+      },
+      {
+        "text": "<body bg=\"background.gif\">",
+        "id": 2
+      },
+      {
+        "text": "<background img=\"background.gif\">",
+        "id": 3
+      },
+      {
+        "text": "<body style=\"background-image:background.gif\"",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "rightAnswerId": 3,
+    "question": "An <iframe> is used to display a web page within a web page?",
+    "answers": [
+      {
+        "text": "False",
+        "id": 1
+      },
+      {
+        "text": "There is no such thing as an <iframe>",
+        "id": 2
+      },
+      {
+        "text": "True",
+        "id": 3
+      },
+      {
+        "text": "<iframe> is used to connect web page to the server",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "rightAnswerId": 2,
+    "question": "Which HTML element defines the title of a document?",
+    "answers": [
+      {
+        "text": "<meta>",
+        "id": 1
+      },
+      {
+        "text": "<title>",
+        "id": 2
+      },
+      {
+        "text": "<head>",
+        "id": 3
+      },
+      {
+        "text": "<htmltitle>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "rightAnswerId": 4,
+    "question": "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
+    "answers": [
+      {
+        "text": "longdesc",
+        "id": 1
+      },
+      {
+        "text": "src",
+        "id": 2
+      },
+      {
+        "text": "title",
+        "id": 3
+      },
+      {
+        "text": "alt",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "rightAnswerId": 3,
+    "question": "What is the correct HTML element for playing audio files?",
+    "answers": [
+      {
+        "text": "<mp3>",
+        "id": 1
+      },
+      {
+        "text": "<sound>",
+        "id": 2
+      },
+      {
+        "text": "<audio>",
+        "id": 3
+      },
+      {
+        "text": "<mp4>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "rightAnswerId": 1,
+    "question": "The HTML global attribute, \"contenteditable\" is used to?",
+    "answers": [
+      {
+        "text": "Specify whether the content of an element is editable or not",
+        "id": 1
+      },
+      {
+        "text": "Update content from the server",
+        "id": 2
+      },
+      {
+        "text": "Specifies a context menu for an element",
+        "id": 3
+      },
+      {
+        "text": "Return the position of the first found occurrence of content inside a string",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "rightAnswerId": 2,
+    "question": "Graphics defined by SVG is in which format?",
+    "answers": [
+      {
+        "text": "JS",
+        "id": 1
+      },
+      {
+        "text": "XML",
+        "id": 2
+      },
+      {
+        "text": "CSS",
+        "id": 3
+      },
+      {
+        "text": "HTML",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "rightAnswerId": 3,
+    "question": "The HTML <canvas> element is used to?",
+    "answers": [
+      {
+        "text": "Create draggable elements",
+        "id": 1
+      },
+      {
+        "text": "Manipulate data in MySQL",
+        "id": 2
+      },
+      {
+        "text": "Draw graphics",
+        "id": 3
+      },
+      {
+        "text": "Display database records",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "rightAnswerId": 4,
+    "question": "In HTML, which attribute is used to specify that an input field must be filled out?",
+    "answers": [
+      {
+        "text": "placeholder",
+        "id": 1
+      },
+      {
+        "text": "validate",
+        "id": 2
+      },
+      {
+        "text": "formvalidate",
+        "id": 3
+      },
+      {
+        "text": "required",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "rightAnswerId": 2,
+    "question": "Which input type defines a slider control?",
+    "answers": [
+      {
+        "text": "search",
+        "id": 1
+      },
+      {
+        "text": "range",
+        "id": 2
+      },
+      {
+        "text": "controls",
+        "id": 3
+      },
+      {
+        "text": "slider",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "rightAnswerId": 3,
+    "question": "Which HTML element is used to display a scalar measurement within a range?",
+    "answers": [
+      {
+        "text": "<range>",
+        "id": 1
+      },
+      {
+        "text": "<gauge>",
+        "id": 2
+      },
+      {
+        "text": "<meter>",
+        "id": 3
+      },
+      {
+        "text": "<measure>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "rightAnswerId": 4,
+    "question": "Which HTML element is used to specify a header for a document or section?",
+    "answers": [
+      {
+        "text": "<section>",
+        "id": 1
+      },
+      {
+        "text": "<head>",
+        "id": 2
+      },
+      {
+        "text": "<top>",
+        "id": 3
+      },
+      {
+        "text": "<header>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "rightAnswerId": 2,
+    "question": "What does CSS stand for?",
+    "answers": [
+      {
+        "text": "Colorful Style Sheets",
+        "id": 1
+      },
+      {
+        "text": "Cascading Style Sheets",
+        "id": 2
+      },
+      {
+        "text": "Creative Style Sheets",
+        "id": 3
+      },
+      {
+        "text": "Computer Style Sheets",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "rightAnswerId": 2,
+    "question": "What is the correct HTML for referring to an external style sheet?",
+    "answers": [
+      {
+        "text": "<stylesheet>style.css</stylesheet>",
+        "id": 1
+      },
+      {
+        "text": "<link rel=\"stylesheet\" href=\"style.css\">",
+        "id": 2
+      },
+      {
+        "text": "<style src=\"style.css\">",
+        "id": 3
+      },
+      {
+        "text": "<script rel=\"stylesheet\" href=\"style.css\"></script>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "rightAnswerId": 3,
+    "question": "Where in an HTML document is the correct place to refer to an external style sheet?",
+    "answers": [
+      {
+        "text": "In the <body> section",
+        "id": 1
+      },
+      {
+        "text": "At the end of the document",
+        "id": 2
+      },
+      {
+        "text": "In the <head> section",
+        "id": 3
+      },
+      {
+        "text": "Inside the <html> tag",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "rightAnswerId": 1,
+    "question": "Which is the correct CSS syntax?",
+    "answers": [
+      {
+        "text": "body {color: black;}",
+        "id": 1
+      },
+      {
+        "text": "body:color=black;",
+        "id": 2
+      },
+      {
+        "text": "{body:color=black;}",
+        "id": 3
+      },
+      {
+        "text": "{body;color:black;}",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 34,
+    "rightAnswerId": 4,
+    "question": "How do you insert a comment in a CSS file?",
+    "answers": [
+      {
+        "text": "' this is a comment",
+        "id": 1
+      },
+      {
+        "text": "// this is a comment //",
+        "id": 2
+      },
+      {
+        "text": "// this is a comment",
+        "id": 3
+      },
+      {
+        "text": "/* this is a comment */",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 35,
+    "rightAnswerId": 2,
+    "question": "How do you add a background color for all <h1> elements?",
+    "answers": [
+      {
+        "text": "h1.all {background-color:#FFFFFF;}",
+        "id": 1
+      },
+      {
+        "text": "h1 {background-color:#FFFFFF;}",
+        "id": 2
+      },
+      {
+        "text": "all.h1 {background-color:#FFFFFF;}",
+        "id": 3
+      },
+      {
+        "text": "h1 {all.background-color:#FFFFFF;}",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "rightAnswerId": 3,
+    "question": "Which CSS property controls the text size?",
+    "answers": [
+      {
+        "text": "font-style",
+        "id": 1
+      },
+      {
+        "text": "text-style",
+        "id": 2
+      },
+      {
+        "text": "font-size",
+        "id": 3
+      },
+      {
+        "text": "text-size",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 37,
+    "rightAnswerId": 3,
+    "question": "What is the correct CSS syntax for making all the <p> elements bold?",
+    "answers": [
+      {
+        "text": "<p style=\"text-size:bold;\">",
+        "id": 1
+      },
+      {
+        "text": "p {text-size:bold;}",
+        "id": 2
+      },
+      {
+        "text": "p {font-weight:bold;}",
+        "id": 3
+      },
+      {
+        "text": "<p style=\"font-size:bold;\">",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "rightAnswerId": 1,
+    "question": "How do you display hyperlinks without an underline?",
+    "answers": [
+      {
+        "text": "a {text-decoration:none;}",
+        "id": 1
+      },
+      {
+        "text": "a {text-decoration:no-underline;}",
+        "id": 2
+      },
+      {
+        "text": "a {underline:none;}",
+        "id": 3
+      },
+      {
+        "text": "a {decoration:no-underline;}",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "rightAnswerId": 1,
+    "question": "How do you display a border like this: Top border = 10 pixels | Bottom border = 5 pixels | Left border = 20 pixels | Right border = 1pixel?",
+    "answers": [
+      {
+        "text": "border-width:10px 1px 5px 20px;",
+        "id": 1
+      },
+      {
+        "text": "border-width:10px 5px 20px 1px;",
+        "id": 2
+      },
+      {
+        "text": "border-width:10px 20px 5px 1px;",
+        "id": 3
+      },
+      {
+        "text": "border-width:5px 20px 10px 1px;",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "rightAnswerId": 3,
+    "question": "How do you select an element with id \"demo\"?",
+    "answers": [
+      {
+        "text": ".demo",
+        "id": 1
+      },
+      {
+        "text": "demo",
+        "id": 2
+      },
+      {
+        "text": "#demo",
+        "id": 3
+      },
+      {
+        "text": "*demo",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 41,
+    "rightAnswerId": 2,
+    "question": "How do you select elements with class name \"test\"?",
+    "answers": [
+      {
+        "text": "#test",
+        "id": 1
+      },
+      {
+        "text": ".test",
+        "id": 2
+      },
+      {
+        "text": "*test",
+        "id": 3
+      },
+      {
+        "text": "test",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 42,
+    "rightAnswerId": 1,
+    "question": "What is the default value of the position property?",
+    "answers": [
+      {
+        "text": "static",
+        "id": 1
+      },
+      {
+        "text": "absolute",
+        "id": 2
+      },
+      {
+        "text": "fixed",
+        "id": 3
+      },
+      {
+        "text": "relative",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "rightAnswerId": 3,
+    "question": "In the following code snippet, what value is given for the left margin: margin: 5px 10px 3px 8px;",
+    "answers": [
+      {
+        "text": "3px",
+        "id": 1
+      },
+      {
+        "text": "10px",
+        "id": 2
+      },
+      {
+        "text": "8px",
+        "id": 3
+      },
+      {
+        "text": "5px",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 44,
+    "rightAnswerId": 1,
+    "question": "Which of the following would be used to create an ID called header which has a width of 750px, a height of 30px and the color of the text is black?",
+    "answers": [
+      {
+        "text": "#header { height: 30px; width: 750px; color: black; }",
+        "id": 1
+      },
+      {
+        "text": ".header { height: 30px; width: 750px; color: black; }",
+        "id": 2
+      },
+      {
+        "text": "#header { height: 30px; width: 750px; text: black; }",
+        "id": 3
+      },
+      {
+        "text": ".header { height: 30px; width: 750px; color: black; }",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 45,
+    "rightAnswerId": 3,
+    "question": "How can you created rounded corners using CSS3?",
+    "answers": [
+      {
+        "text": "border[round]: 30px;",
+        "id": 1
+      },
+      {
+        "text": "corner-effect: round;",
+        "id": 2
+      },
+      {
+        "text": "border-radius: 30px;",
+        "id": 3
+      },
+      {
+        "text": "alpha-effect: round-corner;",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "rightAnswerId": 1,
+    "question": "How do you add shadow to elements in CSS3?",
+    "answers": [
+      {
+        "text": "box-shadow: 10px 10px 5px grey;",
+        "id": 1
+      },
+      {
+        "text": "shadow-right: 10px shadow-bottom: 10px;",
+        "id": 2
+      },
+      {
+        "text": "shadow-color: grey;",
+        "id": 3
+      },
+      {
+        "text": "alpha-effect[shadow]: 10px 10px 5px grey;",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "rightAnswerId": 3,
+    "question": "How to you modify a border image using CSS3?",
+    "answers": [
+      {
+        "text": "border: url(image.png);",
+        "id": 1
+      },
+      {
+        "text": "border-variable: image url(image.png);",
+        "id": 2
+      },
+      {
+        "text": "border-image: url(border.png) 30 30 round;",
+        "id": 3
+      },
+      {
+        "text": "None of the above",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 48,
+    "rightAnswerId": 1,
+    "question": "How to resize a background image using CSS3?",
+    "answers": [
+      {
+        "text": "background-size: 80px 60px",
+        "id": 1
+      },
+      {
+        "text": "bg-dimensions: 80px 60px;",
+        "id": 2
+      },
+      {
+        "text": "background-proportion: 80px 60px;",
+        "id": 3
+      },
+      {
+        "text": "alpha-effect: bg-resize 80px 60px;",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "rightAnswerId": 3,
+    "question": "How to add text shadow using CSS3?",
+    "answers": [
+      {
+        "text": "font: shadowed 5px 5px 5px grey;",
+        "id": 1
+      },
+      {
+        "text": "font-shadow: 5px 5px 5px grey;",
+        "id": 2
+      },
+      {
+        "text": "text-shadow: 5px 5px 5px grey;",
+        "id": 3
+      },
+      {
+        "text": "shadow: text 5px 5px 5px grey;",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "rightAnswerId": 2,
+    "question": "Which prefix do you need to get CSS3 properties to work on older Mozilla Firefox browsers?",
+    "answers": [
+      {
+        "text": "-webkit-",
+        "id": 1
+      },
+      {
+        "text": "-moz-",
+        "id": 2
+      },
+      {
+        "text": "-o-",
+        "id": 3
+      },
+      {
+        "text": "-gecko-",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "rightAnswerId": 1,
+    "question": "What does the a stand for in RGBa?",
+    "answers": [
+      {
+        "text": "Alpha",
+        "id": 1
+      },
+      {
+        "text": "Aqua",
+        "id": 2
+      },
+      {
+        "text": "Apple",
+        "id": 3
+      },
+      {
+        "text": "About",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "rightAnswerId": 4,
+    "question": "What are the first three values of text-shadow in order?",
+    "answers": [
+      {
+        "text": "vertical, blur, horizontal",
+        "id": 1
+      },
+      {
+        "text": "blur, vertical, horizontal",
+        "id": 2
+      },
+      {
+        "text": "vertical, horizontal, blur",
+        "id": 3
+      },
+      {
+        "text": "horizontal, vertical, blur",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "rightAnswerId": 1,
+    "question": "How to force a word wrap using CSS3?",
+    "answers": [
+      {
+        "text": "word-wrap: break-word;",
+        "id": 1
+      },
+      {
+        "text": "text-wrap: break-word;",
+        "id": 2
+      },
+      {
+        "text": "text-wrap: force;",
+        "id": 3
+      },
+      {
+        "text": "text-width: set;",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "rightAnswerId": 4,
+    "question": "What property specifies the stack order of an element",
+    "answers": [
+      {
+        "text": "d-index",
+        "id": 1
+      },
+      {
+        "text": "s-index",
+        "id": 2
+      },
+      {
+        "text": "x-index",
+        "id": 3
+      },
+      {
+        "text": "z-index",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 55,
+    "rightAnswerId": 3,
+    "question": "What is css Float?",
+    "answers": [
+      {
+        "text": "Allows other elements to wrap around an element",
+        "id": 1
+      },
+      {
+        "text": "Element can be pushed to the left or right",
+        "id": 2
+      },
+      {
+        "text": "Both 1st and 2nd answers are correct",
+        "id": 3
+      },
+      {
+        "text": "element can be pushed to any direction",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 56,
+    "rightAnswerId": 2,
+    "question": "If you put a value of 0 for a Border-Radius what will happen?",
+    "answers": [
+      {
+        "text": "The Corner will curve horizontal",
+        "id": 1
+      },
+      {
+        "text": "The Corner will be square",
+        "id": 2
+      },
+      {
+        "text": "The Corner will curve vertical",
+        "id": 3
+      },
+      {
+        "text": "The world will end",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 57,
+    "rightAnswerId": 2,
+    "question": "Which of the following is a server-side JavaScript object?",
+    "answers": [
+      {
+        "text": "Function",
+        "id": 1
+      },
+      {
+        "text": "File",
+        "id": 2
+      },
+      {
+        "text": "FileUpload",
+        "id": 3
+      },
+      {
+        "text": "Date",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 58,
+    "rightAnswerId": 3,
+    "question": "To insert a JavaScript into an HTML page, which tag is used?",
+    "answers": [
+      {
+        "text": "<script=\"java\">",
+        "id": 1
+      },
+      {
+        "text": "<javascript>",
+        "id": 2
+      },
+      {
+        "text": "<script>",
+        "id": 3
+      },
+      {
+        "text": "<js>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 59,
+    "rightAnswerId": 2,
+    "question": "Which of the below is used in JavaScript to insert special characters?",
+    "answers": [
+      {
+        "text": "&",
+        "id": 1
+      },
+      {
+        "text": "\\",
+        "id": 2
+      },
+      {
+        "text": "-",
+        "id": 3
+      },
+      {
+        "text": "%",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 60,
+    "rightAnswerId": 3,
+    "question": "How does JavaScript store dates in objects of Date type?",
+    "answers": [
+      {
+        "text": "The number of days since January 1st, 1900",
+        "id": 1
+      },
+      {
+        "text": "The number of seconds since January 1st, 1970",
+        "id": 2
+      },
+      {
+        "text": "The number of milliseconds since January 1st, 1970",
+        "id": 3
+      },
+      {
+        "text": "The number of picoseconds since January 1st, 1970",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 61,
+    "rightAnswerId": 4,
+    "question": "Which is the correct way to write a JavaScript array?",
+    "answers": [
+      {
+        "text": "let txt = new Array:1=(\"arr\")2=(\"kim\")3=(\"jim\")",
+        "id": 1
+      },
+      {
+        "text": "let txt = new Array(1:\"arr\",2:\"kim\",3:\"jim\")",
+        "id": 2
+      },
+      {
+        "text": "let txt = new Array=[\"arr\",\"kim\",\"jim\"]",
+        "id": 3
+      },
+      {
+        "text": "let txt = [\"arr\",\"kim\",\"jim\"]",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "rightAnswerId": 3,
+    "question": "Which of the following is correct to write “Hello World” on the web page?",
+    "answers": [
+      {
+        "text": "System.out.println(“Hello World”)",
+        "id": 1
+      },
+      {
+        "text": "print(“Hello World”)",
+        "id": 2
+      },
+      {
+        "text": "document.write(“Hello World”)",
+        "id": 3
+      },
+      {
+        "text": "response.write(“Hello World”)",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "rightAnswerId": 1,
+    "question": "Which of the following is not a valid JavaScript variable name?",
+    "answers": [
+      {
+        "text": "2java",
+        "id": 1
+      },
+      {
+        "text": "_java_and_ java _names",
+        "id": 2
+      },
+      {
+        "text": "javaandjava",
+        "id": 3
+      },
+      {
+        "text": "None of the above",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "rightAnswerId": 3,
+    "question": "Which of the ways below is incorrect of instantiating a date?",
+    "answers": [
+      {
+        "text": "new Date(dateString)",
+        "id": 1
+      },
+      {
+        "text": "new Date()",
+        "id": 2
+      },
+      {
+        "text": "new Date(seconds)",
+        "id": 3
+      },
+      {
+        "text": "new Date(year, month, day, hours, minutes, seconds, milliseconds)",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 65,
+    "rightAnswerId": 3,
+    "question": "What is negative infinity in Java script?",
+    "answers": [
+      {
+        "text": "Number in JavaScript, derived by dividing number by a negative number",
+        "id": 1
+      },
+      {
+        "text": "Number in JavaScript, derived by dividing number by zero",
+        "id": 2
+      },
+      {
+        "text": "Number in JavaScript, derived by dividing negative number by zero",
+        "id": 3
+      },
+      {
+        "text": "None of the above",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 66,
+    "rightAnswerId": 4,
+    "question": "What is the alternate name for JavaScript?",
+    "answers": [
+      {
+        "text": "LimeScript",
+        "id": 1
+      },
+      {
+        "text": "ECMScript",
+        "id": 2
+      },
+      {
+        "text": "ECMJScript",
+        "id": 3
+      },
+      {
+        "text": "ECMAScript",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 67,
+    "rightAnswerId": 1,
+    "question": "Which of the following is a client-side JavaScript object?",
+    "answers": [
+      {
+        "text": "FileUpload",
+        "id": 1
+      },
+      {
+        "text": "Function",
+        "id": 2
+      },
+      {
+        "text": "File",
+        "id": 3
+      },
+      {
+        "text": "Date",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 68,
+    "rightAnswerId": 4,
+    "question": "What java wrapper type is created when a JavaScript object is sent to Java?",
+    "answers": [
+      {
+        "text": "ScriptObject",
+        "id": 1
+      },
+      {
+        "text": "JavaObject",
+        "id": 2
+      },
+      {
+        "text": "Jobject",
+        "id": 3
+      },
+      {
+        "text": "JSObject",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 69,
+    "rightAnswerId": 1,
+    "question": "Which of the following method is used to evaluate a string of JavaScript code in the context of the specified object?",
+    "answers": [
+      {
+        "text": "eval",
+        "id": 1
+      },
+      {
+        "text": "parseDoule",
+        "id": 2
+      },
+      {
+        "text": "parseObject",
+        "id": 3
+      },
+      {
+        "text": "efloat",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 70,
+    "rightAnswerId": 2,
+    "question": "From which version of Internet Explorer is Flexbox supported?",
+    "answers": [
+      {
+        "text": "IE9",
+        "id": 1
+      },
+      {
+        "text": "IE10",
+        "id": 2
+      },
+      {
+        "text": "IE11",
+        "id": 3
+      },
+      {
+        "text": "Edge",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 71,
+    "rightAnswerId": 1,
+    "question": "Which Flexbox property really exists?",
+    "answers": [
+      {
+        "text": "flex-wrap",
+        "id": 1
+      },
+      {
+        "text": "re-flex",
+        "id": 2
+      },
+      {
+        "text": "circum-flex",
+        "id": 3
+      },
+      {
+        "text": "corn-flex",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "rightAnswerId": 4,
+    "question": "What is the default orientation within a flex container?",
+    "answers": [
+      {
+        "text": "diagonal",
+        "id": 1
+      },
+      {
+        "text": "perpendicular",
+        "id": 2
+      },
+      {
+        "text": "vertical",
+        "id": 3
+      },
+      {
+        "text": "horizontal",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 73,
+    "rightAnswerId": 2,
+    "question": "In the shortened property flex: 1 0 auto; which property refers to the 2nd value (here 0)?",
+    "answers": [
+      {
+        "text": "flex-grow",
+        "id": 1
+      },
+      {
+        "text": "flex-shrink",
+        "id": 2
+      },
+      {
+        "text": "flex-basis",
+        "id": 3
+      },
+      {
+        "text": "flex-flow",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "rightAnswerId": 2,
+    "question": "Which is the default flex-flow?",
+    "answers": [
+      {
+        "text": "initial",
+        "id": 1
+      },
+      {
+        "text": "row nowrap",
+        "id": 2
+      },
+      {
+        "text": "row wrap",
+        "id": 3
+      },
+      {
+        "text": "column wrap",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "rightAnswerId": 1,
+    "question": "Which Flexbox statement does not exist?",
+    "answers": [
+      {
+        "text": "align-items: space-between;",
+        "id": 1
+      },
+      {
+        "text": "justify-content: space-between;",
+        "id": 2
+      },
+      {
+        "text": "align-content: space-between;",
+        "id": 3
+      },
+      {
+        "text": "align-self: auto;",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 76,
+    "rightAnswerId": 4,
+    "question": "Find the intruder",
+    "answers": [
+      {
+        "text": "justify-content: flex-start;",
+        "id": 1
+      },
+      {
+        "text": "align-items: flex-start;",
+        "id": 2
+      },
+      {
+        "text": "align-content: flex-start;",
+        "id": 3
+      },
+      {
+        "text": "align-self: flex-start;",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "rightAnswerId": 1,
+    "question": "If these two statements are applied on a flex item, what will be its width? Width: 500px; flex-basis: 250px;",
+    "answers": [
+      {
+        "text": "250px",
+        "id": 1
+      },
+      {
+        "text": "500px",
+        "id": 2
+      },
+      {
+        "text": "750px",
+        "id": 3
+      },
+      {
+        "text": "1250px",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "rightAnswerId": 3,
+    "question": "If these three statements are applied on a flex item, what will be its width? Width: 500px; flex-basis: 250px; min-width: 750px;",
+    "answers": [
+      {
+        "text": "250px",
+        "id": 1
+      },
+      {
+        "text": "500px",
+        "id": 2
+      },
+      {
+        "text": "750px",
+        "id": 3
+      },
+      {
+        "text": "1250px",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 79,
+    "rightAnswerId": 4,
+    "question": "If all these statements are applied on a flex item, what will be its width? Width: 500px; flex-basis: 1250px; min-width: 750px; flex-shrink: 0;",
+    "answers": [
+      {
+        "text": "250px",
+        "id": 1
+      },
+      {
+        "text": "500px",
+        "id": 2
+      },
+      {
+        "text": "750px",
+        "id": 3
+      },
+      {
+        "text": "1250px",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 80,
+    "rightAnswerId": 4,
+    "question": "Which class provides a responsive fixed width container? Bootstrap",
+    "answers": [
+      {
+        "text": ".container-fixed",
+        "id": 1
+      },
+      {
+        "text": ".container-fluid",
+        "id": 2
+      },
+      {
+        "text": ".container-fd",
+        "id": 3
+      },
+      {
+        "text": ".container",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "rightAnswerId": 2,
+    "question": "Which class provides a full width container, spanning the entire width of the viewport? Bootstrap",
+    "answers": [
+      {
+        "text": ".container-fixed",
+        "id": 1
+      },
+      {
+        "text": ".container-fluid",
+        "id": 2
+      },
+      {
+        "text": ".container-fd",
+        "id": 3
+      },
+      {
+        "text": ".container",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "rightAnswerId": 1,
+    "question": "The Bootstrap grid system is based on how many columns?",
+    "answers": [
+      {
+        "text": "12",
+        "id": 1
+      },
+      {
+        "text": "3",
+        "id": 2
+      },
+      {
+        "text": "9",
+        "id": 3
+      },
+      {
+        "text": "6",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 83,
+    "rightAnswerId": 2,
+    "question": "Which class adds zebra-stripes to a table? Bootstrap",
+    "answers": [
+      {
+        "text": ".table-zebra",
+        "id": 1
+      },
+      {
+        "text": ".table-striped",
+        "id": 2
+      },
+      {
+        "text": ".table-bordered",
+        "id": 3
+      },
+      {
+        "text": ".even and .odd",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 84,
+    "rightAnswerId": 2,
+    "question": "Which class shapes an image to a circle? Bootstrap",
+    "answers": [
+      {
+        "text": ".img-rounded",
+        "id": 1
+      },
+      {
+        "text": ".img-circle",
+        "id": 2
+      },
+      {
+        "text": ".img-thumbnail",
+        "id": 3
+      },
+      {
+        "text": ".img-round",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "rightAnswerId": 4,
+    "question": "Which class is used to create a big box for calling extra attention? Bootstrap",
+    "answers": [
+      {
+        "text": ".container",
+        "id": 1
+      },
+      {
+        "text": ".bigbox",
+        "id": 2
+      },
+      {
+        "text": ".container-box",
+        "id": 3
+      },
+      {
+        "text": ".jumbotron",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "rightAnswerId": 3,
+    "question": "Which button class is used to create a large button? Bootstrap",
+    "answers": [
+      {
+        "text": ".btn-large",
+        "id": 1
+      },
+      {
+        "text": ".btn-xl",
+        "id": 2
+      },
+      {
+        "text": ".btn-lg",
+        "id": 3
+      },
+      {
+        "text": ".btn-l",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "rightAnswerId": 1,
+    "question": "Which class is used to create a button group? Bootstrap",
+    "answers": [
+      {
+        "text": ".btn-group",
+        "id": 1
+      },
+      {
+        "text": ".group-btn",
+        "id": 2
+      },
+      {
+        "text": ".group-button",
+        "id": 3
+      },
+      {
+        "text": ".button-group",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "rightAnswerId": 3,
+    "question": "How can you insert a search icon? Bootstrap",
+    "answers": [
+      {
+        "text": "<span class=\"glyph glyph-search\"></span>",
+        "id": 1
+      },
+      {
+        "text": "<span class=\"glyphicon-search\"></span>",
+        "id": 2
+      },
+      {
+        "text": "<span class=\"glyphicon glyphicon-search\"></span>",
+        "id": 3
+      },
+      {
+        "text": "<span class=\"glyphicon search\"></span>",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "rightAnswerId": 1,
+    "question": "Which class is used to create a badge? Bootstrap",
+    "answers": [
+      {
+        "text": ".badge",
+        "id": 1
+      },
+      {
+        "text": ".tag",
+        "id": 2
+      },
+      {
+        "text": ".label",
+        "id": 3
+      },
+      {
+        "text": ".flag",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 90,
+    "rightAnswerId": 2,
+    "question": "Which class is used to create a basic pagination? Bootstrap",
+    "answers": [
+      {
+        "text": ".page",
+        "id": 1
+      },
+      {
+        "text": ".pagination",
+        "id": 2
+      },
+      {
+        "text": ".pages",
+        "id": 3
+      },
+      {
+        "text": ".navigation",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 91,
+    "rightAnswerId": 2,
+    "question": "Which class is used to create a basic list group? Bootstrap",
+    "answers": [
+      {
+        "text": ".grouped-list",
+        "id": 1
+      },
+      {
+        "text": ".list-group",
+        "id": 2
+      },
+      {
+        "text": ".group-list",
+        "id": 3
+      },
+      {
+        "text": ".list-grouped",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "rightAnswerId": 3,
+    "question": "Which class adds a heading to a panel? Bootstrap",
+    "answers": [
+      {
+        "text": ".panel-footer",
+        "id": 1
+      },
+      {
+        "text": ".panel-header",
+        "id": 2
+      },
+      {
+        "text": ".panel-heading",
+        "id": 3
+      },
+      {
+        "text": ".panel-head",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 93,
+    "rightAnswerId": 1,
+    "question": "Which class indicates a dropdown menu? Bootstrap",
+    "answers": [
+      {
+        "text": ".dropdown",
+        "id": 1
+      },
+      {
+        "text": ".dropdown-list",
+        "id": 2
+      },
+      {
+        "text": ".select-dropdown",
+        "id": 3
+      },
+      {
+        "text": ".select",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "rightAnswerId": 2,
+    "question": "A standard navigation tab is created with? Bootstrap",
+    "answers": [
+      {
+        "text": "<ul class=\"navigation-tabs\">",
+        "id": 1
+      },
+      {
+        "text": "<ul class=\"nav nav-tabs\">",
+        "id": 2
+      },
+      {
+        "text": "<ul class=\"nav tabs\">",
+        "id": 3
+      },
+      {
+        "text": "<ul class=\"nav nav-navbar\">",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 95,
+    "rightAnswerId": 1,
+    "question": "A standard navigation bar is created with? Bootstrap",
+    "answers": [
+      {
+        "text": "<nav class=\"navbar navbar-default\">",
+        "id": 1
+      },
+      {
+        "text": "<nav class=\"navigationbar navbar-default\">",
+        "id": 2
+      },
+      {
+        "text": "<nav class=\"nav navbar\">",
+        "id": 3
+      },
+      {
+        "text": "<nav class=\"navbar default-navbar\">",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "rightAnswerId": 4,
+    "question": "Which plugin is used to cycle through elements, like a slideshow? Bootstrap",
+    "answers": [
+      {
+        "text": "Orbit",
+        "id": 1
+      },
+      {
+        "text": "Scrollspy",
+        "id": 2
+      },
+      {
+        "text": "Slideshow",
+        "id": 3
+      },
+      {
+        "text": "Carousel",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "rightAnswerId": 4,
+    "question": "Which plugin is used to create a modal window? Bootstrap",
+    "answers": [
+      {
+        "text": "Popup",
+        "id": 1
+      },
+      {
+        "text": "Dialog Box",
+        "id": 2
+      },
+      {
+        "text": "Window",
+        "id": 3
+      },
+      {
+        "text": "Modal",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "rightAnswerId": 1,
+    "question": "Which contextual class indicates a succesful or positive action? Bootstrap",
+    "answers": [
+      {
+        "text": ".text-success",
+        "id": 1
+      },
+      {
+        "text": ".text-warning",
+        "id": 2
+      },
+      {
+        "text": ".text-info",
+        "id": 3
+      },
+      {
+        "text": ".text-primary",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "rightAnswerId": 3,
+    "question": "Which contextual class indicates a dangerous or potentially negative action? Bootstrap",
+    "answers": [
+      {
+        "text": ".text-warning",
+        "id": 1
+      },
+      {
+        "text": ".text-primary",
+        "id": 2
+      },
+      {
+        "text": ".text-danger",
+        "id": 3
+      },
+      {
+        "text": ".text-info",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 100,
+    "rightAnswerId": 2,
+    "question": "Which is the URL-encoding for the ASCII character (!)?",
+    "answers": [
+      {
+        "text": "%20",
+        "id": 1
+      },
+      {
+        "text": "%21",
+        "id": 2
+      },
+      {
+        "text": "%22",
+        "id": 3
+      },
+      {
+        "text": "%23",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "rightAnswerId": 4,
+    "question": "Which of the following is the correct way of returning the length of this string?",
+    "answers": [
+      {
+        "text": "'string',length",
+        "id": 1
+      },
+      {
+        "text": "string,length",
+        "id": 2
+      },
+      {
+        "text": "string.length",
+        "id": 3
+      },
+      {
+        "text": "'string'.length",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "rightAnswerId": 2,
+    "question": "What is the substring keyword used for?",
+    "answers": [
+      {
+        "text": "Creating a string within a string",
+        "id": 1
+      },
+      {
+        "text": "Returning a partial part of a string",
+        "id": 2
+      },
+      {
+        "text": "Reordering characters in a string",
+        "id": 3
+      },
+      {
+        "text": "Substituting characters within a string",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "rightAnswerId": 3,
+    "question": "Which of the following best describes what a function in JavaScript is used for?",
+    "answers": [
+      {
+        "text": "A function creates new variables",
+        "id": 1
+      },
+      {
+        "text": "A function is used for math formulas",
+        "id": 2
+      },
+      {
+        "text": "A reusable piece of code that can be called on throughout an application",
+        "id": 3
+      },
+      {
+        "text": "A function allows for the use of mathematical operators",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 104,
+    "rightAnswerId": 2,
+    "question": "The input in a function is called?",
+    "answers": [
+      {
+        "text": "function variable",
+        "id": 1
+      },
+      {
+        "text": "parameter",
+        "id": 2
+      },
+      {
+        "text": "return",
+        "id": 3
+      },
+      {
+        "text": "global variable",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "rightAnswerId": 2,
+    "question": "What does the return keyword do?",
+    "answers": [
+      {
+        "text": "It allows the user to return to previous code",
+        "id": 1
+      },
+      {
+        "text": "It allows for the output of a function to be used elsewhere",
+        "id": 2
+      },
+      {
+        "text": "It logs the output to the console",
+        "id": 3
+      },
+      {
+        "text": "It ends the statement in a function",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "rightAnswerId": 2,
+    "question": "Which of the following best describes an array?",
+    "answers": [
+      {
+        "text": "A variable that can create functions",
+        "id": 1
+      },
+      {
+        "text": "A variable that can store a list of different data seperately",
+        "id": 2
+      },
+      {
+        "text": "A data type that can store data",
+        "id": 3
+      },
+      {
+        "text": "A data type that can create functions",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "rightAnswerId": 3,
+    "question": "How are while loops different to for loops?",
+    "answers": [
+      {
+        "text": "The start of the loop is not predefined in while loops",
+        "id": 1
+      },
+      {
+        "text": "While loops cannot use comparison operators",
+        "id": 2
+      },
+      {
+        "text": "The end of the loop is not predefined",
+        "id": 3
+      },
+      {
+        "text": "The control of the loop is not predefined in for loops",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 108,
+    "rightAnswerId": 2,
+    "question": "What is the use of the isNaN function?",
+    "answers": [
+      {
+        "text": "It converts a string of numbers to a number",
+        "id": 1
+      },
+      {
+        "text": "It checks if something is not a number and returns a boolean",
+        "id": 2
+      },
+      {
+        "text": "It checks if something is a number and returns a boolean",
+        "id": 3
+      },
+      {
+        "text": "It converts a number to a string",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "rightAnswerId": 3,
+    "question": "Which of the following is not a logical operator in JavaScript?",
+    "answers": [
+      {
+        "text": "||",
+        "id": 1
+      },
+      {
+        "text": "&&",
+        "id": 2
+      },
+      {
+        "text": "$$",
+        "id": 3
+      },
+      {
+        "text": "!",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "rightAnswerId": 2,
+    "question": "Which of the following is the symbol for implementing the AND operator?",
+    "answers": [
+      {
+        "text": "||",
+        "id": 1
+      },
+      {
+        "text": "&&",
+        "id": 2
+      },
+      {
+        "text": "$$",
+        "id": 3
+      },
+      {
+        "text": "!",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 111,
+    "rightAnswerId": 1,
+    "question": "Which of the following is the symbol for implementing the OR operator?",
+    "answers": [
+      {
+        "text": "||",
+        "id": 1
+      },
+      {
+        "text": "&&",
+        "id": 2
+      },
+      {
+        "text": "$$",
+        "id": 3
+      },
+      {
+        "text": "!",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "rightAnswerId": 3,
+    "question": "Which of the following is true about cookie handling in JavaScript?",
+    "answers": [
+      {
+        "text": "JavaScript can manipulate cookies using the cookie property of the Document object",
+        "id": 1
+      },
+      {
+        "text": "JavaScript can read, create, modify, and delete the cookie or cookies that apply to the current web page",
+        "id": 2
+      },
+      {
+        "text": "Both of the above",
+        "id": 3
+      },
+      {
+        "text": "None of the above",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "rightAnswerId": 2,
+    "question": "Which built-in method reverses the order of the elements of an array?",
+    "answers": [
+      {
+        "text": "changeOrder(order)",
+        "id": 1
+      },
+      {
+        "text": "reverse()",
+        "id": 2
+      },
+      {
+        "text": "sort(order)",
+        "id": 3
+      },
+      {
+        "text": "None of the above",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "rightAnswerId": 3,
+    "question": "Which of the following function of String object combines the text of two strings and returns a new string?",
+    "answers": [
+      {
+        "text": "add()",
+        "id": 1
+      },
+      {
+        "text": "merge()",
+        "id": 2
+      },
+      {
+        "text": "concat()",
+        "id": 3
+      },
+      {
+        "text": "append()",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 115,
+    "rightAnswerId": 4,
+    "question": "Which of the following function of String object executes the search for a match between a regular expression and a specified string?",
+    "answers": [
+      {
+        "text": "concat()",
+        "id": 1
+      },
+      {
+        "text": "match()",
+        "id": 2
+      },
+      {
+        "text": "replace()",
+        "id": 3
+      },
+      {
+        "text": "search()",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "rightAnswerId": 4,
+    "question": "Which of the following function of String object creates a string to be displayed as bold as if it were in a <b> tag?",
+    "answers": [
+      {
+        "text": "anchor()",
+        "id": 1
+      },
+      {
+        "text": "big()",
+        "id": 2
+      },
+      {
+        "text": "blink()",
+        "id": 3
+      },
+      {
+        "text": "bold()",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "rightAnswerId": 3,
+    "question": "Which of the following function of Array object returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found?",
+    "answers": [
+      {
+        "text": "indexOf()",
+        "id": 1
+      },
+      {
+        "text": "join()",
+        "id": 2
+      },
+      {
+        "text": "lastIndexOf()",
+        "id": 3
+      },
+      {
+        "text": "map()",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "rightAnswerId": 1,
+    "question": "Which of the following function of Array object adds and/or removes elements from an array?",
+    "answers": [
+      {
+        "text": "splice()",
+        "id": 1
+      },
+      {
+        "text": "toSource()",
+        "id": 2
+      },
+      {
+        "text": "sort()",
+        "id": 3
+      },
+      {
+        "text": "unshift()",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "rightAnswerId": 2,
+    "question": "Which of the following is not a method in the “JSON” object according to the ECMAScript specification?",
+    "answers": [
+      {
+        "text": "JSON.stringify",
+        "id": 1
+      },
+      {
+        "text": "JSON.fromString",
+        "id": 2
+      },
+      {
+        "text": "JSON.parse",
+        "id": 3
+      },
+      {
+        "text": "All are correct",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "rightAnswerId": 2,
+    "question": "The function call Math.ceil(3.5) returns?",
+    "answers": [
+      {
+        "text": "MathError",
+        "id": 1
+      },
+      {
+        "text": "4",
+        "id": 2
+      },
+      {
+        "text": "0",
+        "id": 3
+      },
+      {
+        "text": "3",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 121,
+    "rightAnswerId": 3,
+    "question": "Which event fires whenever a control loses focus?",
+    "answers": [
+      {
+        "text": "onclick",
+        "id": 1
+      },
+      {
+        "text": "onmove",
+        "id": 2
+      },
+      {
+        "text": "onblur",
+        "id": 3
+      },
+      {
+        "text": "onchange",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "rightAnswerId": 4,
+    "question": "Which has the correct syntax of a ternary operation?",
+    "answers": [
+      {
+        "text": "var x = ( y === true ) { “true” : “false” };",
+        "id": 1
+      },
+      {
+        "text": "var x = y === true : “true” ? “false”;",
+        "id": 2
+      },
+      {
+        "text": "var x = ( y === true ) : “true” ? “false”;",
+        "id": 3
+      },
+      {
+        "text": "var x = y === true ? “true” : “false”;",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "rightAnswerId": 4,
+    "question": "What is the result of the following statement: 0 == “”;",
+    "answers": [
+      {
+        "text": "Error, invalid comparison",
+        "id": 1
+      },
+      {
+        "text": "false",
+        "id": 2
+      },
+      {
+        "text": "null",
+        "id": 3
+      },
+      {
+        "text": "true",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "rightAnswerId": 1,
+    "question": "Math.random() returns?",
+    "answers": [
+      {
+        "text": "A random number between 0 and 1",
+        "id": 1
+      },
+      {
+        "text": "A random number that can be any value",
+        "id": 2
+      },
+      {
+        "text": "A random number between 0 and 100",
+        "id": 3
+      },
+      {
+        "text": "A random number between 0 and 1000",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "rightAnswerId": 2,
+    "question": "You use the Math.pow() method to?",
+    "answers": [
+      {
+        "text": "Return any number",
+        "id": 1
+      },
+      {
+        "text": "Return a number raised to the power of a second number",
+        "id": 2
+      },
+      {
+        "text": "Return a random value between 0 and 1",
+        "id": 3
+      },
+      {
+        "text": "Return a variable value",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "rightAnswerId": 3,
+    "question": "Which of the following Array prototype methods actually modifies the array it’s been called on?",
+    "answers": [
+      {
+        "text": "concat()",
+        "id": 1
+      },
+      {
+        "text": "slice()",
+        "id": 2
+      },
+      {
+        "text": "splice()",
+        "id": 3
+      },
+      {
+        "text": "All of the above",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 127,
+    "rightAnswerId": 4,
+    "question": "Math.PI returns the mathematical constant of PI. What standard JavaScript method would truncate Math.Pi to 3.14?",
+    "answers": [
+      {
+        "text": "Math.Round(Math.PI)",
+        "id": 1
+      },
+      {
+        "text": "Math.PI.toPrecision(2)",
+        "id": 2
+      },
+      {
+        "text": "Math.PI.toString(\"D2\")",
+        "id": 3
+      },
+      {
+        "text": "Math.PI.toFixed(2)",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 128,
+    "rightAnswerId": 3,
+    "question": "You use the Math.tan() method to?",
+    "answers": [
+      {
+        "text": "Return the tangent of an angle in degrees",
+        "id": 1
+      },
+      {
+        "text": "Return the tangent of an angle in gradients",
+        "id": 2
+      },
+      {
+        "text": "Return the tangent of an angle in radians",
+        "id": 3
+      },
+      {
+        "text": "Does not exist in JavaScript",
+        "id": 4
+      }
+    ]
+  },
+  {
+    "id": 129,
+    "rightAnswerId": 1,
+    "question": "Which’s the correct syntax for creating a Date object for January 10, 1998?",
+    "answers": [
+      {
+        "text": "new Date(1998, 0, 10);",
+        "id": 1
+      },
+      {
+        "text": "new Date(1, 10, 1998);",
+        "id": 2
+      },
+      {
+        "text": "new Date(0, 10, 1998);",
+        "id": 3
+      },
+      {
+        "text": "new Date(1998, 1, 10);",
+        "id": 4
+      }
+    ]
+  }
+]

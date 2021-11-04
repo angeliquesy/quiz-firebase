@@ -1,4 +1,4 @@
-import { CREATE_QUIZ, CREATE_QUIZ_QUESTION, RESET_QUIZ_CREATION, CREATE_QUIZ_ERROR } from '../types'
+import { CREATE_QUIZ, CREATE_QUIZ_QUESTION, RESET_QUIZ_CREATION } from '../types'
 import axios from '../../axios/axios-quiz'
 import React, {useReducer, useContext} from 'react'
 import {createReducer} from './createReducer'
@@ -35,18 +35,16 @@ export const CreateState = ({children}) => {
   const resetQuizCreation = () => dispatch({type: RESET_QUIZ_CREATION})
 
   const finishCreateQuiz = async () => {
-
     try {
       await axios.post(`quizes.json?auth=${token}`, state.quiz)
+      return 'success'
     }
     catch (e) {
-      dispatch({
-        type: CREATE_QUIZ_ERROR,
-        payload: e
-      })
+      return false
     }
-
-    resetQuizCreation()
+    finally {
+      resetQuizCreation()
+    }
   }
 
   return (

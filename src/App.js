@@ -7,7 +7,7 @@ import Auth from "./containers/Auth/Auth";
 import QuizCreator from "./containers/QuizCreator/QuizCreator";
 import Logout from './components/Logout/Logout'
 import {AuthContext} from './context/auth/authContext'
-import {QuizState} from './context/quiz/quizState'
+import {QuizState} from './context/quiz/QuizState'
 import {CreateState} from './context/create/CreateState'
 
 function App() {

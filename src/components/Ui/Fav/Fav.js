@@ -5,16 +5,29 @@ import Button from '../Button/Button'
 const Fav = props => {
   const [active, setActive] = useState(props.active)
   const cls = ['fa']
+  const icon = props.icon || 'star'
 
   if (active) {
-    cls.push('fa-star')
+    cls.push(`fa-${icon}`)
   }
   else {
-    cls.push('fa-star-o')
+    cls.push(`fa-${icon}-o`)
+  }
+
+  const clickHandler = () => {
+    setActive(prev => !prev)
+    props.onClick()
   }
 
   return (
-    <Button type='icon' parentClass={classes.Fav} onClick={() => setActive(prev => !prev)}>
+    <Button
+      type='icon'
+      disabled={props.disabled}
+      parentClass={classes.Fav}
+      onClick={clickHandler}
+      ariaPressed={active}
+      ariaLabel={active ? 'Remove from favorites' : 'Add to favorites'}
+    >
       <i className={cls.join(' ')}/>
     </Button>
   )

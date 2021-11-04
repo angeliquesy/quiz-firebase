@@ -32,7 +32,7 @@ function Quiz() {
   return (
     <div className={classes.Quiz}>
       <div className={classes.QuizWrapper}>
-        <h1>Ответьте на все вопросы</h1>
+        <h1>Answer all the questions</h1>
         {
           loading || !quiz
             ? <Loader/>

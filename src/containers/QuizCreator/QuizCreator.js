@@ -10,8 +10,8 @@ import {CreateContext} from '../../context/create/createContext'
 
 function createOptionControl(number) {
   return createControl({
-    label: `Вариант ${number}`,
-    errorMessage: 'Значение не может быть пустым',
+    label: `Variant ${number}`,
+    errorMessage: 'The value cannot be empty',
     id: number
   }, {required: true})
 }
@@ -19,8 +19,8 @@ function createOptionControl(number) {
 function createFormControls() {
   return {
     question: createControl({
-      label: 'Введите вопрос',
-      errorMessage: 'Вопрос не может быть пустым',
+      label: 'Enter a question',
+      errorMessage: 'The question cannot be empty',
     }, {required: true}),
     option1: createOptionControl(1),
     option2: createOptionControl(2),
@@ -31,7 +31,7 @@ function createFormControls() {
 
 function QuizCreator() {
 
-  const {quiz, createQuiz, createQuizQuestion, finishCreateQuiz, error} = useContext(CreateContext)
+  const {quiz, createQuiz, createQuizQuestion, finishCreateQuiz} = useContext(CreateContext)
 
   const [init, setInit] = useState({
     name: '',
@@ -44,7 +44,7 @@ function QuizCreator() {
     isFormValid: false,
   })
 
-  const [created, setCreated] = useState(false)
+  const [posted, setPosted] = useState(null)
 
   const submitHandler = event => {
     event.preventDefault()
@@ -77,6 +77,16 @@ function QuizCreator() {
     })
   }
 
+  const finish = async () => {
+    try {
+      const result = !!(await finishCreateQuiz())
+      if (result) setInit({name: '', isValid: false})
+      setPosted(result)
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
   const createQuizHandler = event => {
     event.preventDefault()
 
@@ -87,10 +97,7 @@ function QuizCreator() {
       isFormValid: false,
     })
 
-    setInit({name: '', isValid: false})
-    setCreated(true)
-
-    finishCreateQuiz()
+    finish()
   }
 
   const changeHandler = (value, controlName) => {
@@ -157,7 +164,7 @@ function QuizCreator() {
   }
 
   const select = <Select
-    label='Выберете правильный ответ'
+    label='Select the right answer'
     value={state.rightAnswerId}
     onChange={selectChangeHandler}
     options={[
@@ -172,60 +179,67 @@ function QuizCreator() {
   return (
     <div className={classes.QuizCreator}>
       <div>
-        <h1>Создание тестов</h1>
+        <h1>
+          {init.name ? init.name : 'Quiz creation'}
+        </h1>
 
-        {created
-          ? <React.Fragment>
-              { error ? <p>Произошла ошибка. Попробуйте позже.</p> : <p>Тест успешно создан!</p> }
-              <Button type='success' onClick={() => setCreated(false)}>Создать тест</Button>
-              <Button type='primary' to='/'>Перейти в список тестов</Button>
+        {
+          posted
+            ? <React.Fragment>
+              <p>The quiz is successfully created!</p>
+              <Button type='success' onClick={() => setPosted(false)}>Create a quiz</Button>
+              <Button type='primary' to='/'>Go to quiz list</Button>
             </React.Fragment>
 
-          : <form onSubmit={submitHandler}>
-            {
-              init.name
-                ? <React.Fragment>
+            : <form onSubmit={submitHandler}>
+              {posted === false && <p>An error occurred while trying to send the form.
+                Please check your network connection and try again.</p>}
+              {
+                init.name
+                  ? <React.Fragment>
 
-                  {renderControls()}
+                    {renderControls()}
 
-                  {select}
+                    {select}
 
-                  <Button
-                    type='primary'
-                    onClick={addQuestionHandler}
-                    disabled={!state.isFormValid}
-                  >
-                    Добавить вопрос
-                  </Button>
+                    <Button
+                      type='primary'
+                      onClick={addQuestionHandler}
+                      disabled={!state.isFormValid}
+                    >
+                      Add question
+                    </Button>
 
-                  <Button
-                    type='success'
-                    onClick={createQuizHandler}
-                    disabled={quiz.questions.length === 0}
-                  >
-                    Создать тест
-                  </Button>
+                    <Button
+                      type='success'
+                      onClick={createQuizHandler}
+                      disabled={quiz.questions.length === 0}
+                    >
+                      Create a quiz
+                    </Button>
 
-                </React.Fragment>
-                : <React.Fragment>
-                  <Input
-                    innerRef={nameRef}
-                    label='Введите название теста'
-                    shouldValidate={true}
-                    errorMessage='Название не может быть пустым'
-                    onChange={event => nameHandler(event)}
-                  />
-                  <Button
-                    type='primary'
-                    onClick={addNameHandler}
-                    disabled={!init.isValid}
-                  >
-                    Начать создание теста
-                  </Button>
-                </React.Fragment>
-            }
+                  </React.Fragment>
+                  : <React.Fragment>
+                    <Input
+                      innerRef={nameRef}
+                      label='Enter the quiz name'
+                      shouldValidate={true}
+                      errorMessage='The name cannot be empty'
+                      onChange={event => nameHandler(event)}
+                    />
+                    <Button
+                      type='primary'
+                      onClick={addNameHandler}
+                      disabled={!init.isValid}
+                    >
+                      Continue
+                    </Button>
+                  </React.Fragment>
 
-          </form>
+              }
+
+            </form>
+
         }
       </div>
     </div>

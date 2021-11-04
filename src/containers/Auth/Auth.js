@@ -19,7 +19,7 @@ function Auth() {
         value: '',
         type: 'email',
         label: 'Email',
-        errorMessage: 'Введите корректный email',
+        errorMessage: 'Enter correct email',
         valid: false,
         touched: false,
         validation: {
@@ -30,8 +30,8 @@ function Auth() {
       password: {
         value: '',
         type: 'password',
-        label: 'Пароль',
-        errorMessage: 'Введите корректный пароль',
+        label: 'Password',
+        errorMessage: 'Enter correct password',
         valid: false,
         touched: false,
         validation: {
@@ -125,7 +125,7 @@ function Auth() {
   return (
     <div className={classes.Auth}>
       <div>
-        <h1>Авторизация</h1>
+        <h1>Authorization</h1>
 
         <form className={classes.AuthForm} onSubmit={submitHandler}>
 
@@ -134,12 +134,12 @@ function Auth() {
           <Button type='success' onClick={loginHandler}
                   disabled={!state.isFormValid}
           >
-            Войти
+            Sign in
           </Button>
 
           <Button type='primary' onClick={registerHandler}
                   disabled={!state.isFormValid}>
-            Зарегистрироваться
+            Sign up
           </Button>
 
         </form>

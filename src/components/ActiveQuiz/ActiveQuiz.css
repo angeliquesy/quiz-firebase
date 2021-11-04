@@ -11,3 +11,8 @@
     display: flex;
     justify-content: space-between;
 }
+
+small {
+    margin-left: 10px;
+    white-space: nowrap;
+}

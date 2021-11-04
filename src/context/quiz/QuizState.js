@@ -14,6 +14,7 @@ import React, {useReducer, useContext} from 'react'
 import {quizReducer} from './quizReducer'
 import {QuizContext} from './quizContext'
 import {AuthContext} from '../auth/authContext'
+import {triviaIds} from '../../constants/triviaIds'
 
 export const QuizState = ({children}) => {
 
@@ -62,6 +63,12 @@ export const QuizState = ({children}) => {
       const response = await axios.get(`quizes/${quizId}.json`)
       const quiz = response.data
 
+      for (let i of triviaIds) {
+        if (quizId === i) {
+          quiz.questions = quiz.questions.sort(() => 0.5 - Math.random()).slice(0, 10)
+        }
+      }
+
       fetchQuizSuccess(quiz)
     } catch (e) {
       fetchQuizzesError(e)
@@ -98,8 +105,6 @@ export const QuizState = ({children}) => {
     const question = state.quiz.questions[state.activeQuestion]
     const results = state.results
 
-    console.log(question)
-
     if (question.rightAnswerId === answerId) {
       if (!results[question.id]) {
         results[question.id] = 'success'
@@ -127,6 +132,7 @@ export const QuizState = ({children}) => {
 
   const fetch = async () => {
     fetchQuizzesStart()
+
     try {
       const response = await axios.get('quizes.json')
 
@@ -149,7 +155,7 @@ export const QuizState = ({children}) => {
   return (
     <QuizContext.Provider value={{
       fetchQuizzesStart, fetchQuizzesSuccess, fetchQuizzesError, deleteQuiz,
-      fetch, state,
+      fetch, state, error: state.error,
       fetchQuizById, fetchQuizSuccess, quizSetState, finishQuiz, retryQuiz,
       quizAnswerClick, quizNextQuestion,
       clearLoading: () => fetchQuizzesStart()

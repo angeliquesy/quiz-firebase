@@ -1,13 +1,25 @@
 .QuizList {
     display: flex;
     justify-content: center;
-    padding-top: 100px;
+    padding: 100px 16px 100px 16px;
     flex-grow: 1;
     width: 100%;
+    box-sizing: border-box;
     background: linear-gradient(90deg, #fd8355 0%, #f0576c 36%, #f79cbd 100%);
+
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none;
+
+}
+
+.QuizList::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background: transparent; /* make scrollbar transparent */
 }
 
 .QuizList h1, h2 {
+    text-align: center;
     color: #fff;
 }
 
@@ -34,7 +46,8 @@
     display: inline-block;
     margin: -5px 5px -5px -5px;
     padding: 5px;
-    width: 100%;
+    flex-grow: 1;
+    min-width: 0;
     text-decoration: none;
     color: #fff;
     transition: color 0.3s;
@@ -44,6 +57,39 @@
     /*color: #363f54;*/
 }
 
+.Sorting {
+    margin-bottom: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.Sorting button {
+    width: 27px;
+    height: 27px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.QuizList .Sorting i {
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.Sorting span {
+    margin-right: 0.8em;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.Sorting button:hover + span {
+    opacity: 0.8;
+}
 
 .QuizList li div {
     display: flex;
@@ -55,6 +101,18 @@
     transition: opacity 0.3s ease-in-out;
 }
 
-.QuizList li:hover button {
+.QuizList li:hover button,
+.QuizList li button[aria-pressed="true"]{
     opacity: 1;
 }
+
+@media (max-width: 720px) {
+    .QuizList li button {
+        opacity: 1;
+    }
+
+    .Sorting span {
+        visibility: hidden;
+    }
+}
+

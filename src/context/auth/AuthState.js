@@ -1,7 +1,7 @@
 import React, {useReducer} from 'react'
 import axios from 'axios'
 import axiosDb from '../../axios/axios-quiz'
-import {AUTH_LOGOUT, AUTH_SUCCESS, GET_USER} from '../types'
+import {AUTH_LOGOUT, AUTH_SUCCESS, GET_USER, EDIT_USER} from '../types'
 import {authReducer} from './authReducer'
 import {AuthContext} from './authContext'
 
@@ -10,7 +10,9 @@ const withCreds = query => `https://identitytoolkit.googleapis.com/v1/accounts:$
 export const AuthState = ({children}) => {
   const initialState = {
     token: null,
-    user: null,
+    user: {
+      favs: []
+    },
     id: null
   }
 
@@ -84,7 +86,7 @@ export const AuthState = ({children}) => {
     localStorage.setItem('userId', localId)
     localStorage.setItem('expirationDate', expirationDate)
 
-    getUser(token, localId)
+    getUser()
     authSuccess(token, localId)
     autoLogout(expiresIn)
   }
@@ -93,19 +95,47 @@ export const AuthState = ({children}) => {
     await axiosDb.put(`users/${id}.json?auth=${token}`, {quizzes: 1})
   }
 
-  const getUser = async (token, id) => {
-    const response = await axiosDb.get(`users/${id}.json`)
+  const getUser = async () => {
+    const token = localStorage.getItem('token')
+    const id = localStorage.getItem('userId')
+
+    const response = await axiosDb.get(`users/${id}.json?auth=${token}`)
 
     if (response.data) {
       dispatch({
         type: GET_USER,
         user: response.data
       })
+
+    } else {
+      addUser(token, id)
+      getUser()
+    }
+  }
+
+  const toggleFav = async quizId => {
+    let favs = []
+
+    if (state.user && state.user.favs && state.user.favs.length) {
+      favs = state.user.favs
+
+      if (favs.some(i => i === quizId)) {
+        favs = favs.filter(i => i !== quizId)
+      }
+      else {
+        favs.push(quizId)
+      }
     }
     else {
-      addUser(token, id)
-      getUser(token, id)
+      favs.push(quizId)
     }
+
+    dispatch({
+      type: EDIT_USER,
+      payload: favs
+    })
+
+    await axiosDb.put(`users/${id}/favs.json?auth=${token}`, favs)
   }
 
   const {token, user, id} = state
@@ -113,7 +143,7 @@ export const AuthState = ({children}) => {
   return (
     <AuthContext.Provider value={{
       autoLogin, auth, autoLogout, authSuccess, logout, getUser,
-      isAuthenticated: !!id, user, token, userId: id
+      isAuthenticated: !!id, user, token, userId: id, toggleFav
     }}>
       {children}
     </AuthContext.Provider>
