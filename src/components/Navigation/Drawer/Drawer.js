@@ -25,7 +25,7 @@ function Drawer({isOpen, isAuthenticated, onClose, isMobile}) {
                 {link.label}
                 {link.icon && <i className={`fa ${link.icon}`}/>}
               </NavLink>
-              : <HashLink to={link.to} smooth>{link.label}</HashLink>
+              : <HashLink to={link.to} smooth onClick={clickHandler}>{link.label}</HashLink>
           }
 
 

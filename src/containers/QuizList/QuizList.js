@@ -55,11 +55,12 @@ function QuizList() {
           </NavLink>
           <div>
             { areMine &&
-            <Button type='icon' onClick={() => deleteQuiz(quiz.id)}>
+            <Button parentClass={classes.QuizListIcon} ariaLabel='Delete quiz' type='icon' onClick={() => deleteQuiz(quiz.id)}>
               <i className='fa fa-trash' />
             </Button> }
             {
               isAuthenticated && <Fav
+                parentClass={classes.QuizListIcon}
                 onClick={() => toggleFav(quiz.id)}
                 active={user && user.favs ? check(quiz.id) : false}
               />

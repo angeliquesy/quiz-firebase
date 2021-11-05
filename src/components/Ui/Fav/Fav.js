@@ -23,7 +23,7 @@ const Fav = props => {
     <Button
       type='icon'
       disabled={props.disabled}
-      parentClass={classes.Fav}
+      parentClass={props.parentClass ? props.parentClass + ' ' + classes.Fav : classes.Fav}
       onClick={clickHandler}
       ariaPressed={active}
       ariaLabel={active ? 'Remove from favorites' : 'Add to favorites'}

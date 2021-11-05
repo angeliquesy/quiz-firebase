@@ -133,12 +133,15 @@ function Auth() {
 
           <Button type='success' onClick={loginHandler}
                   disabled={!state.isFormValid}
+                  parentClass={classes.AuthFormButton}
           >
             Sign in
           </Button>
 
           <Button type='primary' onClick={registerHandler}
-                  disabled={!state.isFormValid}>
+                  disabled={!state.isFormValid}
+                  parentClass={classes.AuthFormButton}
+          >
             Sign up
           </Button>
 

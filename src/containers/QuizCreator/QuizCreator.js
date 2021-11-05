@@ -186,7 +186,7 @@ function QuizCreator() {
         {
           posted
             ? <React.Fragment>
-              <p>The quiz is successfully created!</p>
+              <p>The quiz has been successfully created!</p>
               <Button type='success' onClick={() => setPosted(false)}>Create a quiz</Button>
               <Button type='primary' to='/'>Go to quiz list</Button>
             </React.Fragment>

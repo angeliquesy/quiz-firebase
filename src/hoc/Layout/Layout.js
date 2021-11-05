@@ -20,21 +20,24 @@ function Layout({children}) {
 
   return (
     <div className={classes.Layout}>
-
-      <Drawer
-        isOpen={menu}
-        onClose={menuCloseHandler}
-        isAuthenticated={isAuthenticated}
-        isMobile={isMobile}
-      />
-
-      {
-        isMobile &&
-        <MenuToggle
-          onToggle={toggleMenuHandler}
+      <header>
+        <Drawer
           isOpen={menu}
+          onClose={menuCloseHandler}
+          isAuthenticated={isAuthenticated}
+          isMobile={isMobile}
         />
-      }
+
+        {
+          isMobile &&
+          <MenuToggle
+            onToggle={toggleMenuHandler}
+            isOpen={menu}
+          />
+        }
+      </header>
+
+
 
       <main>
         {children}

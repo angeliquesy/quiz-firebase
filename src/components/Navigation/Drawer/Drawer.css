@@ -68,6 +68,7 @@
 
     .Drawer ul li:last-child {
         margin-left: 0;
+        margin-bottom: 0;
     }
 
     .Drawer.close {

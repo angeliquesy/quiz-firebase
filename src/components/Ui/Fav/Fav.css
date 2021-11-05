@@ -1,14 +1,4 @@
 .Fav {
-    padding: 5px;
-    margin: -5px;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-    font-size: 22px;
-    transition: opacity 0.3s;
-}
-
-.Fav i {
     color: yellow;
 }
 

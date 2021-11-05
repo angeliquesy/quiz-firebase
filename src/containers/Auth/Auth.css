@@ -28,8 +28,7 @@
 }
 
 @media (max-width: 720px) {
-    .AuthForm button {
-        width: calc(50% - 8px)
+    .Auth {
+        padding-top: 50px;
     }
 }
-

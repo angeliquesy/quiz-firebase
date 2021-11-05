@@ -6,9 +6,11 @@
     cursor: pointer;
 }
 
-.AnswerItem:hover {
-    background: rgba(255, 255, 255, .2);
-    transition: background .3s ease-in-out;
+@media (hover) , (min-width:0\0) , (min--moz-device-pixel-ratio:0){
+    .AnswerItem:hover {
+        background: rgba(255, 255, 255, .2);
+        transition: background .3s ease-in-out;
+    }
 }
 
 .AnswerItem.success {
@@ -18,3 +20,6 @@
 .AnswerItem.error {
     background: rgba(240, 87, 108, .7);
 }
+
+
+

@@ -1,18 +1,24 @@
 .Quiz {
     display: flex;
     justify-content: center;
-    padding-top: 100px;
+    padding: 100px 16px 16px;
     flex-grow: 1;
+    box-sizing: border-box;
     width: 100%;
     background: linear-gradient(90deg, #5041b2 0%, #7969e6 100%);
 }
 
 .Quiz h1 {
-    margin-left: 10px;
-    color: #fff;
+    text-align: center;
 }
 
 .QuizWrapper {
     max-width: 600px;
     width: 100%;
+}
+
+@media (max-width: 720px) {
+    .Quiz {
+        padding-top: 50px;
+    }
 }
