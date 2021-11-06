@@ -47,6 +47,7 @@ export const QuizState = ({children}) => {
 
   const deleteQuiz = async id => {
     const newQuizzes = state.quizzes.filter(quiz => quiz.id !== id)
+    console.log('deleted ', id)
 
     dispatch({
       type: DELETE_QUIZ,

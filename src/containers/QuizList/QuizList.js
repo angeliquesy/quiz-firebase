@@ -1,4 +1,4 @@
-import React, {Fragment, useContext, useEffect, useState} from 'react'
+import React, {Fragment, useContext, useEffect, useState, useRef} from 'react'
 import classes from './QuizList.css'
 import {NavLink} from 'react-router-dom'
 import Loader from '../../components/Ui/Loader/Loader'
@@ -13,22 +13,39 @@ function QuizList() {
   const {isAuthenticated, userId, toggleFav, getUser, user} = useContext(AuthContext)
   const {fetch, state, clearLoading, deleteQuiz, error} = useContext(QuizContext)
   const {quizzes, loading} = state
+
   const [sorted, setSorted] = useState(false)
+  const [removed, setRemoved] = useState([])
   const myQuizzes = []
   let filteredQuizzes = []
+
+  const timeout = useRef(null)
 
   useEffect(() => {
     fetch()
 
     if (isAuthenticated) getUser()
 
+
     return () => {
       clearLoading()
     }
   }, [])
 
-  const check = (id) => {
+  const check = id => {
     return user.favs.some(i => i === id)
+  }
+
+  const removeQuiz = id => {
+    setRemoved(prev => [...prev, id])
+    timeout.current = setTimeout(() => deleteQuiz(id), 5000)
+  }
+
+
+  const recoverQuiz = id => {
+    clearTimeout(timeout.current)
+    const newRemoved = removed.filter(i => i !== id)
+    setRemoved(newRemoved)
   }
 
   const filterQuizzes = () => {
@@ -50,23 +67,47 @@ function QuizList() {
 
       return (
         <li key={quiz.id}>
-          <NavLink to={'/quiz/' + quiz.id}>
-            {quiz.name}
-          </NavLink>
-          <div>
-            { areMine &&
-            <Button parentClass={classes.QuizListIcon} ariaLabel='Delete quiz' type='icon' onClick={() => deleteQuiz(quiz.id)}>
-              <i className='fa fa-trash' />
-            </Button> }
-            {
-              isAuthenticated && <Fav
-                parentClass={classes.QuizListIcon}
-                onClick={() => toggleFav(quiz.id)}
-                active={user && user.favs ? check(quiz.id) : false}
-              />
-            }
+          {
+            removed.includes(quiz.id) ? <span className={classes.QuizListItemName}>{quiz.name}</span>
+              : <NavLink to={'/quiz/' + quiz.id}>
+                  <span className={classes.QuizListItemName}>{quiz.name}</span>
+                </NavLink>
+          }
 
-          </div>
+          {
+            isAuthenticated &&
+            <div>
+              {
+                !removed.includes(quiz.id)
+                  ?
+                    <Fragment>
+                      {
+                        areMine &&
+                        <Button parentClass={classes.QuizListIcon} ariaLabel='Delete quiz' type='icon'
+                                onClick={() => removeQuiz(quiz.id)}>
+                          <i className='fa fa-trash'/>
+                        </Button>
+                      }
+
+                      <Fav
+                        parentClass={classes.QuizListIcon}
+                        onClick={() => toggleFav(quiz.id)}
+                        active={user && user.favs ? check(quiz.id) : false}
+                      />
+                    </Fragment>
+                  : <Fragment>
+                      <span>deleting...</span>
+                      <Button parentClass={classes.QuizListIcon} ariaLabel='Delete quiz' type='icon'
+                              onClick={() => recoverQuiz(quiz.id)} ariaPressed>
+                        <i className='fa fa-undo'/>
+                      </Button>
+                    </Fragment>
+
+
+              }
+            </div>
+
+          }
         </li>
       )
     })

@@ -28,7 +28,7 @@ function App() {
 
   if (isAuthenticated) {
     routes = (
-      <CreateState>
+
         <Switch>
           <Route path='/quiz-creator' component={QuizCreator}/>
           <Route path='/quiz/:id' component={Quiz}/>
@@ -36,11 +36,12 @@ function App() {
           <Route path='/' component={QuizList} exact/>
           <Redirect to='/'/>
         </Switch>
-      </CreateState>
+
     )
   }
 
   return (
+    <CreateState>
     <QuizState>
       <BrowserRouter>
         <Layout>
@@ -48,6 +49,7 @@ function App() {
         </Layout>
       </BrowserRouter>
     </QuizState>
+    </CreateState>
   );
 }
 

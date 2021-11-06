@@ -68,6 +68,14 @@
     color: #fff;
 }
 
+/*.icon i {*/
+/*    transition: opacity 0.3s;*/
+/*}*/
+
+/*.icon:hover i {*/
+/*    opacity: 0.8;*/
+/*}*/
+
 .gradient {
     min-width: 27px;
     min-height: 27px;

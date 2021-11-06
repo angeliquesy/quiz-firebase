@@ -53,6 +53,11 @@
     transition: color 0.3s;
 }
 
+.QuizListItemName {
+    display: inline-block;
+    max-width: 215px;
+}
+
 .Sorting {
     margin-bottom: 10px;
     padding: 5px 7px 5px 5px;
@@ -89,8 +94,12 @@
 
 .QuizList li div {
     display: flex;
+    align-items: center;
 }
 
+.QuizList li div span {
+    margin-right: 0.2em;
+}
 
 .QuizListIcon {
     opacity: 0;
@@ -117,5 +126,9 @@
 
     .Sorting span {
         visibility: hidden;
+    }
+
+    .QuizList li div span {
+        display: none;
     }
 }
