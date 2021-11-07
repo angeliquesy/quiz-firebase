@@ -13,8 +13,8 @@
     }
 }
 
-@media (max-width: 1024px) {y
-    .QuizList li:hover {
+@media (max-width: 1024px) {
+    .AnswerItem li:hover {
         background: rgba(0, 0, 0, 0);
     }
 }
