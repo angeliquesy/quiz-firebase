@@ -14,7 +14,7 @@
 }
 
 @media (max-width: 1024px) {
-    .AnswerItem li:hover {
+    .AnswerItem:hover {
         background: rgba(0, 0, 0, 0);
     }
 }
