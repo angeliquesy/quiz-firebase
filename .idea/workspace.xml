@@ -2,13 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50605c50-3633-440f-9b1c-3b14bdc53ddf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ActiveQuiz/ActiveQuiz.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ActiveQuiz/ActiveQuiz.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ActiveQuiz/ActiveQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ActiveQuiz/ActiveQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ActiveQuiz/AnswersList/AnswerItem/AnswerItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ActiveQuiz/AnswersList/AnswerItem/AnswerItem.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ActiveQuiz/AnswersList/AnswerItem/AnswerItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ActiveQuiz/AnswersList/AnswerItem/AnswerItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FinishedQuiz/FinishedQuiz.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FinishedQuiz/FinishedQuiz.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Auth/Auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Auth/Auth.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/QuizList/QuizList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/QuizList/QuizList.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
