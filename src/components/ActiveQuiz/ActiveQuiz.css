@@ -1,12 +1,12 @@
 .ActiveQuiz {
     padding: 20px 16px 16px;
-    color: #fff;
     border: 2px solid #fff;
     border-radius: 5px;
     box-sizing: border-box;
 }
 
 .Question {
+    margin-top: 0;
     display: flex;
     justify-content: space-between;
 }

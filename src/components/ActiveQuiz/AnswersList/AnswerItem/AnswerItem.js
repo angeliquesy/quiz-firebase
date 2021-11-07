@@ -1,5 +1,6 @@
 import React from "react";
 import classes from './AnswerItem.css'
+import {decodeString} from '../../ActiveQuiz'
 
 const AnswerItem = props => {
   const cls = [classes.AnswerItem]
@@ -13,7 +14,7 @@ const AnswerItem = props => {
       className={cls.join(' ')}
       onClick={() => props.onAnswerClick(props.answer.id)}
     >
-      { props.answer.text }
+      { decodeString(props.answer.text) }
     </li>
   )
 }
