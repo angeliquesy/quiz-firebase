@@ -13,6 +13,12 @@
     }
 }
 
+@media (max-width: 1024px) {y
+    .QuizList li:hover {
+        background: rgba(0, 0, 0, 0);
+    }
+}
+
 .AnswerItem.success {
     background: rgba(161, 240, 69, .7);
 }

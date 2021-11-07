@@ -15,7 +15,7 @@
 .QuizList::-webkit-scrollbar {
     width: 0px;
     height: 0px;
-    background: transparent; /* make scrollbar transparent */
+    background: rgba(0, 0, 0, 0);;
 }
 
 .QuizList h1, h2 {
@@ -37,7 +37,7 @@
     border-radius: 5px;
 }
 
-@media (hover: hover), screen and (min-width:0\0) {
+@media (hover), screen and (min-width:0\0), (min--moz-device-pixel-ratio:0) {
     .QuizList li:hover {
         background-color: rgba(90, 90, 90, 0.1);
     }
