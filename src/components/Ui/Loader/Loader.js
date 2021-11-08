@@ -1,7 +1,7 @@
 import React from 'react'
 import classes from './Loader.css'
 
-const Loder = props => (
+const Loader = () => (
   <div className={classes.Loader}>
     <div>
       <div />
@@ -9,4 +9,4 @@ const Loder = props => (
   </div>
 )
 
-export default Loder
+export default Loader

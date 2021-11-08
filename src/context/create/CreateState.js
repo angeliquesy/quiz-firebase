@@ -2,8 +2,8 @@ import { CREATE_QUIZ, CREATE_QUIZ_QUESTION, RESET_QUIZ_CREATION } from '../types
 import axios from '../../axios/axios-quiz'
 import React, {useReducer, useContext} from 'react'
 import {createReducer} from './createReducer'
-import {CreateContext} from './createContext'
-import {AuthContext} from '../auth/authContext'
+import { CreateContext } from './createContext'
+import { AuthContext } from '../auth/authContext'
 
 export const CreateState = ({children}) => {
   const initialState = {
@@ -37,13 +37,12 @@ export const CreateState = ({children}) => {
   const finishCreateQuiz = async () => {
     try {
       await axios.post(`quizes.json?auth=${token}`, state.quiz)
+      resetQuizCreation()
+
       return 'success'
     }
     catch (e) {
       return false
-    }
-    finally {
-      resetQuizCreation()
     }
   }
 

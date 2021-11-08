@@ -1,13 +1,13 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import classes from './Fav.css'
 import Button from '../Button/Button'
 
-const Fav = props => {
-  const [active, setActive] = useState(props.active)
-  const cls = ['fa']
-  const icon = props.icon || 'star'
+const Fav = ({ parentClass, active, disabled, onClick, icon = 'star' }) => {
 
-  if (active) {
+  const [isActive, setIsActive] = useState(active)
+  const cls = ['fa']
+
+  if (isActive) {
     cls.push(`fa-${icon}`)
   }
   else {
@@ -15,18 +15,18 @@ const Fav = props => {
   }
 
   const clickHandler = () => {
-    setActive(prev => !prev)
-    props.onClick()
+    setIsActive(prev => !prev)
+    onClick()
   }
 
   return (
     <Button
       type='icon'
-      disabled={props.disabled}
-      parentClass={props.parentClass ? props.parentClass + ' ' + classes.Fav : classes.Fav}
+      disabled={disabled}
+      parentClass={parentClass ? parentClass + ' ' + classes.Fav : classes.Fav}
       onClick={clickHandler}
-      ariaPressed={active}
-      ariaLabel={active ? 'Remove from favorites' : 'Add to favorites'}
+      ariaPressed={isActive}
+      ariaLabel={isActive ? 'Remove from favorites' : 'Add to favorites'}
     >
       <i className={cls.join(' ')}/>
     </Button>

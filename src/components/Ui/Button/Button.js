@@ -1,36 +1,41 @@
-import React from "react";
-import {Link} from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom'
 import classes from './Button.css'
 
-const Button = props => {
+const Button = ({
+  parentClass, type, to, onClick,
+  disabled, ariaPressed, ariaLabel,
+  children }) => {
+
   const cls = [
     classes.Button,
-    classes[props.type]
+    classes[type]
   ]
 
-  if (props.parentClass) {
-    cls.push(props.parentClass)
+  if (parentClass) {
+    cls.push(parentClass)
   }
 
-  const isLink = !!props.to
+  const isLink = !!to
 
   return (
     !isLink
     ? <button
-        onClick={props.onClick}
+        onClick={onClick}
         className={cls.join(' ')}
-        disabled={props.disabled}
-        aria-pressed={props.ariaPressed}
-        aria-label={props.ariaLabel}
+        disabled={disabled}
+        aria-pressed={ariaPressed}
+        aria-label={ariaLabel}
       >
-        {props.children}
+        {children}
       </button>
     : <Link
-        to={props.to}
+        to={to}
         className={cls.join(' ')}
       >
-        {props.children}
+        {children}
       </Link>
   )
 }
+
 export default Button

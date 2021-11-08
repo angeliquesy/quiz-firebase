@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react'
 import classes from './AnswerItem.css'
-import {decodeString} from '../../ActiveQuiz'
+import { decodeString } from '../../ActiveQuiz'
 
-const AnswerItem = props => {
+const AnswerItem = ({ state, answer, onAnswerClick }) => {
   const cls = [classes.AnswerItem]
 
-  if (props.state) {
-    cls.push(classes[props.state])
+  if (state) {
+    cls.push(classes[state])
   }
 
   return (
     <li
       className={cls.join(' ')}
-      onClick={() => props.onAnswerClick(props.answer.id)}
+      onClick={() => onAnswerClick(answer.id)}
     >
-      { decodeString(props.answer.text) }
+      {decodeString(answer.text)}
     </li>
   )
 }

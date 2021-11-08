@@ -1,4 +1,4 @@
-import {CREATE_QUIZ, CREATE_QUIZ_QUESTION, RESET_QUIZ_CREATION} from "../types";
+import {CREATE_QUIZ, CREATE_QUIZ_QUESTION, RESET_QUIZ_CREATION} from '../types'
 import {reducerHandler} from '../helpers'
 
 const handlers = {

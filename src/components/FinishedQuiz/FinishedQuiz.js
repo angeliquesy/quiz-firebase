@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 import classes from './FinishedQuiz.css'
 import Button from '../Ui/Button/Button'
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
-const FinishedQuiz = props => {
-  const successCount = Object.keys(props.results).reduce((total, key) => {
-    if (props.results[key] === 'success') {
+const FinishedQuiz = ({ results, quiz, onRetry }) => {
+  const successCount = Object.keys(results).reduce((total, key) => {
+    if (results[key] === 'success') {
       total++
     }
 
@@ -15,11 +15,11 @@ const FinishedQuiz = props => {
   return (
     <div className={classes.FinishedQuiz}>
       <ul>
-        {props.quiz.questions.map((quizItem, index) => {
+        {quiz.questions.map((quizItem, index) => {
           const cls = [
             'fa',
-            props.results[quizItem.id] === 'error' ? 'fa-times' : 'fa-check',
-            classes[props.results[quizItem.id]]
+            results[quizItem.id] === 'error' ? 'fa-times' : 'fa-check',
+            classes[results[quizItem.id]]
           ]
           return (
           <li key={index}>
@@ -32,11 +32,11 @@ const FinishedQuiz = props => {
         }
       </ul>
 
-      <p>{successCount} out of {props.quiz.questions.length} are correct</p>
+      <p>{successCount} out of {quiz.questions.length} are correct</p>
 
       <div>
 
-        <Button onClick={props.onRetry} type='primary'>Retry</Button>
+        <Button onClick={onRetry} type='primary'>Retry</Button>
         <Button type='success' to='/'>Go to quiz list</Button>
 
       </div>

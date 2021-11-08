@@ -26,6 +26,11 @@
 
 }
 
+.Error {
+    margin: 0 0 1em 0;
+    color: #ff4500;
+}
+
 @media (max-width: 720px) {
     .Auth {
         padding-top: 50px;

@@ -1,12 +1,10 @@
-import React, {useContext, useRef, useState} from 'react';
+import React, { useContext, useState } from 'react';
 import classes from './QuizCreator.css'
 import Button from '../../components/Ui/Button/Button'
-import {createControl, validate, validateForm} from '../../form/formFramework'
+import { createControl, validate, validateForm } from '../../form/formFramework'
 import Input from '../../components/Ui/Input/Input'
 import Select from '../../components/Ui/Select/Select'
-import {CreateContext} from '../../context/create/createContext'
-
-//import {AuthContext} from '../../context/auth/authContext'
+import { CreateContext } from '../../context/create/createContext'
 
 function createOptionControl(number) {
   return createControl({
@@ -29,13 +27,17 @@ function createFormControls() {
   }
 }
 
+const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1)
+
 function QuizCreator() {
 
-  const {quiz, createQuiz, createQuizQuestion, finishCreateQuiz} = useContext(CreateContext)
+  const { quiz, createQuiz, createQuizQuestion, finishCreateQuiz } = useContext(CreateContext)
 
   const [init, setInit] = useState({
     name: '',
     isValid: false,
+    touched: false,
+    submitted: false,
   })
 
   const [state, setState] = useState({
@@ -53,7 +55,7 @@ function QuizCreator() {
   const addQuestionHandler = event => {
     event.preventDefault()
 
-    const {question, option1, option2, option3, option4} = state.formControls
+    const { question, option1, option2, option3, option4 } = state.formControls
 
     const questionItem = {
       question: question.value,
@@ -78,13 +80,9 @@ function QuizCreator() {
   }
 
   const finish = async () => {
-    try {
-      const result = !!(await finishCreateQuiz())
-      if (result) setInit({name: '', isValid: false})
-      setPosted(result)
-    } catch (e) {
-      console.error(e)
-    }
+    const result = !!(await finishCreateQuiz())
+    if (result) setInit({name: '', isValid: false, touched: false, submitted: false})
+    setPosted(result)
   }
 
   const createQuizHandler = event => {
@@ -105,7 +103,7 @@ function QuizCreator() {
     const control = {...formControls[controlName]}
 
     control.touched = true
-    control.value = value
+    control.value = capitalize(value)
     control.valid = validate(control.value, control.validation)
 
     formControls[controlName] = control
@@ -117,22 +115,18 @@ function QuizCreator() {
     })
   }
 
-  const nameHandler = e => {
-    const control = {}
-    control.touched = true
-    control.value = e.target.value
-    control.valid = validate(control.value, control.validation)
-
-    setInit({
-      ...init, isValid: control.valid
-    })
+  const nameHandler = (control, validation) => {
+    setInit(prev => ({
+      ...prev,
+      name: capitalize(control.value),
+      isValid: validate(control.value, validation),
+      touched: true
+    }))
   }
 
-  const nameRef = useRef()
-
   const addNameHandler = () => {
-    setInit(prev => ({...prev, name: nameRef.current.value}))
-    createQuiz(nameRef.current.value, localStorage.getItem('userId'))
+    setInit(prev => ({...prev, submitted: true}))
+    createQuiz(init.name, localStorage.getItem('userId'))
   }
 
   const renderControls = () => {
@@ -187,15 +181,16 @@ function QuizCreator() {
           posted
             ? <React.Fragment>
               <p>The quiz has been successfully created!</p>
-              <Button type='success' onClick={() => setPosted(false)}>Create a quiz</Button>
+              <Button type='success' onClick={() => setPosted(null)}>Create a quiz</Button>
               <Button type='primary' to='/'>Go to quiz list</Button>
             </React.Fragment>
 
             : <form onSubmit={submitHandler}>
-              {posted === false && <p>An error occurred while trying to send the form.
+              {posted === false && <p className={classes.Error}>An error occurred while trying to send the form.
                 Please check your network connection and try again.</p>}
+
               {
-                init.name
+                init.submitted
                   ? <React.Fragment>
 
                     {renderControls()}
@@ -221,11 +216,13 @@ function QuizCreator() {
                   </React.Fragment>
                   : <React.Fragment>
                     <Input
-                      innerRef={nameRef}
                       label='Enter the quiz name'
+                      valid={init.isValid}
+                      value={init.name}
+                      touched={init.touched}
                       shouldValidate={true}
                       errorMessage='The name cannot be empty'
-                      onChange={event => nameHandler(event)}
+                      onChange={event => nameHandler(event.target, {required: true})}
                     />
                     <Button
                       type='primary'

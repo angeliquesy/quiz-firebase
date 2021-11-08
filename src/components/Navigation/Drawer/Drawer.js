@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react'
 import classes from './Drawer.css'
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 import Backdrop from '../../Ui/Backdrop/Backdrop'
-import {HashLink} from 'react-router-hash-link'
 
-function Drawer({isOpen, isAuthenticated, onClose, isMobile}) {
+function Drawer({ isOpen, isAuthenticated, onClose, isMobile }) {
 
   const clickHandler = () => {
     onClose()

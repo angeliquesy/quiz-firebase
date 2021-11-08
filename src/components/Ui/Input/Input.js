@@ -1,14 +1,15 @@
 import React from 'react'
 import classes from './Input.css'
 
-function isInvalid({valid, touched, shouldValidate}) {
+function isInvalid({ valid, touched, shouldValidate }) {
   return !valid && shouldValidate && touched
 }
 
 const Input = props => {
-  const inputType = props.type || 'text'
+  const { type = 'text', label, innerRef, value, onChange, errorMessage } = props
+
   const cls = [classes.Input]
-  const htmlFor = `${inputType}-${Math.random()}`
+  const htmlFor = `${type}-${Math.random()}`
 
   if (isInvalid(props)) {
     cls.push(classes.invalid)
@@ -16,18 +17,18 @@ const Input = props => {
 
   return (
     <div className={cls.join(' ')}>
-      <label htmlFor={htmlFor}>{props.label}</label>
+      <label htmlFor={htmlFor}>{label}</label>
       <input
-        ref={props.innerRef}
-        type={inputType}
+        ref={innerRef}
+        type={type}
         id={htmlFor}
-        value={props.value}
-        onChange={props.onChange}
+        value={value}
+        onChange={onChange}
       />
 
       {
         isInvalid(props)
-          ? <span>{props.errorMessage || 'Введите верное значение'}</span>
+          ? <span>{errorMessage || 'Введите верное значение'}</span>
           : null
       }
 

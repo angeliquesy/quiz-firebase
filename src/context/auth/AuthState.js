@@ -1,9 +1,9 @@
 import React, {useReducer} from 'react'
 import axios from 'axios'
 import axiosDb from '../../axios/axios-quiz'
-import {AUTH_LOGOUT, AUTH_SUCCESS, GET_USER, EDIT_USER} from '../types'
+import {AUTH_LOGOUT, AUTH_SUCCESS, GET_USER, EDIT_USER, AUTH_ERROR} from '../types'
 import {authReducer} from './authReducer'
-import {AuthContext} from './authContext'
+import { AuthContext } from './authContext'
 
 const withCreds = query => `https://identitytoolkit.googleapis.com/v1/accounts:${query}?key=AIzaSyCPg1ppEmNlVms9f4WAtq56AjuAfLLRUOY`
 
@@ -13,7 +13,8 @@ export const AuthState = ({children}) => {
     user: {
       favs: []
     },
-    id: null
+    id: null,
+    error: null
   }
 
   const [state, dispatch] = useReducer(authReducer, initialState)
@@ -57,6 +58,13 @@ export const AuthState = ({children}) => {
     })
   }
 
+  const authError = error => {
+    dispatch({
+      type: AUTH_ERROR,
+      error
+    })
+  }
+
   const auth = async (email, password, isLogin) => {
     const authData = {
       email,
@@ -68,8 +76,18 @@ export const AuthState = ({children}) => {
       ? withCreds('signInWithPassword')
       : withCreds('signUp')
 
-    const response = await axios.post(url, authData)
-    const {localId, expiresIn, refreshToken} = response.data
+    let response
+
+    try {
+      response = await axios.post(url, authData)
+    }
+    catch(e) {
+      authError(url ? 'signIn' : 'signUp')
+    }
+
+    if (!response) return
+
+    const { localId, expiresIn, refreshToken } = response.data
 
     const secureResponse = await axios.post(
       'https://securetoken.googleapis.com/v1/token?key=AIzaSyCPg1ppEmNlVms9f4WAtq56AjuAfLLRUOY',
@@ -138,12 +156,12 @@ export const AuthState = ({children}) => {
     await axiosDb.put(`users/${id}/favs.json?auth=${token}`, favs)
   }
 
-  const {token, user, id} = state
+  const { token, user, id, error } = state
 
   return (
     <AuthContext.Provider value={{
       autoLogin, auth, autoLogout, authSuccess, logout, getUser,
-      isAuthenticated: !!id, user, token, userId: id, toggleFav
+      isAuthenticated: !!id, user, token, userId: id, toggleFav, error
     }}>
       {children}
     </AuthContext.Provider>

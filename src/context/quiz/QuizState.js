@@ -12,8 +12,8 @@ import {
 } from '../types'
 import React, {useReducer, useContext} from 'react'
 import {quizReducer} from './quizReducer'
-import {QuizContext} from './quizContext'
-import {AuthContext} from '../auth/authContext'
+import { QuizContext } from './quizContext'
+import { AuthContext } from '../auth/authContext'
 import {triviaIds} from '../../constants/triviaIds'
 
 export const QuizState = ({children}) => {
@@ -31,7 +31,7 @@ export const QuizState = ({children}) => {
 
   const [state, dispatch] = useReducer(quizReducer, initialState)
 
-  const {token} = useContext(AuthContext)
+  const { token } = useContext(AuthContext)
 
   const fetchQuizzesStart = () => dispatch({type: FETCH_QUIZZES_START})
 
@@ -47,7 +47,6 @@ export const QuizState = ({children}) => {
 
   const deleteQuiz = async id => {
     const newQuizzes = state.quizzes.filter(quiz => quiz.id !== id)
-    console.log('deleted ', id)
 
     dispatch({
       type: DELETE_QUIZ,

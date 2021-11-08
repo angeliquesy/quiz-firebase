@@ -20,23 +20,27 @@
     background: #fff;
     animation: loader 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+
 .Loader > div div:after,
 .Loader > div div:before {
-    content: " ";
+    content: '';
     position: absolute;
     display: block;
     width: 32px;
     height: 32px;
     background: #fff;
 }
+
 .Loader > div div:before {
     left: -24px;
     border-radius: 50% 0 0 50%;
 }
+
 .Loader > div div:after {
     top: -24px;
     border-radius: 50% 50% 0 0;
 }
+
 @keyframes loader {
     0% {
         transform: scale(0.95);

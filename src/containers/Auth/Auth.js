@@ -2,7 +2,7 @@ import React, {useState, useContext} from 'react';
 import classes from './Auth.css'
 import Button from '../../components/Ui/Button/Button'
 import Input from '../../components/Ui/Input/Input'
-import {AuthContext} from '../../context/auth/authContext'
+import { AuthContext } from '../../context/auth/authContext'
 
 function validateEmail(email) {
   const regExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -10,7 +10,7 @@ function validateEmail(email) {
 }
 
 function Auth() {
-  const {auth} = useContext(AuthContext)
+  const { auth, error } = useContext(AuthContext)
 
   const [state, setState] = useState({
     isFormValid: false,
@@ -128,6 +128,14 @@ function Auth() {
         <h1>Authorization</h1>
 
         <form className={classes.AuthForm} onSubmit={submitHandler}>
+
+          {error &&
+            <p className={classes.Error}>
+              {error === 'signIn'
+                ? 'The email or password is incorrect. Please enter correct email and password or sign up'
+                : 'The email is already exists. Try to sign in'}
+            </p>
+          }
 
           {renderInputs()}
 

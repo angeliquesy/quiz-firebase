@@ -1,16 +1,13 @@
-import React, {useContext, useEffect} from 'react'
-import {useParams} from 'react-router-dom'
+import React, { useContext, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import classes from './Quiz.css'
-import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
-import FinishedQuiz from "../../components/FinishedQuiz/FinishedQuiz";
-// import axios from '../../axios/axios-quiz'
+import ActiveQuiz from '../../components/ActiveQuiz/ActiveQuiz'
+import FinishedQuiz from '../../components/FinishedQuiz/FinishedQuiz'
 import Loader from '../../components/Ui/Loader/Loader'
-import {QuizContext} from '../../context/quiz/quizContext'
-
-//import {fetchQuizById, quizAnswerClick, retryQuiz} from '../../store/actions/quiz'
+import { QuizContext } from '../../context/quiz/quizContext'
 
 function Quiz() {
-  const {fetchQuizById, retryQuiz, quizAnswerClick, state} = useContext(QuizContext)
+  const { fetchQuizById, retryQuiz, quizAnswerClick, state } = useContext(QuizContext)
 
   const {
     loading,
@@ -21,7 +18,7 @@ function Quiz() {
     answerState,
   } = state
 
-  const {id} = useParams()
+  const { id } = useParams()
 
   useEffect(() => {
     fetchQuizById(id)

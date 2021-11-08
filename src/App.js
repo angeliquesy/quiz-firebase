@@ -1,17 +1,17 @@
-import React, {useContext, useEffect} from 'react';
-import Layout from "./hoc/Layout/Layout";
-import {BrowserRouter, Redirect, Route, Switch} from 'react-router-dom'
-import Quiz from "./containers/Quiz/Quiz";
-import QuizList from "./containers/QuizList/QuizList";
-import Auth from "./containers/Auth/Auth";
-import QuizCreator from "./containers/QuizCreator/QuizCreator";
+import React, { useContext, useEffect } from 'react'
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
+import Layout from './hoc/Layout/Layout'
+import Quiz from './containers/Quiz/Quiz'
+import Home from './containers/Home/Home'
+import Auth from './containers/Auth/Auth'
+import QuizCreator from './containers/QuizCreator/QuizCreator'
 import Logout from './components/Logout/Logout'
-import {AuthContext} from './context/auth/authContext'
-import {QuizState} from './context/quiz/QuizState'
-import {CreateState} from './context/create/CreateState'
+import { AuthContext } from './context/auth/authContext'
+import { QuizState } from './context/quiz/QuizState'
+import { CreateState } from './context/create/CreateState'
 
 function App() {
-  const {autoLogin, isAuthenticated} = useContext(AuthContext)
+  const { autoLogin, isAuthenticated } = useContext(AuthContext)
 
   useEffect(() => {
     autoLogin()
@@ -21,7 +21,7 @@ function App() {
     <Switch>
       <Route path='/auth' component={Auth}/>
       <Route path='/quiz/:id' component={Quiz}/>
-      <Route path='/' component={QuizList}/>
+      <Route path='/' component={Home}/>
       <Redirect to='/'/>
     </Switch>
   )
@@ -33,7 +33,7 @@ function App() {
           <Route path='/quiz-creator' component={QuizCreator}/>
           <Route path='/quiz/:id' component={Quiz}/>
           <Route path='/logout' component={Logout}/>
-          <Route path='/' component={QuizList} exact/>
+          <Route path='/' component={Home} exact/>
           <Redirect to='/'/>
         </Switch>
 

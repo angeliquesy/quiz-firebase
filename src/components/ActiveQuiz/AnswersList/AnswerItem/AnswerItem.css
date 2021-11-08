@@ -16,6 +16,7 @@
 @media (max-width: 1024px) {
     .AnswerItem:hover {
         background: rgba(0, 0, 0, 0);
+        transition: none;
     }
 }
 

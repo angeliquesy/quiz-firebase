@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react'
 import classes from './MenuToggle.css'
 
-const MenuToggle = props => {
+const MenuToggle = ({ isOpen, onToggle }) => {
   const cls = [
     classes.MenuToggle,
     'fa',
   ]
 
-  if (props.isOpen) {
+  if (isOpen) {
     cls.push('fa-times')
     cls.push(classes.open)
   }
@@ -18,8 +18,9 @@ const MenuToggle = props => {
   return (
     <i
       className={cls.join(' ')}
-      onClick={props.onToggle}
+      onClick={onToggle}
     />
   )
 }
+
 export default MenuToggle
