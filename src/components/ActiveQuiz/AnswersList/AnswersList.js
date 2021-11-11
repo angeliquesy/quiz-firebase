@@ -4,8 +4,7 @@ import AnswerItem from './AnswerItem/AnswerItem'
 
 const AnswersList = ({ answers, state, onAnswerClick }) => (
   <ul className={classes.AnswersList}>
-    { answers.map((answer, index) => {
-      return (
+    {answers.map((answer, index) => (
         <AnswerItem
           key={index}
           answer={answer}
@@ -13,7 +12,7 @@ const AnswersList = ({ answers, state, onAnswerClick }) => (
           state={state ? state[answer.id] : null}
         />
       )
-    }) }
+    )}
   </ul>
 )
 

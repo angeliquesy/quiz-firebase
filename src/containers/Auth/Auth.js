@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useContext} from 'react';
+import React, { Fragment, useState, useContext } from 'react';
 import classes from './Auth.css'
 import Button from '../../components/Ui/Button/Button'
 import Input from '../../components/Ui/Input/Input'

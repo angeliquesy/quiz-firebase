@@ -13,8 +13,7 @@ const Select = ({ label, value, options, onChange }) => {
         value={value}
         onChange={onChange}
       >
-        {options.map((option, index) => {
-          return (
+        {options.map((option, index) => (
             <option
               value={option.value}
               key={index}
@@ -22,7 +21,7 @@ const Select = ({ label, value, options, onChange }) => {
               {option.text}
             </option>
           )
-        })}
+        )}
       </select>
     </div>
   )

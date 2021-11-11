@@ -4,7 +4,7 @@ import {reducerHandler} from '../helpers'
 const handlers = {
   [AUTH_SUCCESS]: (state, {token, id}) => ({...state, token, id}),
   [AUTH_ERROR]: (state, {error}) => ({...state, error}),
-  [AUTH_LOGOUT]: (state) => ({...state, user: {favs: []}, id: null, token: null}),
+  [AUTH_LOGOUT]: (state) => ({...state, user: {favs: []}, id: null, token: null, error: null}),
   [GET_USER]: (state, {user}) => ({...state, user}),
   [EDIT_USER]: (state, {payload}) => ({...state, user: {...state.user, favs: payload}}),
   DEFAULT: state => state

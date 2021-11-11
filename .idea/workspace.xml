@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="50605c50-3633-440f-9b1c-3b14bdc53ddf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ActiveQuiz/ActiveQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ActiveQuiz/ActiveQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Logout/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Logout/Logout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ActiveQuiz/AnswersList/AnswersList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ActiveQuiz/AnswersList/AnswersList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/QuizList/QuizListItem/QuizListItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuizList/QuizListItem/QuizListItem.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/QuizList/QuizListItem/QuizListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuizList/QuizListItem/QuizListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Ui/Fav/Fav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Fav/Fav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Ui/Fav/Fav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Fav/Fav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Ui/Input/Input.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Input/Input.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Ui/Input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Input/Input.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Auth/Auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Auth/Auth.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Ui/Select/Select.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Select/Select.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Auth/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Auth/Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Quiz/Quiz.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Quiz/Quiz.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Quiz/Quiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Quiz/Quiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/auth/AuthState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/auth/AuthState.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/auth/authReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/auth/authReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/create/CreateState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/create/CreateState.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/quiz/QuizState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/quiz/QuizState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hoc/Layout/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/frontend-questions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/trivia.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/registerServiceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/registerServiceWorker.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +51,7 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>

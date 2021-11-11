@@ -11,10 +11,11 @@ import {
   QUIZ_SET_STATE
 } from '../types'
 import React, {useReducer, useContext} from 'react'
-import {quizReducer} from './quizReducer'
+import { quizReducer } from './quizReducer'
 import { QuizContext } from './quizContext'
 import { AuthContext } from '../auth/authContext'
-import {triviaIds} from '../../constants/triviaIds'
+import { triviaIds } from '../../constants/triviaIds'
+import { db } from '../../constants/db-paths'
 
 export const QuizState = ({ children }) => {
 
@@ -53,14 +54,14 @@ export const QuizState = ({ children }) => {
       payload: newQuizzes
     })
 
-    await axios.delete(`quizes/${id}.json?auth=${token}`)
+    await axios.delete(`${db.quizzes}/${id}.json?auth=${token}`)
   }
 
   const fetchQuizById = async quizId => {
     fetchQuizzesStart()
 
     try {
-      const response = await axios.get(`quizes/${quizId}.json`)
+      const response = await axios.get(`${db.quizzes}/${quizId}.json`)
       const quiz = response.data
 
       for (let i of triviaIds) {
@@ -115,12 +116,14 @@ export const QuizState = ({ children }) => {
       const timeout = window.setTimeout(() => {
         if (isQuizFinished(state)) {
           finishQuiz()
-        } else {
+        }
+    else {
           quizNextQuestion(state.activeQuestion + 1)
         }
         window.clearTimeout(timeout)
       }, 1000)
-    } else {
+    }
+    else {
       results[question.id] = 'error'
       quizSetState({[answerId]: 'error'}, results)
     }
@@ -134,7 +137,7 @@ export const QuizState = ({ children }) => {
     fetchQuizzesStart()
 
     try {
-      const response = await axios.get('quizes.json')
+      const response = await axios.get(`${db.quizzes}.json`)
 
       const quizzes = []
 

@@ -4,19 +4,18 @@ import { NavLink } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 import Backdrop from '../../Ui/Backdrop/Backdrop'
 
-const Drawer = ({ isOpen, isAuthenticated, onClose, isMobile }) => {
+const Drawer = ({isOpen, isAuthenticated, onClose, isMobile}) => {
 
   const clickHandler = () => {
     onClose()
   }
 
   const renderLinks = links => {
-    return links.map((link, index) => {
-      return (
+    return links.map((link, index) => (
         <li key={index}>
           {
             !link.hash
-            ? <NavLink
+              ? <NavLink
                 to={link.to}
                 exact={link.exact}
                 activeClassName={classes.active}
@@ -27,11 +26,9 @@ const Drawer = ({ isOpen, isAuthenticated, onClose, isMobile }) => {
               </NavLink>
               : <HashLink to={link.to} smooth onClick={clickHandler}>{link.label}</HashLink>
           }
-
-
         </li>
       )
-    })
+    )
   }
 
   const cls = [classes.Drawer]
@@ -49,7 +46,8 @@ const Drawer = ({ isOpen, isAuthenticated, onClose, isMobile }) => {
     links.push({to: '/#my-quizzes', label: '#My quizzes', hash: true, exact: true})
     links.push({to: '/logout', label: 'Sign out', exact: false, icon: 'fa-sign-out'})
 
-  } else {
+  }
+  else {
     links.push({to: '/auth', label: 'Sign in', exact: false, icon: 'fa-user-o'})
   }
 

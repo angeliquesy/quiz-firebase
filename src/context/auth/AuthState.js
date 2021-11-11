@@ -1,9 +1,10 @@
 import React, {useReducer} from 'react'
 import axios from 'axios'
 import axiosDb from '../../axios/axios-quiz'
-import {AUTH_LOGOUT, AUTH_SUCCESS, GET_USER, EDIT_USER, AUTH_ERROR} from '../types'
-import {authReducer} from './authReducer'
+import { AUTH_LOGOUT, AUTH_SUCCESS, GET_USER, EDIT_USER, AUTH_ERROR } from '../types'
+import { authReducer } from './authReducer'
 import { AuthContext } from './authContext'
+import { db } from '../../constants/db-paths'
 
 const withCreds = query => `https://identitytoolkit.googleapis.com/v1/accounts:${query}?key=AIzaSyCPg1ppEmNlVms9f4WAtq56AjuAfLLRUOY`
 
@@ -41,11 +42,13 @@ export const AuthState = ({ children }) => {
 
     if (!id) {
       logout()
-    } else {
+    } 
+    else {
       const expirationDate = new Date(localStorage.getItem('expirationDate'))
       if (expirationDate <= new Date()) {
         logout()
-      } else {
+      } 
+      else {
         authSuccess(token, id)
         autoLogout((expirationDate.getTime() - new Date().getTime()) / 1000)
       }
@@ -111,7 +114,7 @@ export const AuthState = ({ children }) => {
   }
 
   const addUser = async (token, id) => {
-    await axiosDb.put(`users/${id}.json?auth=${token}`, {quizzes: 1})
+    await axiosDb.put(`${db.users}/${id}.json?auth=${token}`, {quizzes: 1})
   }
 
   const getUser = async () => {
@@ -120,7 +123,7 @@ export const AuthState = ({ children }) => {
 
     if (!token) return
 
-    const response = await axiosDb.get(`users/${id}.json?auth=${token}`)
+    const response = await axiosDb.get(`${db.users}/${id}.json?auth=${token}`)
 
     if (response.data) {
       dispatch({
@@ -128,7 +131,8 @@ export const AuthState = ({ children }) => {
         user: response.data
       })
 
-    } else {
+    } 
+    else {
       addUser(token, id)
       getUser()
     }
@@ -156,7 +160,7 @@ export const AuthState = ({ children }) => {
       payload: favs
     })
 
-    await axiosDb.put(`users/${id}/favs.json?auth=${token}`, favs)
+    await axiosDb.put(`${db.users}/${id}/favs.json?auth=${token}`, favs)
   }
 
   const { token, user, id, error } = state
