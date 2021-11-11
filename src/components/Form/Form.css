@@ -1,0 +1,25 @@
+.Form {
+    background: #eee;
+    color: #000000;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.Fieldset > *:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.Footer {
+    margin-top: 20px;
+}
+
+.FooterHigher {
+    margin-top: 15px;
+}
+
+.Error {
+    margin: 0 0 1em 0;
+    color: #ff4500;
+    white-space: pre-wrap;
+}

@@ -21,7 +21,7 @@ function App() {
     <Switch>
       <Route path='/auth' component={Auth}/>
       <Route path='/quiz/:id' component={Quiz}/>
-      <Route path='/' component={Home}/>
+      <Route path='/' component={Home} exact/>
       <Redirect to='/'/>
     </Switch>
   )

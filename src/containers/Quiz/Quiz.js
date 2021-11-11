@@ -6,7 +6,7 @@ import FinishedQuiz from '../../components/FinishedQuiz/FinishedQuiz'
 import Loader from '../../components/Ui/Loader/Loader'
 import { QuizContext } from '../../context/quiz/quizContext'
 
-function Quiz() {
+const Quiz = () => {
   const { fetchQuizById, retryQuiz, quizAnswerClick, state } = useContext(QuizContext)
 
   const {
@@ -28,7 +28,7 @@ function Quiz() {
 
   return (
     <div className={classes.Quiz}>
-      <div className={classes.QuizWrapper}>
+      <div className={classes.Wrapper}>
         <h1>Answer all the questions</h1>
         {
           loading || !quiz

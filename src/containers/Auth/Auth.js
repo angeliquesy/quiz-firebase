@@ -1,15 +1,16 @@
-import React, {useState, useContext} from 'react';
+import React, {Fragment, useState, useContext} from 'react';
 import classes from './Auth.css'
 import Button from '../../components/Ui/Button/Button'
 import Input from '../../components/Ui/Input/Input'
 import { AuthContext } from '../../context/auth/authContext'
+import Form from '../../components/Form/Form'
 
 function validateEmail(email) {
   const regExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return regExp.test(String(email).toLowerCase());
 }
 
-function Auth() {
+const Auth = () => {
   const { auth, error } = useContext(AuthContext)
 
   const [state, setState] = useState({
@@ -58,7 +59,7 @@ function Auth() {
     )
   }
 
-  const submitHandler = (e) => {
+  const submitHandler = e => {
     e.preventDefault()
   }
 
@@ -127,33 +128,34 @@ function Auth() {
       <div>
         <h1>Authorization</h1>
 
-        <form className={classes.AuthForm} onSubmit={submitHandler}>
+        <Form
+          onSubmit={submitHandler}
+          errorText={error === 'signIn'
+            ? 'The email or password is incorrect.\nPlease enter correct email and password or sign up'
+            : 'The email already exists. Try to sign in'}
+          errorCondition={error}
+        >
 
-          {error &&
-            <p className={classes.Error}>
-              {error === 'signIn'
-                ? 'The email or password is incorrect. Please enter correct email and password or sign up'
-                : 'The email is already exists. Try to sign in'}
-            </p>
-          }
+          <Fragment>
 
-          {renderInputs()}
+            {renderInputs()}
+          </Fragment>
 
-          <Button type='success' onClick={loginHandler}
-                  disabled={!state.isFormValid}
-                  parentClass={classes.AuthFormButton}
-          >
-            Sign in
-          </Button>
+          <Fragment>
+            <Button type='success' onClick={loginHandler}
+                    disabled={!state.isFormValid}
+            >
+              Sign in
+            </Button>
 
-          <Button type='primary' onClick={registerHandler}
-                  disabled={!state.isFormValid}
-                  parentClass={classes.AuthFormButton}
-          >
-            Sign up
-          </Button>
+            <Button type='primary' onClick={registerHandler}
+                    disabled={!state.isFormValid}
+            >
+              Sign up
+            </Button>
+          </Fragment>
 
-        </form>
+        </Form>
 
       </div>
     </div>

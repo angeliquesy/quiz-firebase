@@ -1,10 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 import classes from './QuizCreator.css'
 import Button from '../../components/Ui/Button/Button'
 import { createControl, validate, validateForm } from '../../form/formFramework'
 import Input from '../../components/Ui/Input/Input'
 import Select from '../../components/Ui/Select/Select'
 import { CreateContext } from '../../context/create/createContext'
+import Form from '../../components/Form/Form'
 
 function createOptionControl(number) {
   return createControl({
@@ -29,7 +30,7 @@ function createFormControls() {
 
 const capitalize = str => str.charAt(0).toUpperCase() + str.slice(1)
 
-function QuizCreator() {
+const QuizCreator = () => {
 
   const { quiz, createQuiz, createQuizQuestion, finishCreateQuiz } = useContext(CreateContext)
 
@@ -134,7 +135,7 @@ function QuizCreator() {
       const control = state.formControls[controlName]
 
       return (
-        <React.Fragment key={index}>
+        <Fragment key={index}>
           <Input
             label={control.label}
             value={control.value}
@@ -145,7 +146,7 @@ function QuizCreator() {
             onChange={event => changeHandler(event.target.value, controlName)}
           />
           {index === 0 ? <hr/> : null}
-        </React.Fragment>
+        </Fragment>
       )
     })
   }
@@ -179,64 +180,72 @@ function QuizCreator() {
 
         {
           posted
-            ? <React.Fragment>
+            ? <Fragment>
               <p>The quiz has been successfully created!</p>
               <Button type='success' onClick={() => setPosted(null)}>Create a quiz</Button>
               <Button type='primary' to='/'>Go to quiz list</Button>
-            </React.Fragment>
+            </Fragment>
 
-            : <form onSubmit={submitHandler}>
-              {posted === false && <p className={classes.Error}>An error occurred while trying to send the form.
-                Please check your network connection and try again.</p>}
+            : <Form
+                onSubmit={submitHandler}
+                errorText={'An error occurred while trying to send the form.\nPlease check your network connection and try again.'}
+                errorCondition={posted === false}
+              >
 
               {
                 init.submitted
-                  ? <React.Fragment>
+                  ? <Fragment>
 
-                    {renderControls()}
+                      <Fragment>
+                        {renderControls()}
+                        {select}
+                      </Fragment>
 
-                    {select}
+                      <Fragment>
+                        <Button
+                          type='primary'
+                          onClick={addQuestionHandler}
+                          disabled={!state.isFormValid}
+                        >
+                          Add question
+                        </Button>
+                        <Button
+                          type='success'
+                          onClick={createQuizHandler}
+                          disabled={quiz.questions.length === 0}
+                        >
+                          Create a quiz
+                        </Button>
+                      </Fragment>
 
-                    <Button
-                      type='primary'
-                      onClick={addQuestionHandler}
-                      disabled={!state.isFormValid}
-                    >
-                      Add question
-                    </Button>
+                    </Fragment>
+                  : <Fragment>
 
-                    <Button
-                      type='success'
-                      onClick={createQuizHandler}
-                      disabled={quiz.questions.length === 0}
-                    >
-                      Create a quiz
-                    </Button>
+                      <Fragment>
+                        <Input
+                          label='Enter the quiz name'
+                          valid={init.isValid}
+                          value={init.name}
+                          touched={init.touched}
+                          shouldValidate={true}
+                          errorMessage='The name cannot be empty'
+                          onChange={event => nameHandler(event.target, {required: true})}
+                        />
+                      </Fragment>
 
-                  </React.Fragment>
-                  : <React.Fragment>
-                    <Input
-                      label='Enter the quiz name'
-                      valid={init.isValid}
-                      value={init.name}
-                      touched={init.touched}
-                      shouldValidate={true}
-                      errorMessage='The name cannot be empty'
-                      onChange={event => nameHandler(event.target, {required: true})}
-                    />
-                    <Button
-                      type='primary'
-                      onClick={addNameHandler}
-                      disabled={!init.isValid}
-                    >
-                      Continue
-                    </Button>
-                  </React.Fragment>
+                      <Fragment>
+                        <Button
+                          type='primary'
+                          onClick={addNameHandler}
+                          disabled={!init.isValid}
+                        >
+                          Continue
+                        </Button>
+                      </Fragment>
 
+                  </Fragment>
               }
-
-            </form>
-
+            </Form>
         }
       </div>
     </div>

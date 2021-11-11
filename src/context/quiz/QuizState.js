@@ -16,7 +16,7 @@ import { QuizContext } from './quizContext'
 import { AuthContext } from '../auth/authContext'
 import {triviaIds} from '../../constants/triviaIds'
 
-export const QuizState = ({children}) => {
+export const QuizState = ({ children }) => {
 
   const initialState = {
     quizzes: [],

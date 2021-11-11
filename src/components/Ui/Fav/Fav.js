@@ -5,14 +5,6 @@ import Button from '../Button/Button'
 const Fav = ({ parentClass, active, disabled, onClick, icon = 'star' }) => {
 
   const [isActive, setIsActive] = useState(active)
-  const cls = ['fa']
-
-  if (isActive) {
-    cls.push(`fa-${icon}`)
-  }
-  else {
-    cls.push(`fa-${icon}-o`)
-  }
 
   const clickHandler = () => {
     setIsActive(prev => !prev)
@@ -28,7 +20,8 @@ const Fav = ({ parentClass, active, disabled, onClick, icon = 'star' }) => {
       ariaPressed={isActive}
       ariaLabel={isActive ? 'Remove from favorites' : 'Add to favorites'}
     >
-      <i className={cls.join(' ')}/>
+      <i className={`fa fa-${icon}-o`}/>
+      <i className={`fa fa-${icon}`}/>
     </Button>
   )
 }

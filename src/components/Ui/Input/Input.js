@@ -6,10 +6,12 @@ function isInvalid({ valid, touched, shouldValidate }) {
 }
 
 const Input = props => {
-  const { type = 'text', label, innerRef, value, onChange, errorMessage } = props
+  const { parentClass, type = 'text', label, innerRef, value, onChange, errorMessage } = props
 
   const cls = [classes.Input]
   const htmlFor = `${type}-${Math.random()}`
+
+  if (parentClass) cls.push(parentClass)
 
   if (isInvalid(props)) {
     cls.push(classes.invalid)

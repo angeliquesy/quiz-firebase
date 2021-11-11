@@ -2,7 +2,7 @@ import React from 'react'
 import classes from './ActiveQuiz.css'
 import AnswersList from './AnswersList/AnswersList'
 
-export const decodeString = str => {
+export function decodeString (str) {
   const values = {
     '&quot;': '"',
     '&pi;': 'π',

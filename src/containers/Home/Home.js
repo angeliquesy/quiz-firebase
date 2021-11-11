@@ -8,7 +8,7 @@ import { QuizContext } from '../../context/quiz/quizContext'
 import { AuthContext } from '../../context/auth/authContext'
 import { triviaIds } from '../../constants/triviaIds'
 
-function Home() {
+const Home = () => {
 
   const { isAuthenticated, userId, getUser, user } = useContext(AuthContext)
   const { fetch, state, clearLoading, error } = useContext(QuizContext)
@@ -20,9 +20,7 @@ function Home() {
 
   useEffect(() => {
     fetch()
-
-    if (isAuthenticated) getUser()
-
+    getUser()
 
     return () => {
       clearLoading()
@@ -31,10 +29,6 @@ function Home() {
 
   const filterQuizzes = () => {
     quizzes.forEach((quiz) => {
-      for (let i of triviaIds) {
-        if (quiz.id === i) return
-      }
-
       if (quiz.createdBy === userId) {
         myQuizzes.push(quiz)
       }
@@ -59,6 +53,8 @@ function Home() {
     else {
       filteredQuizzes = quizzes
     }
+
+    filteredQuizzes = filteredQuizzes.filter(quiz => quiz.id !== triviaIds[0] && quiz.id !== triviaIds[1])
 
     return (
       <Fragment>

@@ -7,7 +7,7 @@ import { AuthContext } from './authContext'
 
 const withCreds = query => `https://identitytoolkit.googleapis.com/v1/accounts:${query}?key=AIzaSyCPg1ppEmNlVms9f4WAtq56AjuAfLLRUOY`
 
-export const AuthState = ({children}) => {
+export const AuthState = ({ children }) => {
   const initialState = {
     token: null,
     user: {
@@ -26,6 +26,7 @@ export const AuthState = ({children}) => {
   }
 
   const logout = () => {
+    localStorage.removeItem('token')
     localStorage.removeItem('userId')
     localStorage.removeItem('expirationDate')
 
@@ -82,7 +83,7 @@ export const AuthState = ({children}) => {
       response = await axios.post(url, authData)
     }
     catch(e) {
-      authError(url ? 'signIn' : 'signUp')
+      authError(isLogin ? 'signIn' : 'signUp')
     }
 
     if (!response) return
@@ -116,6 +117,8 @@ export const AuthState = ({children}) => {
   const getUser = async () => {
     const token = localStorage.getItem('token')
     const id = localStorage.getItem('userId')
+
+    if (!token) return
 
     const response = await axiosDb.get(`users/${id}.json?auth=${token}`)
 

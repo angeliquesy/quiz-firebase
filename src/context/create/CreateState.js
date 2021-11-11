@@ -5,7 +5,7 @@ import {createReducer} from './createReducer'
 import { CreateContext } from './createContext'
 import { AuthContext } from '../auth/authContext'
 
-export const CreateState = ({children}) => {
+export const CreateState = ({ children }) => {
   const initialState = {
     quiz: {
       name: '',

@@ -29,9 +29,9 @@ const QuizListItem = ({ quiz, isAuthenticated, areMine, user, hasFav }) => {
   return (
     <li className={classes.QuizListItem}>
       {
-          <NavLink to={removed.includes(quiz.id) ? '#' : '/quiz/' + quiz.id}>
-            <span className={classes.QuizListItemName}>{quiz.name}</span>
-          </NavLink>
+        <NavLink to={removed.includes(quiz.id) ? '#' : '/quiz/' + quiz.id}>
+          <span className={classes.Title}>{quiz.name}</span>
+        </NavLink>
       }
 
       {
@@ -43,21 +43,21 @@ const QuizListItem = ({ quiz, isAuthenticated, areMine, user, hasFav }) => {
               <Fragment>
                 {
                   areMine &&
-                  <Button parentClass={classes.QuizListItemIcon} ariaLabel='Delete quiz' type='icon'
+                  <Button parentClass={classes.Icon} ariaLabel='Delete quiz' type='icon'
                           onClick={() => removeQuiz(quiz.id)}>
                     <i className='fa fa-trash'/>
                   </Button>
                 }
 
                 <Fav
-                  parentClass={classes.QuizListItemIcon}
+                  parentClass={classes.Icon}
                   onClick={() => toggleFav(quiz.id)}
                   active={user && user.favs ? hasFav(quiz.id) : false}
                 />
               </Fragment>
               : <Fragment>
                 <span>deleting...</span>
-                <Button parentClass={classes.QuizListItemIcon} ariaLabel='Delete quiz' type='icon'
+                <Button parentClass={classes.Icon} ariaLabel='Delete quiz' type='icon'
                         onClick={() => recoverQuiz(quiz.id)} ariaPressed>
                   <i className='fa fa-undo'/>
                 </Button>

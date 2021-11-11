@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 import Backdrop from '../../Ui/Backdrop/Backdrop'
 
-function Drawer({ isOpen, isAuthenticated, onClose, isMobile }) {
+const Drawer = ({ isOpen, isAuthenticated, onClose, isMobile }) => {
 
   const clickHandler = () => {
     onClose()
