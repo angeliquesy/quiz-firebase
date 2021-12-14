@@ -32,7 +32,7 @@ const FinishedQuiz = ({ results, quiz, onRetry }) => {
         }
       </ul>
 
-      <p>{successCount} out of {quiz.questions.length} are correct</p>
+      <p>{successCount} out of the {quiz.questions.length} are correct</p>
 
       <div>
 

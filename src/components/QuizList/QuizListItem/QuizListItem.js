@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useRef, useState } from 'react'
+import React, { Fragment, useContext, useRef, useState, useEffect } from 'react'
 import classes from './QuizListItem.css'
 import {NavLink} from 'react-router-dom'
 import Button from '../../Ui/Button/Button'
@@ -11,25 +11,26 @@ const QuizListItem = ({ quiz, isAuthenticated, areMine, user, hasFav }) => {
   const { toggleFav } = useContext(AuthContext)
   const { deleteQuiz } = useContext(QuizContext)
 
-  const [removed, setRemoved] = useState([])
+  const [removed, setRemoved] = useState(false)
+
+  const ref = useRef(null)
 
   const timeout = useRef(null)
 
   const removeQuiz = id => {
-    setRemoved(prev => [...prev, id])
+    setRemoved(true)
     timeout.current = setTimeout(() => deleteQuiz(id), 5000)
   }
 
-  const recoverQuiz = id => {
+  const recoverQuiz = () => {
     clearTimeout(timeout.current)
-    const newRemoved = removed.filter(i => i !== id)
-    setRemoved(newRemoved)
+    setRemoved(false)
   }
 
   return (
-    <li className={classes.QuizListItem}>
+    <li className={classes.QuizListItem} ref={ref}>
       {
-        <NavLink to={removed.includes(quiz.id) ? '#' : '/quiz/' + quiz.id}>
+        <NavLink to={removed ? '#' : '/quiz/' + quiz.id}>
           <span className={classes.Title}>{quiz.name}</span>
         </NavLink>
       }
@@ -38,7 +39,7 @@ const QuizListItem = ({ quiz, isAuthenticated, areMine, user, hasFav }) => {
         isAuthenticated &&
         <div>
           {
-            !removed.includes(quiz.id)
+            !removed
               ?
               <Fragment>
                 {

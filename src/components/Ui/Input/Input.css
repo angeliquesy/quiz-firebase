@@ -3,6 +3,7 @@
     padding: 0;
     display: block;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 .Input input {
@@ -16,12 +17,45 @@
     transition: all 0.3s ease-in-out;
 }
 
-.Input span {
+.Error {
+    margin-bottom: -5px;
+    display: flex;
     color: #f01f30;
     font-size: 12px;
     font-weight: bold;
+
+    opacity: 0;
+    height: 0;
+    transition: height 0.3s, opacity 0.3s;
+}
+
+.Error.active {
+    opacity: 1;
+    transition: height 0.3s, opacity 0.3s;
 }
 
 .Input.invalid label {
     color: #f01f30;
+}
+
+.ErrorEnter {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.ErrorEnterActive {
+    max-height: 100%;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in;
+}
+
+.ErrorExit {
+    opacity: 1;
+}
+
+.ErrorExitActive {
+    max-height: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, max-height 0.3s ease-out;
 }

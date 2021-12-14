@@ -19,7 +19,7 @@
     opacity: 1;
 }
 
-.Fav[aria-pressed="true"] i:nth-of-type(1) {
+.Fav[aria-pressed="true"] i:first-of-type {
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     transform: scale(2.2);
     opacity: 0;

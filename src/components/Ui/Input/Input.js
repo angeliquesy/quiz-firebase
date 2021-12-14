@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import classes from './Input.css'
 
 function isInvalid({ valid, touched, shouldValidate }) {
@@ -6,14 +6,17 @@ function isInvalid({ valid, touched, shouldValidate }) {
 }
 
 const Input = props => {
-  const { parentClass, type = 'text', label, innerRef, value, onChange, errorMessage } = props
+  const { parentClass, type = 'text', label, autofocus, innerRef, value, onChange, errorMessage } = props
+
+  const invalid= isInvalid(props)
+  const errorRef = useRef(null)
 
   const cls = [classes.Input]
   const htmlFor = `${type}-${Math.random()}`
 
   if (parentClass) cls.push(parentClass)
 
-  if (isInvalid(props)) {
+  if (invalid) {
     cls.push(classes.invalid)
   }
 
@@ -25,14 +28,17 @@ const Input = props => {
         type={type}
         id={htmlFor}
         value={value}
+        autoFocus={autofocus}
         onChange={onChange}
       />
 
-      {
-        isInvalid(props)
-          ? <span>{errorMessage || 'Введите верное значение'}</span>
-          : null
-      }
+      <span
+        className={invalid ? classes.Error + ' ' + classes.active : classes.Error}
+        ref={errorRef}
+        style={invalid ? {height: `${errorRef.current.scrollHeight}px`} : null}
+      >
+        {errorMessage || 'Enter correct value'}
+      </span>
 
     </div>
   )

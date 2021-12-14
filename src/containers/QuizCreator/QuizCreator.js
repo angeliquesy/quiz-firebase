@@ -182,7 +182,7 @@ const QuizCreator = () => {
           posted
             ? <Fragment>
               <p>The quiz has been successfully created!</p>
-              <Button type='success' onClick={() => setPosted(null)}>Create a quiz</Button>
+              <Button type='success' onClick={() => setPosted(null)}>Create another quiz</Button>
               <Button type='primary' to='/'>Go to quiz list</Button>
             </Fragment>
 
@@ -226,6 +226,7 @@ const QuizCreator = () => {
                           label='Enter the quiz name'
                           valid={init.isValid}
                           value={init.name}
+                          autofocus={true}
                           touched={init.touched}
                           shouldValidate={true}
                           errorMessage='The name cannot be empty'

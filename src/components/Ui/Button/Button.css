@@ -68,13 +68,13 @@
     color: #fff;
 }
 
-/*.icon i {*/
-/*    transition: opacity 0.3s;*/
-/*}*/
+.icon i {
+    transition: opacity 0.3s;
+}
 
-/*.icon:hover i {*/
-/*    opacity: 0.8;*/
-/*}*/
+.icon:hover i {
+    opacity: 0.8;
+}
 
 .gradient {
     min-width: 27px;

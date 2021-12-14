@@ -54,7 +54,7 @@ export const QuizState = ({ children }) => {
       payload: newQuizzes
     })
 
-    await axios.delete(`${db.quizzes}/${id}.json?auth=${token}`)
+    //await axios.delete(`${db.quizzes}/${id}.json?auth=${token}`)
   }
 
   const fetchQuizById = async quizId => {

@@ -30,9 +30,13 @@
     justify-content: center;
 }
 
-.Home .Sorting i {
+.Sorting i {
     color: #ffffff;
     font-size: 12px;
+}
+
+.Sorting button[aria-pressed="true"] i:first-of-type {
+    transform: none;
 }
 
 .Sorting span {

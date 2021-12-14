@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react'
+import React, { useReducer } from 'react'
 import axios from 'axios'
 import axiosDb from '../../axios/axios-quiz'
 import { AUTH_LOGOUT, AUTH_SUCCESS, GET_USER, EDIT_USER, AUTH_ERROR } from '../types'
@@ -42,12 +42,12 @@ export const AuthState = ({ children }) => {
 
     if (!id) {
       logout()
-    } 
+    }
     else {
       const expirationDate = new Date(localStorage.getItem('expirationDate'))
       if (expirationDate <= new Date()) {
         logout()
-      } 
+      }
       else {
         authSuccess(token, id)
         autoLogout((expirationDate.getTime() - new Date().getTime()) / 1000)
@@ -131,7 +131,7 @@ export const AuthState = ({ children }) => {
         user: response.data
       })
 
-    } 
+    }
     else {
       addUser(token, id)
       getUser()

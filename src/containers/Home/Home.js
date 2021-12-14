@@ -15,7 +15,7 @@ const Home = () => {
   const { quizzes, loading } = state
 
   const [sorted, setSorted] = useState(false)
-  const myQuizzes = []
+  let myQuizzes = []
   let filteredQuizzes = []
 
   useEffect(() => {
@@ -55,6 +55,9 @@ const Home = () => {
     }
 
     filteredQuizzes = filteredQuizzes.filter(quiz => quiz.id !== triviaIds[0] && quiz.id !== triviaIds[1])
+    myQuizzes = myQuizzes.filter(quiz => quiz.id !== triviaIds[0] && quiz.id !== triviaIds[1])
+
+    console.log(myQuizzes)
 
     return (
       <Fragment>
