@@ -39,16 +39,16 @@ const Drawer = ({isOpen, isAuthenticated, onClose, isMobile}) => {
 
   const links = [
     {to: '/', label: 'Home', exact: true},
-    {to: '/about', label: 'About'}
   ]
 
   if (isAuthenticated) {
-    links.push({to: '/quiz-creator', label: 'Create a quiz'})
+    links.push({to: '/quiz-creator', label: 'Create a quiz', exact: false})
     links.push({to: '/#my-quizzes', label: '#My quizzes', hash: true, exact: true})
-    links.push({to: '/logout', label: 'Sign out', icon: 'fa-sign-out'})
-
+    links.push({to: '/about', label: 'About',  exact: false})
+    links.push({to: '/logout', label: 'Sign out', icon: 'fa-sign-out',  exact: false})
   }
   else {
+    links.push({to: '/about', label: 'About',  exact: false})
     links.push({to: '/auth', label: 'Sign in', exact: false, icon: 'fa-user-o'})
   }
 

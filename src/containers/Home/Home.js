@@ -100,7 +100,7 @@ const Home = () => {
                   hasFav={hasFav}
                   areMine
               />
-              : <Button to='/quiz-creator' type='success'>Create a quiz</Button>
+              : <Button to='/quiz-creator' parentClass={classes.CreateButton} type='success'>Create a quiz</Button>
             }
 
           </Fragment>
@@ -123,7 +123,6 @@ const Home = () => {
       </div>
     </div>
   )
-
 }
 
-export default Home;
+export default Home
