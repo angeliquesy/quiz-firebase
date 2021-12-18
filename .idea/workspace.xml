@@ -9,32 +9,11 @@
       <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.9231f928.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/css/main.9231f928.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.92fc22b5.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.92fc22b5.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ActiveQuiz/AnswersList/AnswerItem/AnswerItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ActiveQuiz/AnswersList/AnswerItem/AnswerItem.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FinishedQuiz/FinishedQuiz.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FinishedQuiz/FinishedQuiz.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FinishedQuiz/FinishedQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FinishedQuiz/FinishedQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navigation/MenuToggle/MenuToggle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/MenuToggle/MenuToggle.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/QuizList/QuizList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuizList/QuizList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/QuizList/QuizListItem/QuizListItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuizList/QuizListItem/QuizListItem.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/QuizList/QuizListItem/QuizListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuizList/QuizListItem/QuizListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Ui/Backdrop/Backdrop.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Backdrop/Backdrop.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Ui/Backdrop/Backdrop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Backdrop/Backdrop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Ui/Button/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Button/Button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Ui/Select/Select.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Select/Select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Auth/Auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Auth/Auth.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Home/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Quiz/Quiz.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Quiz/Quiz.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/quiz/QuizState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/quiz/QuizState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useIsMobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useIsMobile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.748aa678.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.748aa678.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.a3694532.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/main.a3694532.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/About/About.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/About/About.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/About/About.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

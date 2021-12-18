@@ -1,7 +1,7 @@
 .About {
     display: flex;
     justify-content: center;
-    padding: 100px 16px 100px 16px;
+    padding: 100px 16px 16px 16px;
     flex-grow: 1;
     width: 100%;
     box-sizing: border-box;
@@ -12,4 +12,10 @@
     max-width: 600px;
     font-size: 22px;
     line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .Home {
+        padding-top: 50px;
+    }
 }
