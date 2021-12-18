@@ -8,8 +8,8 @@
 
 @media (hover: hover) , screen and (min-width:0\0), (min--moz-device-pixel-ratio:0) {
     .AnswerItem:hover {
-        background: rgba(255, 255, 255, .2);
-        transition: background .3s ease-in-out;
+        background: rgba(255, 255, 255, 0.2);
+        transition: background 0.3s ease-in-out;
     }
 }
 
@@ -21,11 +21,11 @@
 }
 
 .AnswerItem.success {
-    background: rgba(161, 240, 69, .7);
+    background: rgba(161, 240, 69, 0.7);
 }
 
 .AnswerItem.error {
-    background: rgba(240, 87, 108, .7);
+    background: rgba(240, 87, 108, 0.7);
 }
 
 

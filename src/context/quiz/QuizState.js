@@ -10,10 +10,9 @@ import {
   QUIZ_RETRY,
   QUIZ_SET_STATE
 } from '../types'
-import React, {useReducer, useContext} from 'react'
+import React, { useReducer } from 'react'
 import { quizReducer } from './quizReducer'
 import { QuizContext } from './quizContext'
-import { AuthContext } from '../auth/authContext'
 import { triviaIds } from '../../constants/triviaIds'
 import { db } from '../../constants/db-paths'
 
@@ -32,7 +31,7 @@ export const QuizState = ({ children }) => {
 
   const [state, dispatch] = useReducer(quizReducer, initialState)
 
-  const { token } = useContext(AuthContext)
+  const token = localStorage.getItem('token')
 
   const fetchQuizzesStart = () => dispatch({type: FETCH_QUIZZES_START})
 
@@ -48,13 +47,17 @@ export const QuizState = ({ children }) => {
 
   const deleteQuiz = async id => {
     const newQuizzes = state.quizzes.filter(quiz => quiz.id !== id)
+    const storage = localStorage.getItem('deleted') || ''
+
+    if (storage !== id)
+      localStorage.setItem('deleted', storage + ' ' + id)
 
     dispatch({
       type: DELETE_QUIZ,
       payload: newQuizzes
     })
 
-    //await axios.delete(`${db.quizzes}/${id}.json?auth=${token}`)
+    await axios.delete(`${db.quizzes}/${id}.json?auth=${token}`)
   }
 
   const fetchQuizById = async quizId => {
@@ -137,6 +140,15 @@ export const QuizState = ({ children }) => {
     fetchQuizzesStart()
 
     try {
+      const deleted = localStorage.getItem('deleted')
+
+      if (deleted) {
+        console.log(deleted)
+        deleted.split(' ').forEach(i => deleteQuiz(i))
+      }
+
+      localStorage.removeItem('deleted')
+
       const response = await axios.get(`${db.quizzes}.json`)
 
       const quizzes = []

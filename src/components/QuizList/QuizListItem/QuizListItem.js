@@ -11,24 +11,45 @@ const QuizListItem = ({ quiz, isAuthenticated, areMine, user, hasFav }) => {
   const { toggleFav } = useContext(AuthContext)
   const { deleteQuiz } = useContext(QuizContext)
 
+  useEffect(() => {
+    window.addEventListener('beforeunload', cleanRemoved);
+
+    return () => {
+      cleanRemoved()
+      window.removeEventListener('beforeunload', cleanRemoved);
+    }
+  }, [])
+
   const [removed, setRemoved] = useState(false)
 
   const ref = useRef(null)
 
   const timeout = useRef(null)
 
+  const cls = [classes.QuizListItem]
+  if (removed) cls.push(classes.removed)
+
   const removeQuiz = id => {
     setRemoved(true)
-    timeout.current = setTimeout(() => deleteQuiz(id), 5000)
+    timeout.current = true
   }
 
+  const cleanRemoved = () => {
+    if (timeout.current) {
+      deleteQuiz(quiz.id)
+    }
+  }
+
+
+
   const recoverQuiz = () => {
-    clearTimeout(timeout.current)
+    //clearTimeout(timeout.current)
     setRemoved(false)
+    timeout.current = false
   }
 
   return (
-    <li className={classes.QuizListItem} ref={ref}>
+    <li className={cls.join(' ')} ref={ref}>
       {
         <NavLink to={removed ? '#' : '/quiz/' + quiz.id}>
           <span className={classes.Title}>{quiz.name}</span>
@@ -57,7 +78,7 @@ const QuizListItem = ({ quiz, isAuthenticated, areMine, user, hasFav }) => {
                 />
               </Fragment>
               : <Fragment>
-                <span>deleting...</span>
+                <span>deleted</span>
                 <Button parentClass={classes.Icon} ariaLabel='Delete quiz' type='icon'
                         onClick={() => recoverQuiz(quiz.id)} ariaPressed>
                   <i className='fa fa-undo'/>

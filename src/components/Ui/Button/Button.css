@@ -11,13 +11,14 @@
     text-decoration: none;
     box-sizing: border-box;
     text-align: center;
+    transition: color 0.3s, background-color 0.3s;
 }
 
 .Button:not(.icon):not(.gradient) + .Button:not(.icon):not(.gradient) {
     margin-left: 15px;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
     .Button:not(.icon):not(.gradient) {
         width: 100%;
     }

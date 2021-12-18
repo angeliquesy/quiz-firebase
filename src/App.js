@@ -3,6 +3,7 @@ import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 import Layout from './hoc/Layout/Layout'
 import Quiz from './containers/Quiz/Quiz'
 import Home from './containers/Home/Home'
+import About from './containers/About/About'
 import Auth from './containers/Auth/Auth'
 import QuizCreator from './containers/QuizCreator/QuizCreator'
 import Logout from './components/Logout/Logout'
@@ -21,6 +22,7 @@ function App() {
     <Switch>
       <Route path='/auth' component={Auth}/>
       <Route path='/quiz/:id' component={Quiz}/>
+      <Route path='/about' component={About}/>
       <Route path='/' component={Home} exact/>
       <Redirect to='/'/>
     </Switch>
@@ -28,15 +30,14 @@ function App() {
 
   if (isAuthenticated) {
     routes = (
-
-        <Switch>
-          <Route path='/quiz-creator' component={QuizCreator}/>
-          <Route path='/quiz/:id' component={Quiz}/>
-          <Route path='/logout' component={Logout}/>
-          <Route path='/' component={Home} exact/>
-          <Redirect to='/'/>
-        </Switch>
-
+      <Switch>
+        <Route path='/quiz-creator' component={QuizCreator}/>
+        <Route path='/quiz/:id' component={Quiz}/>
+        <Route path='/logout' component={Logout}/>
+        <Route path='/about' component={About}/>
+        <Route path='/' component={Home} exact/>
+        <Redirect to='/'/>
+      </Switch>
     )
   }
 

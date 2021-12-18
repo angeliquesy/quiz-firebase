@@ -6,47 +6,35 @@
   <component name="ChangeListManager">
     <list default="true" id="50605c50-3633-440f-9b1c-3b14bdc53ddf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/rimraf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/rimraf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/rimraf.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/rimraf.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/runtime/node_modules/regenerator-runtime/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/runtime/node_modules/regenerator-runtime/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/runtime/node_modules/regenerator-runtime/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/runtime/node_modules/regenerator-runtime/path.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@babel/runtime/node_modules/regenerator-runtime/runtime.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/color-name/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/color-name/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/regenerator-runtime/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/regenerator-runtime/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/regenerator-runtime/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/regenerator-runtime/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/regenerator-runtime/runtime-module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/regenerator-runtime/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/regenerator-runtime/runtime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tmp/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tmp/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tmp/lib/tmp.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tmp/lib/tmp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/tmp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/tmp/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webidl-conversions/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webidl-conversions/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webidl-conversions/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webidl-conversions/lib/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/webidl-conversions/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/webidl-conversions/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/whatwg-url/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/whatwg-url/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/whatwg-url/lib/URL-impl.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/whatwg-url/lib/URL-impl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/whatwg-url/lib/public-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/whatwg-url/lib/public-api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/whatwg-url/lib/url-state-machine.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/whatwg-url/lib/url-state-machine.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/whatwg-url/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/whatwg-url/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.9231f928.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.9231f928.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.92fc22b5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.92fc22b5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ActiveQuiz/AnswersList/AnswerItem/AnswerItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ActiveQuiz/AnswersList/AnswerItem/AnswerItem.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FinishedQuiz/FinishedQuiz.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FinishedQuiz/FinishedQuiz.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FinishedQuiz/FinishedQuiz.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FinishedQuiz/FinishedQuiz.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Form/Form.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Form/Form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Form/Form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/QuizList/QuizList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuizList/QuizList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/Drawer/Drawer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navigation/MenuToggle/MenuToggle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navigation/MenuToggle/MenuToggle.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/QuizList/QuizList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuizList/QuizList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/QuizList/QuizListItem/QuizListItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuizList/QuizListItem/QuizListItem.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/QuizList/QuizListItem/QuizListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/QuizList/QuizListItem/QuizListItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Ui/Backdrop/Backdrop.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Backdrop/Backdrop.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Ui/Backdrop/Backdrop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Backdrop/Backdrop.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Ui/Button/Button.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Button/Button.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Ui/Fav/Fav.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Fav/Fav.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Ui/Input/Input.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Input/Input.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Ui/Input/Input.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Input/Input.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Ui/Select/Select.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ui/Select/Select.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Auth/Auth.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Auth/Auth.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Home/Home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Quiz/Quiz.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/Quiz/Quiz.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/QuizCreator/QuizCreator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/context/auth/AuthState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/auth/AuthState.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/context/quiz/QuizState.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/quiz/QuizState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useIsMobile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useIsMobile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

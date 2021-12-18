@@ -41,13 +41,18 @@ const QuizCreator = () => {
     submitted: false,
   })
 
-  const [state, setState] = useState({
-    rightAnswerId: 1,
+  const defaultState = {
+    rightAnswerId: '',
     formControls: createFormControls(),
+    areInputsValid: false,
+    areSelectsValid: false,
     isFormValid: false,
-  })
+  }
 
+  const [state, setState] = useState(defaultState)
   const [posted, setPosted] = useState(null)
+
+  const clearState = () => setState({...state, ...defaultState})
 
   const submitHandler = event => {
     event.preventDefault()
@@ -72,12 +77,7 @@ const QuizCreator = () => {
 
     createQuizQuestion(questionItem)
 
-    setState({
-      ...state,
-      rightAnswerId: 1,
-      formControls: createFormControls(),
-      isFormValid: false,
-    })
+    clearState()
   }
 
   const finish = async () => {
@@ -89,12 +89,7 @@ const QuizCreator = () => {
   const createQuizHandler = event => {
     event.preventDefault()
 
-    setState({
-      ...state,
-      rightAnswerId: 1,
-      formControls: createFormControls(),
-      isFormValid: false,
-    })
+    clearState()
 
     finish()
   }
@@ -112,7 +107,8 @@ const QuizCreator = () => {
     setState({
       ...state,
       formControls,
-      isFormValid: validateForm(formControls)
+      areInputsValid: validateForm(formControls),
+      isFormValid: state.areSelectsValid && validateForm(formControls),
     })
   }
 
@@ -154,7 +150,9 @@ const QuizCreator = () => {
   const selectChangeHandler = event => {
     setState({
       ...state,
-      rightAnswerId: +event.target.value
+      rightAnswerId: +event.target.value,
+      areSelectsValid: true,
+      isFormValid: state.areInputsValid
     })
   }
 
@@ -163,11 +161,11 @@ const QuizCreator = () => {
     value={state.rightAnswerId}
     onChange={selectChangeHandler}
     options={[
+      {text: 'Please choose...', value: '', disabled: true},
       {text: 1, value: 1},
       {text: 2, value: 2},
       {text: 3, value: 3},
       {text: 4, value: 4},
-
     ]}
   />
 
@@ -175,7 +173,7 @@ const QuizCreator = () => {
     <div className={classes.QuizCreator}>
       <div>
         <h1>
-          {init.name ? init.name : 'Quiz creation'}
+          {init.name ? init.name : 'New quiz'}
         </h1>
 
         {
@@ -202,6 +200,7 @@ const QuizCreator = () => {
                       </Fragment>
 
                       <Fragment>
+                        <i/>
                         <Button
                           type='primary'
                           onClick={addQuestionHandler}

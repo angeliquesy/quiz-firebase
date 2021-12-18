@@ -50,7 +50,7 @@
     opacity: 0.8;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
     .Home {
         padding-top: 50px;
     }

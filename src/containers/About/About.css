@@ -1,0 +1,15 @@
+.About {
+    display: flex;
+    justify-content: center;
+    padding: 100px 16px 100px 16px;
+    flex-grow: 1;
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #fd8355 0%, #f0576c 36%, #f79cbd 100%);
+}
+
+.About > div {
+    max-width: 600px;
+    font-size: 22px;
+    line-height: 1.4;
+}

@@ -17,7 +17,7 @@
     text-align: center;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
     .Auth {
         padding-top: 50px;
     }

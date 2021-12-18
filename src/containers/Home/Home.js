@@ -57,8 +57,6 @@ const Home = () => {
     filteredQuizzes = filteredQuizzes.filter(quiz => quiz.id !== triviaIds[0] && quiz.id !== triviaIds[1])
     myQuizzes = myQuizzes.filter(quiz => quiz.id !== triviaIds[0] && quiz.id !== triviaIds[1])
 
-    console.log(myQuizzes)
-
     return (
       <Fragment>
         <Button type='gradient' to={`/quiz/${triviaIds[0]}`}>
@@ -90,7 +88,7 @@ const Home = () => {
             />
         }
 
-        { isAuthenticated &&
+        {isAuthenticated &&
           <Fragment>
             <h2 id='my-quizzes'>My quizzes</h2>
 
@@ -124,7 +122,7 @@ const Home = () => {
         }
       </div>
     </div>
-  );
+  )
 
 }
 

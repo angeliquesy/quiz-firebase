@@ -38,13 +38,14 @@ const Drawer = ({isOpen, isAuthenticated, onClose, isMobile}) => {
   }
 
   const links = [
-    {to: '/', label: 'Main', exact: true}
+    {to: '/', label: 'Home', exact: true},
+    {to: '/about', label: 'About'}
   ]
 
   if (isAuthenticated) {
-    links.push({to: '/quiz-creator', label: 'Create a quiz', exact: false})
+    links.push({to: '/quiz-creator', label: 'Create a quiz'})
     links.push({to: '/#my-quizzes', label: '#My quizzes', hash: true, exact: true})
-    links.push({to: '/logout', label: 'Sign out', exact: false, icon: 'fa-sign-out'})
+    links.push({to: '/logout', label: 'Sign out', icon: 'fa-sign-out'})
 
   }
   else {
@@ -53,12 +54,15 @@ const Drawer = ({isOpen, isAuthenticated, onClose, isMobile}) => {
 
   return (
     <React.Fragment>
+
       <nav className={cls.join(' ')}>
         <ul>
           {renderLinks(links)}
         </ul>
       </nav>
-      {isMobile && isOpen ? <Backdrop onClick={onClose}/> : null}
+
+      <Backdrop condition={isMobile && isOpen} onClick={onClose}/>
+
     </React.Fragment>
   )
 }

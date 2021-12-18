@@ -16,6 +16,7 @@ const Select = ({ label, value, options, onChange }) => {
         {options.map((option, index) => (
             <option
               value={option.value}
+              disabled={option.disabled}
               key={index}
             >
               {option.text}
