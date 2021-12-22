@@ -11,7 +11,7 @@ const About = () => (
         input any email and password, let the browser remember it&nbsp;for you to&nbsp;be&nbsp;able to&nbsp;sign in&nbsp;again.</p>
       <p>An&nbsp;authorized user also can star his favorite quizzes and delete his own quizzes.</p>
       <p>Enjoy ❤</p>
-    </div>hg
+    </div>
   </div>
 )
 
